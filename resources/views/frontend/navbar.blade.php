@@ -13,13 +13,14 @@
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
-          <li class="dropdown"><a href="#"><span>Akun</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Masuk</a></li>
-              <li><a href="#">Daftar</a></li>
-            </ul>
-          </li>
+          <li><a class="nav-link scrollto " href="#product">Produk</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+          <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
+           <ul>
+            <li><a href="#register">Daftar</a></li>
+            <li><a href="#login">Masuk</a></li>
+           </ul>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
