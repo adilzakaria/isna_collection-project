@@ -27,14 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Remember
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link href="css/navbar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,21 +59,27 @@
       </div>
 
       <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
-          <li><a class="nav-link scrollto " href="#product">Produk</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
-          <li class="dropdown" ><a href="#"><span>Akun</span> <i class="bi bi-chevron-down"></i> </a>
-           <ul>
-            <li><a href="#register">Pesanan</a></li>
-            <li><a href="#login">Keluar</a></li>
-           </ul>
-          </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+  <ul>
+    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+    <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
+    <li><a class="nav-link scrollto" href="#portfolio">Katalog</a></li>
+    <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+    <li class="dropdown">
+      <a href="#" id="akun">
+        <span>Akun</span>
+        <i class="bi bi-chevron-down"></i>
+        <span class="notification-badge"></span><!-- Change '3' to the actual notification count -->
+      </a>
+      <ul>
+        <li><a href="#">Akun Saya</a></li>
+        <li><a href="#">Pesanan</a></li>
+        <li><a href="#">Keluar</a></li>
+      </ul>
+    </li>
+  </ul>
+  <i class="bi bi-list mobile-nav-toggle"></i>
+</nav><!-- .navbar -->
+
 
     </div>
   </header><!-- End Header -->

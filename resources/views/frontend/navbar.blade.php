@@ -13,7 +13,6 @@
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
-          <li><a class="nav-link scrollto " href="#product">Produk</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
           <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
            <ul>
