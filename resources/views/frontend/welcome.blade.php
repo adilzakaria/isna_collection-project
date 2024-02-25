@@ -62,7 +62,7 @@
     <div class="hero-container" data-aos="fade-up">
       <h1>Isna Collection</h1>
       <h2>Mewujudkan Kreativitas Melalui Jarum dan Benang: Isna Collection, Solusi Terbaik untuk Busana Personal yang Berkualitas.</h2>
-      <a href="#about" class="btn-get-started scrollto">Pesan Sekarang</a>
+      <a href="#" class="btn-get-started scrollto">Pesan Sekarang</a>
     </div>
   </section><!-- End Hero -->
 

@@ -27,7 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="css/navbar.css" rel="stylesheet">
+  <link href="assets/css/navbar.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,7 +58,7 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav id="navbar" class="navbar">
+<nav id="navbar" class="navbar">
   <ul>
     <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
     <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
@@ -72,7 +72,10 @@
       </a>
       <ul>
         <li><a href="#">Akun Saya</a></li>
-        <li><a href="#">Pesanan</a></li>
+        <li><a href="#">
+          <span>Pesanan</span>
+          <span class="notification-order"></span>
+        </a></li>
         <li><a href="#">Keluar</a></li>
       </ul>
     </li>
@@ -89,7 +92,7 @@
     <div class="hero-container" data-aos="fade-up">
       <h1>Isna Collection</h1>
       <h2>Mewujudkan Kreativitas Melalui Jarum dan Benang: Isna Collection, Solusi Terbaik untuk Busana Personal yang Berkualitas.</h2>
-      <a href="#about" class="btn-get-started scrollto">Pesan Sekarang</a>
+      <a href="#" class="btn-get-started scrollto">Pesan Sekarang</a>
     </div>
   </section><!-- End Hero -->
 
