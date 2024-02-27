@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,14 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Remember
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -55,7 +46,34 @@
     </div>
   </section>
 
- @include ('frontend.navbar')
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html">Isna Collection</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+          <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
+           <ul>
+            <li><a href="/register">Daftar</a></li>
+            <li><a href="/login">Masuk</a></li>
+           </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -81,8 +99,8 @@
             <div class="box-heading" data-aos="fade-up">
               <h4>Tentang Kami</h4>
               <h3>Berawal dari tangan sederhana yang kami sajikan dengan rasa bangga</h3>
-              <p>Isna Collection adalah jasa jahit rumahan yang tumbuh dari semangat dan kerja keras seorang biasa. 
-                Berdiri dengan tekad yang kuat, Isna Collection memulai perjalanan dengan sebuah ide sederhana: menyediakan layanan jahit yang berkualitas tinggi dan personal untuk setiap pelanggan. Dengan kemampuan, dedikasi, dan keahlian, Isna Collection telah membangun reputasi sebagai destinasi fashion yang ramah dan terpercaya. 
+              <p>Isna Collection adalah jasa jahit rumahan yang tumbuh dari semangat dan kerja keras seorang biasa.
+                Berdiri dengan tekad yang kuat, Isna Collection memulai perjalanan dengan sebuah ide sederhana: menyediakan layanan jahit yang berkualitas tinggi dan personal untuk setiap pelanggan. Dengan kemampuan, dedikasi, dan keahlian, Isna Collection telah membangun reputasi sebagai destinasi fashion yang ramah dan terpercaya.
                 Setiap jahitan yang dihasilkan adalah bukti komitmen Isna Collection untuk memberikan yang terbaik, karena keindahan lahir dari detail yang penuh dedikasi.</p>
             </div>
 
