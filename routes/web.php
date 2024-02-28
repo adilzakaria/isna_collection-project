@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,4 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [WelcomeController::class,'index']);
 Route::get('/home', [HomeController::class,'home']);
 Route::get('/login', [LoginController::class,'login']);
+Route::get('/register', [RegisterController::class, 'register']);

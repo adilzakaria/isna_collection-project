@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Register</title>
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
@@ -27,7 +27,7 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/register.css">
 
 </head>
 <div class="container">
@@ -44,25 +44,22 @@
                     <h4 class="sub-title" style="word-break: break-all">Benang</h4>
                 </div>
                 <div class="right-content">
-                    <h3 class="form-title">Login</h3>
+                    <h3 class="form-title">Register</h3>
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label>Username / Email</label>
-                            <input type="email" placeholder="Username / Email" class="form-control" style="background-color: rgb(219, 219, 219)">
+                            <label>Username</label>
+                            <input type="username" placeholder="Username" class="form-control" style="background-color: rgb(219, 219, 219)">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Email" class="form-control" style="background-color: rgb(219, 219, 219)">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
                             <input type="password" placeholder="Password" class="form-control" style="background-color: rgb(219, 219, 219)">
                         </div>
-                        <button class="btn signin">Login</button>
-                        <div class="remember-me">
-                            <input type="checkbox" class="checkbox">
-                            <span class="check-label">Remember Me</span>
-                        </div>
-                        <a href="" class="forgot">Forgot Password</a>
+                        <button class="btn signin" style="margin-top: 50px">Register</button>
                     </form>
-
-                    <div class="signup-link" style="margin-top: 125px">Don't have an account? Sign up <a href="">here</a></div>
                 </div>
             </div>
         </div>
