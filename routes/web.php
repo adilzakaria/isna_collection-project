@@ -27,4 +27,4 @@ Route::get('/', [WelcomeController::class,'index']);
 Route::get('/home', [HomeController::class,'home']);
 Route::get('/login', [LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'register']);
-Route::get('/admin', [AdminController::class, 'admin']);
+Route::get('/admin1',[AdminController::class, 'admin']);
