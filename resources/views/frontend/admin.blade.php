@@ -6,7 +6,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Corona Admin</title>
+    <title>Admin</title>
     <!-- plugins:css -->
     <link
       rel="stylesheet"
@@ -49,15 +49,6 @@
       </div>
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div
-          class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"
-            ><img src="admin/assets/images/logo.svg" alt="logo"
-          /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"
-            ><img src="admin/assets/images/logo-mini.svg" alt="logo"
-          /></a>
-        </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
@@ -70,8 +61,8 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Adil Zakaria</h5>
-                  <span>Gold Member</span>
+                  <h5 class="mb-0 font-weight-normal">Hai, Adil</h5>
+                  <span>Admin</span>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"
@@ -80,7 +71,7 @@
               <div
                 class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
                 aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
+                <a href="#home" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-settings text-primary"></i>
@@ -88,8 +79,7 @@
                   </div>
                   <div class="preview-item-content">
                     <p class="preview-subject ellipsis mb-1 text-small">
-                      Account settings
-                    </p>
+                      Account Settings
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -106,18 +96,6 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-calendar-today text-success"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">
-                      To-do list
-                    </p>
-                  </div>
-                </a>
               </div>
             </div>
           </li>
@@ -125,7 +103,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="admin1">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -150,141 +128,7 @@
               data-toggle="minimize">
               <span class="mdi mdi-menu"></span>
             </button>
-            <ul class="navbar-nav w-100">
-              <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search products" />
-                </form>
-              </li>
-            </ul>
             <ul class="navbar-nav navbar-nav-right">
-              <li class="nav-item dropdown d-none d-lg-block">
-                <a
-                  class="nav-link btn btn-success create-new-button"
-                  id="createbuttonDropdown"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  href="#"
-                  >+ Create New Project</a
-                >
-                <div
-                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                  aria-labelledby="createbuttonDropdown">
-                  <h6 class="p-3 mb-0">Projects</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-file-outline text-primary"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Software Development
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-web text-info"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        UI Development
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-layers text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Software Testing
-                      </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all projects</p>
-                </div>
-              </li>
-              <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
-                  <i class="mdi mdi-view-grid"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a
-                  class="nav-link count-indicator dropdown-toggle"
-                  id="messageDropdown"
-                  href="#"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <i class="mdi mdi-email"></i>
-                  <span class="count bg-success"></span>
-                </a>
-                <div
-                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
-                  aria-labelledby="messageDropdown">
-                  <h6 class="p-3 mb-0">Messages</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img
-                        src="admin/assets/images/faces/face4.jpg"
-                        alt="image"
-                        class="rounded-circle profile-pic" />
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Mark send you a message
-                      </p>
-                      <p class="text-muted mb-0">1 Minutes ago</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img
-                        src="admin/assets/images/faces/face2.jpg"
-                        alt="image"
-                        class="rounded-circle profile-pic" />
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Cregh send you a message
-                      </p>
-                      <p class="text-muted mb-0">15 Minutes ago</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img
-                        src="admin/assets/images/faces/face3.jpg"
-                        alt="image"
-                        class="rounded-circle profile-pic" />
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">
-                        Profile picture updated
-                      </p>
-                      <p class="text-muted mb-0">18 Minutes ago</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">4 new messages</p>
-                </div>
-              </li>
               <li class="nav-item dropdown border-left">
                 <a
                   class="nav-link count-indicator dropdown-toggle"
@@ -352,7 +196,7 @@
                       src="admin/assets/images/faces/face15.jpg"
                       alt="" />
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">
-                      Henry Klein
+                      Adil Zakaria
                     </p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
@@ -405,26 +249,7 @@
                   <div class="card-body py-0 px-0 px-sm-3">
                     <div class="row align-items-center">
                       <div class="col-4 col-sm-3 col-xl-2">
-                        <img
-                          src="admin/assets/images/dashboard/Group126@2x.png"
-                          class="gradient-corona-img img-fluid"
-                          alt="" />
-                      </div>
-                      <div class="col-5 col-sm-7 col-xl-8 p-0">
-                        <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-                        <p class="mb-0 font-weight-normal d-none d-sm-block">
-                          Check out our Pro version with 5 unique layouts!
-                        </p>
-                      </div>
-                      <div class="col-3 col-sm-2 col-xl-2 ps-0 text-center">
-                        <span>
-                          <a
-                            href="https://www.bootstrapdash.com/product/corona-admin-template/"
-                            target="_blank"
-                            class="btn btn-outline-light btn-rounded get-started-btn"
-                            >Upgrade to PRO</a
-                          >
-                        </span>
+                        
                       </div>
                     </div>
                   </div>
