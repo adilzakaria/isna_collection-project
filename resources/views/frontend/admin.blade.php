@@ -261,7 +261,7 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Order Status</h4>
+                    <h4 class="card-title font-admin">Order Status</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
@@ -275,13 +275,13 @@
                                 </label>
                               </div>
                             </th>
-                            <th>Client Name</th>
-                            <th>Order No</th>
-                            <th>Product Cost</th>
-                            <th>Project</th>
-                            <th>Payment Mode</th>
-                            <th>Start Date</th>
-                            <th>Payment Status</th>
+                            <th >Client Name</th>
+                            <th >Order No</th>
+                            <th >Product Cost</th>
+                            <th >Project</th>
+                            <th >Payment Mode</th>
+                            <th >Start Date</th>
+                            <th >Payment Status</th>
                           </tr>
                         </thead>
                         <tbody>
