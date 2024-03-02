@@ -111,11 +111,11 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a class="nav-link" href="form">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Form Elements</span>
+              <span class="menu-title">Form Update</span>
             </a>
           </li>
       </nav>
@@ -269,40 +269,21 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title font-admin">Order Status</h4>
+                    <h4 class="card-title font-admin">Ulasan Pembeli</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
-                            <th>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input" />
-                                </label>
-                              </div>
-                            </th>
-                            <th >Client Name</th>
-                            <th >Order No</th>
-                            <th >Product Cost</th>
-                            <th >Project</th>
-                            <th >Payment Mode</th>
-                            <th >Start Date</th>
-                            <th >Payment Status</th>
+                            <th >ID</th>
+                            <th >Nama Pembeli</th>
+                            <th >Rating</th>
+                            <th >Ulasan</th>
+                            <th >Deskripsi</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input" />
-                                </label>
-                              </div>
-                            </td>
+                            <td>1</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face1.jpg"
@@ -312,24 +293,14 @@
                             <td>02312</td>
                             <td>$14,500</td>
                             <td>Dashboard</td>
-                            <td>Credit card</td>
-                            <td>04 Dec 2019</td>
                             <td>
-                              <div class="badge badge-outline-success">
-                                Approved
+                              <div class="badge badge-outline-danger">
+                                Hapus
                               </div>
                             </td>
                           </tr>
                           <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input" />
-                                </label>
-                              </div>
-                            </td>
+                            <td>2</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face2.jpg"
@@ -339,24 +310,14 @@
                             <td>02312</td>
                             <td>$14,500</td>
                             <td>Website</td>
-                            <td>Cash on delivered</td>
-                            <td>04 Dec 2019</td>
                             <td>
-                              <div class="badge badge-outline-warning">
-                                Pending
+                              <div class="badge badge-outline-danger">
+                                Hapus
                               </div>
                             </td>
                           </tr>
                           <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input" />
-                                </label>
-                              </div>
-                            </td>
+                            <td>3</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face5.jpg"
@@ -366,24 +327,14 @@
                             <td>02312</td>
                             <td>$14,500</td>
                             <td>App design</td>
-                            <td>Credit card</td>
-                            <td>04 Dec 2019</td>
                             <td>
                               <div class="badge badge-outline-danger">
-                                Rejected
+                                Hapus
                               </div>
                             </td>
                           </tr>
                           <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input" />
-                                </label>
-                              </div>
-                            </td>
+                            <td>4</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face3.jpg"
@@ -393,24 +344,14 @@
                             <td>02312</td>
                             <td>$14,500</td>
                             <td>Development</td>
-                            <td>Online Payment</td>
-                            <td>04 Dec 2019</td>
                             <td>
-                              <div class="badge badge-outline-success">
-                                Approved
+                              <div class="badge badge-outline-danger">
+                                Hapus
                               </div>
                             </td>
                           </tr>
                           <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input
-                                    type="checkbox"
-                                    class="form-check-input" />
-                                </label>
-                              </div>
-                            </td>
+                            <td>5</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face4.jpg"
@@ -420,11 +361,9 @@
                             <td>02312</td>
                             <td>$14,500</td>
                             <td>Website</td>
-                            <td>Credit card</td>
-                            <td>04 Dec 2019</td>
                             <td>
-                              <div class="badge badge-outline-success">
-                                Approved
+                              <div class="badge badge-outline-danger">
+                                Hapus
                               </div>
                             </td>
                           </tr>
@@ -436,6 +375,114 @@
               </div>
             </div>
             
+          <!-- Start Katalog -->
+            <div class="row">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title font-admin">Katalog Isna Collection</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th >ID</th>
+                            <th >Gambar</th>
+                            <th >Nama Produk</th>
+                            <th >Kategori</th>
+                            <th >Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>gambar.jpg</td>
+                            <td>lorem ipsum assalamualaikum wr wb</td>
+                            <td>dress, atasan, lainnya</td>
+                            <td>
+                              <div class="badge badge-outline-primary">
+                                Perbarui
+                              </div>
+                            </td>
+                            <td>
+                              <div class="badge badge-outline-danger">
+                                Hapus
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>gambar.jpg</td>
+                            <td>lorem ipsum assalamualaikum wr wb</td>
+                            <td>dress, atasan, lainnya</td>
+                            <td>
+                              <div class="badge badge-outline-primary">
+                                Perbarui
+                              </div>
+                            </td>
+                            <td>
+                              <div class="badge badge-outline-danger">
+                                Hapus
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>gambar.jpg</td>
+                            <td>lorem ipsum assalamualaikum wr wb</td>
+                            <td>dress, atasan, lainnya</td>
+                            <td>
+                              <div class="badge badge-outline-primary">
+                                Perbarui
+                              </div>
+                            </td>
+                            <td>
+                              <div class="badge badge-outline-danger">
+                                Hapus
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>gambar.jpg</td>
+                            <td>lorem ipsum assalamualaikum wr wb</td>
+                            <td>dress, atasan, lainnya</td>
+                            <td>
+                              <div class="badge badge-outline-primary">
+                                Perbarui
+                              </div>
+                            </td>
+                            <td>
+                              <div class="badge badge-outline-danger">
+                                Hapus
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>gambar.jpg</td>
+                            <td>lorem ipsum assalamualaikum wr wb</td>
+                            <td>dress, atasan, lainnya</td>
+                            <td>
+                              <div class="badge badge-outline-primary">
+                                Perbarui
+                              </div>
+                            </td>
+                            <td>
+                              <div class="badge badge-outline-danger">
+                                Hapus
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- End Katalog -->
+
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">

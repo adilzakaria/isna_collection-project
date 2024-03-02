@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function admin()
+    public function showDash()
     {
-        return view ('frontend.admin');
+        return view ('admin.dash');
+    }
+    public function showForm()
+    {
+        return view ('admin.form');
     }
 }
