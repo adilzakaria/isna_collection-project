@@ -30,43 +30,49 @@
     <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-            <div class="form-container">
-                <div class="left-content">
-                    <h3 class="title" style="margin-bottom: 5px">Isna</h3>
-                    <h3 class="title" style="margin-bottom: 70px">Collection</h3>
-                    <h4 class="sub-title" style="word-break: break-all">Mewujudkan</h4>
-                    <h4 class="sub-title" style="word-break: break-all">Kreativitas</h4>
-                    <h4 class="sub-title" style="word-break: break-all">Melalui</h4>
-                    <h4 class="sub-title" style="word-break: break-all">Jarum Dan</h4>
-                    <h4 class="sub-title" style="word-break: break-all">Benang</h4>
-                </div>
-                <div class="right-content">
-                    <h3 class="form-title">Login</h3>
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label>Username / Email</label>
-                            <input type="email" placeholder="Username / Email" class="form-control" style="background-color: rgb(219, 219, 219)">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" placeholder="Password" class="form-control" style="background-color: rgb(219, 219, 219)">
-                        </div>
-                        <button class="btn signin">Login</button>
-                        <div class="remember-me">
-                            <input type="checkbox" class="checkbox">
-                            <span class="check-label">Remember Me</span>
-                        </div>
-                        <a href="" class="forgot">Forgot Password</a>
-                    </form>
 
-                    <div class="signup-link" style="margin-top: 125px">Don't have an account? Sign up <a href="">here</a></div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="form-container">
+                    <div class="left-content">
+                        <h3 class="title" style="margin-bottom: 5px">Isna</h3>
+                        <h3 class="title" style="margin-bottom: 70px">Collection</h3>
+                        <h4 class="sub-title" style="word-break: break-all">Mewujudkan</h4>
+                        <h4 class="sub-title" style="word-break: break-all">Kreativitas</h4>
+                        <h4 class="sub-title" style="word-break: break-all">Melalui</h4>
+                        <h4 class="sub-title" style="word-break: break-all">Jarum Dan</h4>
+                        <h4 class="sub-title" style="word-break: break-all">Benang</h4>
+                    </div>
+                    <div class="right-content">
+                        <h3 class="form-title">Login</h3>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label>Username / Email</label>
+                                <input type="email" placeholder="Username / Email" class="form-control"
+                                    style="background-color: rgb(219, 219, 219)">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input type="password" placeholder="Password" class="form-control"
+                                    style="background-color: rgb(219, 219, 219)">
+                            </div>
+                            <button class="btn signin">Login</button>
+                            <div class="remember-me">
+                                <input type="checkbox" class="checkbox">
+                                <span class="check-label">Remember Me</span>
+                            </div>
+                            <a href="/forgot" class="forgot">Forgot Password</a>
+                        </form>
+
+                        <div class="signup-link" style="margin-top: 125px">Don't have an account? Sign up <a
+                                href="/register">here</a></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
 
 </html>

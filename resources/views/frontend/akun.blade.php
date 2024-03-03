@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Akun Saya</title>
+
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
@@ -27,11 +28,17 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="assets/css/akun.css">
 
 </head>
 
 <body>
+@include('frontend.navcontent')
+
+    <nav id="navbar" class="navbar" style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+        <h1 style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">Hai, Pengguna</h1>
+    </nav>
+
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
@@ -46,24 +53,24 @@
                         <h4 class="sub-title" style="word-break: break-all">Benang</h4>
                     </div>
                     <div class="right-content">
-                        <h3 class="form-title">Register</h3>
+                        <h3 class="form-title">Forgot Password</h3>
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="username" placeholder="Username" class="form-control"
+                                <label>Username / Email</label>
+                                <input type="username" placeholder="Username / Email" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" placeholder="Email" class="form-control"
+                                <label>Passowrd</label>
+                                <input type="Password" placeholder="Password" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" placeholder="Password" class="form-control"
+                                <label> Confirm Password</label>
+                                <input type="confirm" placeholder=" Confirm Password" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
-                            <button class="btn signin" style="margin-top: 50px">Register</button>
+                            <button class="btn signin" style="margin-top: 50px">Change</button>
                         </form>
                     </div>
                 </div>

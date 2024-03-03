@@ -6,7 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ForgotController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AkunController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,7 @@ Route::get('/', [WelcomeController::class,'index']);
 Route::get('/home', [HomeController::class,'home']);
 Route::get('/login', [LoginController::class,'login']);
 Route::get('/register', [RegisterController::class, 'register']);
+Route::get('/akun', [AkunController::class, 'akun']);
+Route::get('/forgot', [ForgotController::class, 'forgot']);
 Route::get('/dash',[AdminController::class, 'showDash']);
 Route::get('/form',[AdminController::class, 'showForm']);

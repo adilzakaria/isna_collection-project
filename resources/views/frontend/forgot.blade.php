@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Forgot Password</title>
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
@@ -46,24 +46,24 @@
                         <h4 class="sub-title" style="word-break: break-all">Benang</h4>
                     </div>
                     <div class="right-content">
-                        <h3 class="form-title">Register</h3>
+                        <h3 class="form-title">Forgot Password</h3>
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="username" placeholder="Username" class="form-control"
+                                <label>Username / Email</label>
+                                <input type="username" placeholder="Username / Email" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" placeholder="Email" class="form-control"
+                                <label>Passowrd</label>
+                                <input type="Password" placeholder="Password" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" placeholder="Password" class="form-control"
+                                <label> Confirm Password</label>
+                                <input type="confirm" placeholder=" Confirm Password" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
-                            <button class="btn signin" style="margin-top: 50px">Register</button>
+                            <button class="btn signin" style="margin-top: 50px">Change</button>
                         </form>
                     </div>
                 </div>

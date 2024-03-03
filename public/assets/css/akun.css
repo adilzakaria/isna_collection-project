@@ -148,80 +148,8 @@
 
 .form-container .form-horizontal .btn:hover,
 .form-container .form-horizontal .btn:focus {
-    box-shadow: 0 0 10px #ff97a8;
+    box-shadow: 0 0 10px #ff9dda;
     outline: none;
-}
-
-.form-container .form-horizontal .remember-me {
-    width: calc(100% - 105px);
-    display: inline-block;
-}
-
-.form-container .form-horizontal .remember-me .check-label {
-    color: #999;
-    font-size: 12px;
-    font-weight: 400;
-    vertical-align: top;
-    display: inline-block;
-}
-
-.form-container .form-horizontal .remember-me .checkbox {
-    height: 17px;
-    width: 17px;
-    min-height: auto;
-    margin: 0 1px 0 0;
-    border: 2px solid #ff97a8;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    transition: all 0.3s ease 0s;
-}
-
-.form-container .form-horizontal .remember-me .checkbox:before {
-    content: "";
-    height: 5px;
-    width: 10px;
-    border-bottom: 2px solid #fff;
-    border-left: 2px solid #fff;
-    transform: rotate(-45deg);
-    position: absolute;
-    left: 2px;
-    top: 2.5px;
-    transition: all 0.3s ease;
-}
-
-.form-container .form-horizontal .remember-me .checkbox:checked {
-    background-color: #ff97a8;
-}
-
-.form-container .form-horizontal .remember-me .checkbox:checked:before {
-    opacity: 1;
-}
-
-.form-container .form-horizontal .remember-me .checkbox:not(:checked):before {
-    opacity: 0;
-}
-
-.form-container .form-horizontal .remember-me .checkbox:focus {
-    outline: none;
-}
-
-.form-container .form-horizontal .forgot {
-    color: #ff97a8;
-    font-size: 12px;
-    text-align: right;
-    width: 100px;
-    vertical-align: top;
-    display: inline-block;
-    transition: all 0.3s ease 0s;
-}
-
-.form-container .form-horizontal .forgot:hover {
-    text-decoration: underline;
 }
 
 .form-container .right-content .separator {
@@ -230,20 +158,6 @@
     text-align: center;
     margin: 0 0 15px;
     display: block;
-}
-
-.form-container .right-content .signup-link {
-    color: #999;
-    font-size: 13px;
-}
-
-.form-container .right-content .signup-link a {
-    color: #ff97a8;
-    transition: all 0.3s ease 0s;
-}
-
-.form-container .right-content .signup-link a:hover {
-    text-decoration: underline;
 }
 
 @media only screen and (max-width: 767px) {
