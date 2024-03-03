@@ -226,20 +226,20 @@
           </div>
         </nav>
         <!-- partial -->
-        <div class="main-panel">
+        <div class="main-panel  ">
           <div class="content-wrapper">
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Perbarui Katalog</h4>
+                    <h4 class="card-title text-dark">Perbarui Katalog</h4>
                     <form class="forms-sample">
                       <div class="form-group">
-                        <label for="exampleInputName1">Judul</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label class="text-dark" for="exampleInputName1">Judul</label>
+                        <input type="text" class="form-control bg-white" id="exampleInputName1" placeholder="Nama Produk">
                       </div>
                       <div class="form-group">
-                        <label for="exampleSelectGender">Kategori Baju</label>
-                        <select class="form-control" id="exampleSelectGender">
+                        <label class="text-dark" for="exampleSelectGender">Kategori Baju</label>
+                        <select class="form-control bg-white text-dark" id="exampleSelectGender">
                             <option selected>Atasan</option>
                             <option value="2">Dress</option>
                             <option value="3">Kebaya</option>
@@ -247,17 +247,17 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label>File upload</label>
+                        <label class="text-dark">Gambar</label>
                         <input type="file" name="img[]" class="file-upload-default">
                         <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="format .jpg/.png">
                           <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            <button class="file-upload-browse btn btn-primary" type="button">Unggah</button>
                           </span>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary me-2">Perbarui</button>
-                      <button class="btn btn-dark">Batal</button>
+                      <button type="submit" class="btn btn-success me-2">Perbarui</button>
+                      <button class="btn btn-danger">Batal</button>
                     </form>
                   </div>
                 </div>
@@ -265,40 +265,33 @@
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Perbarui Deskripsi</h4>
+                    <h4 class="card-title text-dark">Perbarui Deskripsi</h4>
                     <form class="forms-sample">
                       <div class="form-group">
-                        <label for="exampleInputName1">Judul</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label class="text-dark" for="exampleInputName1">Judul</label>
+                        <input type="text" class="form-control bg-white" id="exampleInputName1" placeholder="">
                       </div>
                       <div class="form-group">
-                        <label for="exampleTextarea1">Deskripsi</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                        <label class="text-dark" for="exampleTextarea1">Deskripsi</label>
+                        <textarea class="form-control bg-white" id="exampleTextarea1" rows="4"></textarea>
                       </div>
                       <div class="form-group">
-                        <label>File upload</label>
+                        <label class="text-dark">Gambar</label>
                         <input type="file" name="img[]" class="file-upload-default">
                         <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                          <input type="text" class="form-control file-upload-info" disabled placeholder="format .jpg/.png">
                           <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            <button class="file-upload-browse btn btn-primary" type="button">Unggah</button>
                           </span>
                         </div>
                       </div>
-                      <button type="submit" class="btn btn-primary me-2">Perbarui</button>
-                      <button class="btn btn-dark">Batal</button>
+                      <button type="submit" class="btn btn-success me-2">Perbarui</button>
+                      <button class="btn btn-danger">Batal</button>
                     </form>
                   </div>
                 </div>
               </div>
           <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

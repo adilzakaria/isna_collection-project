@@ -103,7 +103,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="admin1">
+            <a class="nav-link" href="dash">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -269,102 +269,92 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title font-admin">Ulasan Pembeli</h4>
+                    <h4 class="card-title text-dark">Ulasan Pembeli</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
-                            <th >ID</th>
-                            <th >Nama Pembeli</th>
-                            <th >Rating</th>
-                            <th >Ulasan</th>
-                            <th >Deskripsi</th>
+                            <th class="text-dark">ID</th>
+                            <th class="text-dark">Nama Pembeli</th>
+                            <th class="text-dark">Rating</th>
+                            <th class="text-dark">Ulasan</th>
+                            <th class="text-dark">Deskripsi</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>1</td>
+                            <td class="text-dark">1</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face1.jpg"
                                 alt="image" />
-                              <span class="ps-2">Henry Klein</span>
+                              <span class="ps-2 text-dark">Henry Klein</span>
                             </td>
-                            <td>02312</td>
-                            <td>$14,500</td>
-                            <td>Dashboard</td>
-                            <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">Dashboard</td>
+                            <td class="text-dark">
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>2</td>
+                            <td class="text-dark">2</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face2.jpg"
                                 alt="image" />
-                              <span class="ps-2">Estella Bryan</span>
+                              <span class="ps-2 text-dark">Estella Bryan</span>
                             </td>
-                            <td>02312</td>
-                            <td>$14,500</td>
-                            <td>Website</td>
-                            <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">Website</td>
+                            <td class="text-dark">
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>3</td>
+                            <td class="text-dark">3</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face5.jpg"
                                 alt="image" />
-                              <span class="ps-2">Lucy Abbott</span>
+                              <span class="ps-2 text-dark">Lucy Abbott</span>
                             </td>
-                            <td>02312</td>
-                            <td>$14,500</td>
-                            <td>App design</td>
-                            <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">App design</td>
+                            <td class="text-dark">
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>4</td>
+                            <td class="text-dark">4</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face3.jpg"
                                 alt="image" />
-                              <span class="ps-2">Peter Gill</span>
+                              <span class="ps-2 text-dark">Peter Gill</span>
                             </td>
-                            <td>02312</td>
-                            <td>$14,500</td>
-                            <td>Development</td>
-                            <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">Development</td>
+                            <td class="text-dark">
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>5</td>
+                            <td class="text-dark">5</td>
                             <td>
                               <img
                                 src="admin/assets/images/faces/face4.jpg"
                                 alt="image" />
-                              <span class="ps-2">Sallie Reyes</span>
+                              <span class="ps-2 text-dark">Sallie Reyes</span>
                             </td>
-                            <td>02312</td>
-                            <td>$14,500</td>
-                            <td>Website</td>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">Website</td>
                             <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                         </tbody>
@@ -380,97 +370,77 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title font-admin">Katalog Isna Collection</h4>
+                    <h4 class="card-title text-dark">Katalog Isna Collection</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
-                            <th >ID</th>
-                            <th >Gambar</th>
-                            <th >Nama Produk</th>
-                            <th >Kategori</th>
-                            <th >Aksi</th>
+                            <th class="text-dark">ID</th>
+                            <th class="text-dark">Gambar</th>
+                            <th class="text-dark">Nama Produk</th>
+                            <th class="text-dark">Kategori</th>
+                            <th class="text-dark">Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>1</td>
-                            <td>gambar.jpg</td>
-                            <td>lorem ipsum assalamualaikum wr wb</td>
-                            <td>dress, atasan, lainnya</td>
+                            <td class="text-dark">1</td>
+                            <td class="text-dark">gambar.jpg</td>
+                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
+                            <td class="text-dark">dress, atasan, lainnya</td>
                             <td>
-                              <div class="badge badge-outline-primary">
-                                Perbarui
-                              </div>
+                              <button class="btn btn-success">Perbarui</button>
                             </td>
                             <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>2</td>
-                            <td>gambar.jpg</td>
-                            <td>lorem ipsum assalamualaikum wr wb</td>
-                            <td>dress, atasan, lainnya</td>
+                            <td class="text-dark">2</td>
+                            <td class="text-dark">gambar.jpg</td>
+                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
+                            <td class="text-dark">dress, atasan, lainnya</td>
                             <td>
-                              <div class="badge badge-outline-primary">
-                                Perbarui
-                              </div>
+                              <button class="btn btn-success">Perbarui</button>
                             </td>
                             <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>3</td>
-                            <td>gambar.jpg</td>
-                            <td>lorem ipsum assalamualaikum wr wb</td>
-                            <td>dress, atasan, lainnya</td>
+                            <td class="text-dark">3</td>
+                            <td class="text-dark">gambar.jpg</td>
+                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
+                            <td class="text-dark">dress, atasan, lainnya</td>
                             <td>
-                              <div class="badge badge-outline-primary">
-                                Perbarui
-                              </div>
+                              <button class="btn btn-success">Perbarui</button>
                             </td>
                             <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>4</td>
-                            <td>gambar.jpg</td>
-                            <td>lorem ipsum assalamualaikum wr wb</td>
-                            <td>dress, atasan, lainnya</td>
+                            <td class="text-dark">4</td>
+                            <td class="text-dark">gambar.jpg</td>
+                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
+                            <td class="text-dark">dress, atasan, lainnya</td>
                             <td>
-                              <div class="badge badge-outline-primary">
-                                Perbarui
-                              </div>
+                              <button class="btn btn-success">Perbarui</button>
                             </td>
                             <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                           <tr>
-                            <td>5</td>
-                            <td>gambar.jpg</td>
-                            <td>lorem ipsum assalamualaikum wr wb</td>
-                            <td>dress, atasan, lainnya</td>
+                            <td class="text-dark">5</td>
+                            <td class="text-dark">gambar.jpg</td>
+                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
+                            <td class="text-dark">dress, atasan, lainnya</td>
                             <td>
-                              <div class="badge badge-outline-primary">
-                                Perbarui
-                              </div>
+                              <button class="btn btn-success">Perbarui</button>
                             </td>
                             <td>
-                              <div class="badge badge-outline-danger">
-                                Hapus
-                              </div>
+                              <button class= "btn btn-danger">Hapus</button>
                             </td>
                           </tr>
                         </tbody>
@@ -484,26 +454,7 @@
           <!-- End Katalog -->
 
           <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div
-              class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span
-                class="text-muted d-block text-center text-sm-left d-sm-inline-block"
-                >Copyright © bootstrapdash.com 2021</span
-              >
-              <span
-                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-                Free
-                <a
-                  href="https://www.bootstrapdash.com/bootstrap-admin-template/"
-                  target="_blank"
-                  >Bootstrap admin template</a
-                >
-                from Bootstrapdash.com</span
-              >
-            </div>
-          </footer>
+          
           <!-- partial -->
         </div>
         <!-- main-panel ends -->
