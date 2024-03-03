@@ -126,18 +126,18 @@
                 <div
                   class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                   aria-labelledby="notificationDropdown">
-                  <h6 class="p-3 mb-0">Notifications</h6>
+                  <h6 class="p-3 mb-0">Notifikasi</h6>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
+                        <i class="mdi mdi-message text-success"></i>
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
+                      <p class="preview-subject mb-1">Adil J Michael</p>
                       <p class="text-muted ellipsis mb-0">
-                        Just a reminder that you have an event today
+                      Hallo, Segera Konfirmasi Pesanan
                       </p>
                     </div>
                   </a>
@@ -145,28 +145,17 @@
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-danger"></i>
+                        <i class="mdi mdi-message text-success"></i>
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                      <p class="text-muted ellipsis mb-0">Update dashboard</p>
+                      <p class="preview-subject mb-1">Dimas Statham</p>
+                      <p class="text-muted ellipsis mb-0">
+                        Hallo, Segera Konfirmasi Pesanan
+                      </p>
                     </div>
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-link-variant text-warning"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0">New admin wow!</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
+                  <p class="p-3 mb-0 text-center">Lihat lebih banyak</p>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -226,7 +215,7 @@
           </div>
         </nav>
         <!-- partial -->
-        <div class="main-panel  ">
+        <div class="main-panel">
           <div class="content-wrapper">
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
@@ -235,11 +224,11 @@
                     <form class="forms-sample">
                       <div class="form-group">
                         <label class="text-dark" for="exampleInputName1">Judul</label>
-                        <input type="text" class="form-control bg-white" id="exampleInputName1" placeholder="Nama Produk">
+                        <input type="text" class="form-control bg-white text-black" id="exampleInputName1" placeholder="Nama Produk">
                       </div>
                       <div class="form-group">
                         <label class="text-dark" for="exampleSelectGender">Kategori Baju</label>
-                        <select class="form-control bg-white text-dark" id="exampleSelectGender">
+                        <select class="form-control bg-white text-black" id="exampleSelectGender">
                             <option selected>Atasan</option>
                             <option value="2">Dress</option>
                             <option value="3">Kebaya</option>
@@ -269,11 +258,11 @@
                     <form class="forms-sample">
                       <div class="form-group">
                         <label class="text-dark" for="exampleInputName1">Judul</label>
-                        <input type="text" class="form-control bg-white" id="exampleInputName1" placeholder="">
+                        <input type="text" class="form-control bg-white text-black" id="exampleInputName1" placeholder="">
                       </div>
                       <div class="form-group">
                         <label class="text-dark" for="exampleTextarea1">Deskripsi</label>
-                        <textarea class="form-control bg-white" id="exampleTextarea1" rows="4"></textarea>
+                        <textarea class="form-control bg-white text-black" id="exampleTextarea1" rows="4"></textarea>
                       </div>
                       <div class="form-group">
                         <label class="text-dark">Gambar</label>

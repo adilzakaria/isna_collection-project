@@ -149,18 +149,18 @@
                 <div
                   class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
                   aria-labelledby="notificationDropdown">
-                  <h6 class="p-3 mb-0">Notifications</h6>
+                  <h6 class="p-3 mb-0">Notifikasi</h6>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
+                        <i class="mdi mdi-message text-success"></i>
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
+                      <p class="preview-subject mb-1">Adil J Michael</p>
                       <p class="text-muted ellipsis mb-0">
-                        Just a reminder that you have an event today
+                      Hallo, Segera Konfirmasi Pesanan
                       </p>
                     </div>
                   </a>
@@ -168,28 +168,17 @@
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-danger"></i>
+                        <i class="mdi mdi-message text-success"></i>
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                      <p class="text-muted ellipsis mb-0">Update dashboard</p>
+                      <p class="preview-subject mb-1">Dimas Statham</p>
+                      <p class="text-muted ellipsis mb-0">
+                        Hallo, Segera Konfirmasi Pesanan
+                      </p>
                     </div>
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-link-variant text-warning"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0">New admin wow!</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
+                  <p class="p-3 mb-0 text-center">Lihat lebih banyak</p>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -450,8 +439,43 @@
                 </div>
               </div>
             </div>
-
           <!-- End Katalog -->
+
+          <!-- Start Pesan -->
+
+          <div class="row">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title text-dark">Pesan</h4>
+                    <div class="table-responsive">
+                        <table>
+                          <div class="card text-dark">
+                            <div class="m-3">
+                              <h4>Nama Pelanggan</h4>
+                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (BELUM TERBACA)
+                            </div>
+                          </div>
+                          <div class="card text-dark mt-3">
+                            <div class="m-3">
+                              <h4>Nama Pelanggan</h4>
+                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (BELUM TERBACA)
+                            </div>
+                          </div>
+                          <div class="card text-dark mt-3 bg-white">
+                            <div class="m-3">
+                              <h4>Nama Pelanggan</h4>
+                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (SUDAH TERBACA)
+                            </div>
+                          </div>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <!-- End Pesan -->
 
           <!-- content-wrapper ends -->
           
