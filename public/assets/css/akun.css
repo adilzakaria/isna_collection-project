@@ -12,7 +12,7 @@
     position: absolute;
     background: #fff;
     border-radius: 6px;
-    max-width: 80%;
+    max-width: 100%;
     width: 100%;
     padding: 40px;
 }
@@ -26,30 +26,34 @@
 
 .form-container .left-content {
     position: relative;
-    width: 40%;
+    width: 30%;
     padding: 40px 30px;
     display: inline-block;
     vertical-align: top;
     padding-right: 20px;
-    height: 550px;
+    height: 469px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .form-container .left-content::before {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
     z-index: 0; /* Tetapkan z-index ke nilai yang lebih rendah */
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .form-container .left-content {
-    background: url("../img/bg-login.jpg") top center;
+    background-color: #ec71a9;
     background-size: cover;
     font-family: "Oswald", sans-serif;
     z-index: 1; /* Tetapkan z-index ke nilai yang lebih tinggi */
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .form-container .left-content .title,
@@ -59,11 +63,11 @@
 }
 
 .form-container .left-content .title {
-    color: #ff97a8;
-    font-family: "Oswald";
-    font-size: 18px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
     letter-spacing: 2px;
-    font-weight: 300;
+    font-weight: bold;
     text-transform: uppercase;
     margin: 0 0 20px;
 }
@@ -80,9 +84,14 @@
 
 .form-container .right-content {
     text-align: center;
-    width: 60%;
+    background-color: #f7dfea;
+    width: 70%;
     padding: 30px 50px;
     display: inline-block;
+    height: 469px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 4px solid #ec71a9;
 }
 
 .form-container .right-content .form-title {
@@ -138,6 +147,21 @@
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.5px;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 9px 11px;
+    margin: 0 0 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .kiri {
+    color: #fff;
+    background-color: #CF3277;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
     text-transform: capitalize;
     width: 100%;
     padding: 9px 11px;
