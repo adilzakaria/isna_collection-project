@@ -37,3 +37,4 @@ Route::get('/forgot', [ForgotController::class, 'forgot']);
 Route::get('/order', [OrderController::class, 'order']);
 Route::get('/dash',[AdminController::class, 'showDash']);
 Route::get('/form',[AdminController::class, 'showForm']);
+Route::get('/pesanan', function(){return view('frontend.pesanan');});
