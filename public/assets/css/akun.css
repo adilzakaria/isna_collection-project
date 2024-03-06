@@ -94,16 +94,13 @@
     border: 4px solid #ec71a9;
 }
 
-.form-container .right-content .form-title {
-    color: #888;
-    font-family: "Oswald", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
-    text-align: left;
-    text-transform: uppercase;
-    padding: 0 0 2px;
-    margin: 0 0 30px;
-    border-bottom: 2px solid #ff97a8;
+.form-container .right-content .title {
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 0 20px;
 }
 
 .form-container .right-content .form-horizontal {
@@ -157,7 +154,7 @@
 
 .form-container .form-horizontal .kiri {
     color: #fff;
-    background-color: #CF3277;
+    background-color: #cf3277;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -167,6 +164,37 @@
     padding: 9px 11px;
     margin: 0 0 20px;
     border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .btnkiri {
+    color: #000000;
+    background-color: #ffc4de;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    width: 40%;
+    padding: 9px 11px;
+    margin: 0 0 20px;
+    border-radius: 10px;
+    border: 3px solid #E966A0;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .btnkanan {
+    color: #fff;
+    background-color: rgb(255, 0, 0);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    width: 40%;
+    padding: 9px 11px;
+    margin: 0 0 20px;
+    border-radius: 10px;
     transition: all 0.3s ease 0s;
 }
 

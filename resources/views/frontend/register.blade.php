@@ -49,11 +49,16 @@
                         <h3 class="form-title">Register</h3>
                         <form class="form-horizontal">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="username" placeholder="Username" class="form-control"
+                                <label>Nama</label>
+                                <input type="nama" placeholder="Nama" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
                             <div class="form-group">
+                                <label>No Hp</label>
+                                <input type="hp" placeholder="No Hp" class="form-control"
+                                    style="background-color: rgb(219, 219, 219)">
+                            </div>
+                            <div class="form-group" style="margin-top: -15px">
                                 <label>Email</label>
                                 <input type="email" placeholder="Email" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
@@ -63,7 +68,7 @@
                                 <input type="password" placeholder="Password" class="form-control"
                                     style="background-color: rgb(219, 219, 219)">
                             </div>
-                            <button class="btn signin" style="margin-top: 50px">Register</button>
+                            <button class="btn signin" style="margin-top: 20px">Register</button>
                         </form>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Akun Saya</title>
+    <title>Edit Profile</title>
 
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
@@ -44,7 +44,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-offset-2 col-md-8">
                 <div class="form-container">
                     <div class="left-content">
                         <div style="display: flex; align-items: center;">
@@ -78,26 +78,26 @@
                                 </svg><span>Log Out</span></button>
                         </form>
                     </div>
-                    <div class="right-content">
-                        <form class="form-horizontal" style="margin-top: 50px">
+                    <div class="right-content" style="border-bottom-right: 15px; border-top-right-radius: 15px;">
+                        <h2 class="title" style="margin-top: 10px">Edit Profile</h2>
+                        <form class="form-horizontal" style="margin-top: 30px">
                             <div class="form-group">
                                 <label style="color: black">Nama Pengguna :</label>
-                                <output class="form-control"
-                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black; font-weight: bold">Michael
-                                    J Adil</output>
+                                <input class="form-control" placeholder="Michael J Adil"
+                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black"></input>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-top: -10px">
                                 <label style="color: black">No Hp :</label>
-                                <output class="form-control"
-                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black; font-weight: bold">+62
-                                    8257
-                                    0976 1290</output>
+                                <input class="form-control" placeholder="+62 825 0976 1290"
+                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black"></input>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-top: -25px">
                                 <label style="color: black">Email :</label>
                                 <output class="form-control"
-                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black; font-weight: bold">michael4archangel@gmail.com</output>
+                                    style="background-color: rgb(246, 246, 246); font-size: 20px; color: rgb(137, 137, 137); font-weight: bold;">michael4archangel@gmail.com</output>
                             </div>
+                            <button class="btn btnkiri" style="margin-top: 20px;">Simpan</button>
+                            <button class="btn btnkanan" style="margin-top: 20px; float: right;">Batal</button>
                         </form>
                     </div>
                 </div>
@@ -106,6 +106,5 @@
     </div>
 
 </body>
-
 
 </html>
