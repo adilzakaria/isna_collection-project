@@ -13,6 +13,7 @@
       href="admin/assets/vendors/mdi/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="admin/assets/vendors/css/vendor.bundle.base.css" />
     <link rel="stylesheet" href="admin/assets/css/style.css" />
+    <link rel="stylesheet" href="admin/assets/css/order.css" />
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
   </head>
@@ -253,237 +254,88 @@
                 </div>
               </div>
             </div>
-            
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title text-dark">Ulasan Pembeli</h4>
-                    <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th class="text-dark">ID</th>
-                            <th class="text-dark">Nama Pembeli</th>
-                            <th class="text-dark">Jenis Baju</th>
-                            <th class="text-dark">Rating</th>
-                            <th class="text-dark">Ulasan</th>
-                            <th class="text-dark">Deskripsi</th>
-                            <th class="text-dark">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="text-dark">1</td>
-                            <td>
-                              <img
-                                src="admin/assets/images/faces/face1.jpg"
-                                alt="image" />
-                              <span class="ps-2 text-dark">Henry Klein</span>
-                            </td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">lorem is_a aslada ksort</td>
-                            <td class="text-dark">Dashboard</td>
-                            <td class="text-dark">
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">2</td>
-                            <td>
-                              <img
-                                src="admin/assets/images/faces/face2.jpg"
-                                alt="image" />
-                              <span class="ps-2 text-dark">Estella Bryan</span>
-                            </td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">lorem is_a aslada ksort</td>
-                            <td class="text-dark">Website</td>
-                            <td class="text-dark">
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">3</td>
-                            <td>
-                              <img
-                                src="admin/assets/images/faces/face5.jpg"
-                                alt="image" />
-                              <span class="ps-2 text-dark">Lucy Abbott</span>
-                            </td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">lorem is_a aslada ksort</td>
-                            <td class="text-dark">App design</td>
-                            <td class="text-dark">
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">4</td>
-                            <td>
-                              <img
-                                src="admin/assets/images/faces/face3.jpg"
-                                alt="image" />
-                              <span class="ps-2 text-dark">Peter Gill</span>
-                            </td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">lorem is_a aslada ksort</td>
-                            <td class="text-dark">Development</td>
-                            <td class="text-dark">
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">5</td>
-                            <td>
-                              <img
-                                src="admin/assets/images/faces/face4.jpg"
-                                alt="image" />
-                              <span class="ps-2 text-dark">Sallie Reyes</span>
-                            </td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">02312</td>
-                            <td class="text-dark">lorem is_a aslada ksort</td>
-                            <td class="text-dark">Website</td>
-                            <td>
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          <!-- Start Katalog -->
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title text-dark">Katalog Isna Collection</h4>
-                    <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th class="text-dark">ID</th>
-                            <th class="text-dark">Gambar</th>
-                            <th class="text-dark">Nama Produk</th>
-                            <th class="text-dark">Kategori</th>
-                            <th class="text-dark">Aksi</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="text-dark">1</td>
-                            <td class="text-dark">gambar.jpg</td>
-                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
-                            <td class="text-dark">dress, atasan, lainnya</td>
-                            <td>
-                              <button class="btn btn-success">Perbarui</button>
-                            </td>
-                            <td>
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">2</td>
-                            <td class="text-dark">gambar.jpg</td>
-                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
-                            <td class="text-dark">dress, atasan, lainnya</td>
-                            <td>
-                              <button class="btn btn-success">Perbarui</button>
-                            </td>
-                            <td>
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">3</td>
-                            <td class="text-dark">gambar.jpg</td>
-                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
-                            <td class="text-dark">dress, atasan, lainnya</td>
-                            <td>
-                              <button class="btn btn-success">Perbarui</button>
-                            </td>
-                            <td>
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">4</td>
-                            <td class="text-dark">gambar.jpg</td>
-                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
-                            <td class="text-dark">dress, atasan, lainnya</td>
-                            <td>
-                              <button class="btn btn-success">Perbarui</button>
-                            </td>
-                            <td>
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">5</td>
-                            <td class="text-dark">gambar.jpg</td>
-                            <td class="text-dark">lorem ipsum assalamualaikum wr wb</td>
-                            <td class="text-dark">dress, atasan, lainnya</td>
-                            <td>
-                              <button class="btn btn-success">Perbarui</button>
-                            </td>
-                            <td>
-                              <button class= "btn btn-danger">Hapus</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!-- End Katalog -->
 
           <!-- Start Pesan -->
 
-          <div class="row">
-              <div class="col-12 grid-margin">
+          <div class="row justify-content-center">
+            <!-- username -->
+              <div class="col-md-10">
+                <div class="card">
+                <h3 class="card-title text-dark m-4 mx-5">Pesanan @username</h3>
+                </div>
+              </div>
+              <!-- usernmae -->
+              <div class="row justify-content-center">
+              <div class="col-md-6">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title text-dark">Pesan</h4>
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                          <div class="card text-dark" href="/order-admin">
-                            <div class="m-3">
-                              <h4>Nama Pelanggan</h4>
-                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (BELUM TERBACA)
-                              <a href="/order-admin" class="btn-get-started scrollto mx-5">Lihat</a>
+                          <div class="card text-dark bg-white">
+                            <!-- Detail Informasi -->
+                            <div class="card card-border bg-white m-3">
+                              <h4>Detail Informasi</h4>
+                              <div style="display: inline-flex;">
+                              <output class="form-control bg-white text-dark" style="width: 170px;">username</output>
+                              <output class="form-control bg-white text-dark mx-4" style="width: 140px;">087898704567</output>
+                              <output class="form-control bg-white text-dark" style="width: 230px;">email</output>
+                              </div>
+                              <div style="display: inline-flex; margin-top: 1rem;">
+                              <output class="form-control bg-white text-dark" style="width: 210px;">Kalimantan Selatan</output>
+                              <output class="form-control bg-white text-dark mx-4" style="width: 180px;">Kota Majapahit</output>
+                              <output class="form-control bg-white text-dark" style="width: 150px;">Kecamatan</output>
+                              </div>
+                              <div style="display: inline-flex; margin-top: 1rem;">
+                              <output class="form-control bg-white text-dark" style="width: 430px;">Alamat Lengkap</output>
+                              <output class="form-control bg-white text-dark" style="width: 150px; margin-left: 10px;">Kode POS</output>
+                              </div>
                             </div>
-                          </div>
-                          <div class="card text-dark mt-3">
-                            <div class="m-3">
-                              <h4>Nama Pelanggan</h4>
-                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (BELUM TERBACA)
-                              <a href="/order-admin" class="btn-get-started scrollto mx-5">Lihat</a>
+                            <!-- dEatail Informasi -->
+
+                            <!-- DEDTAIL PESANANI -->
+                            <h4 class="mx-3">Detail Pesanan</h4>
+                            <div class="card bg-white card-border mx-3">
+                            <div style="display: inline-flex;">
+                            <div class="card card-border bg-white">
+                            <div style="display: inline-flex;">
+                            <output class="form-control bg-white text-dark" style="widt200">Jenis Baju</output>
+                            <output class="form-control bg-white text-dark" style="width: 150px; margin-left: 10px;">Ukuran</output>
                             </div>
-                          </div>
-                          <div class="card text-dark mt-3 bg-white">
-                            <div class="m-3">
-                              <h4>Nama Pelanggan</h4>
-                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (SUDAH TERBACA)
-                              <a href="/order-admin" class="btn-get-started scrollto mx-5">Lihat</a>
+                            <div style="display: inline-flex; margin-top: 1rem;">
+                            <input class="form-control bg-white text-dark" type="text-area"style="width: 200px; height: 100px"></input>
                             </div>
+                            </div>
+                            <div class="card bg-white card-border mx-3">
+                            <img src="assets/img/portfolio/baju1.jpg" alt="" style="width:200px; height:200px;">  
+                            </div>
+                            </div>
+                            </div>
+                            <!-- DETAIL PESANANI -->
                           </div>
-                        </table>
                     </div>
                   </div>
                 </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                          <div class="card text-dark bg-white">
+                            <!-- Detail Informasi -->
+                            <div class="card card-border bg-white m-3">
+                              <h4>Keputusan Pesanan</h4>
+                              <select class="form-select my-3" aria-label="Default select example">
+                                <option selected>Disetujui</option>
+                                <option value="1">Tidak Disetujui</option>
+                              </select>
+                              <input class="form-control bg-white text-dark my-3" type="dropdown"style="width: 200px;" placeholder="Harga"></input>
+                              <input class="form-control bg-white text-dark my-3" type="dropdown"style="width: 200px;" placeholder="Estimasi Waktu"></input>
+                              <button class="btn btn-success bg-white text-dark my-4" type="dropdown">Kirim</button>
+                            </div>
+                            <!-- dEatail Informasi -->
+                          </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
               </div>
-            </div>
+        </div>
 
           <!-- End Pesan -->
 

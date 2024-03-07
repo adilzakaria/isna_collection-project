@@ -15777,7 +15777,9 @@ fieldset:disabled .swal2-modal .swal2-buttonswrapper .swal2-styled,
     flex: 1 1 auto;
     padding: 1rem 1rem;
 }
-
+.card-border{
+    border-color: #ffffff;
+}
 .card-title {
     margin-bottom: 0.5rem;
 }
