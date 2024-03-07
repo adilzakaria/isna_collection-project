@@ -260,14 +260,16 @@
                   <div class="card-body">
                     <h4 class="card-title text-dark">Ulasan Pembeli</h4>
                     <div class="table-responsive">
-                      <table class="table">
+                      <table class="table table-hover">
                         <thead>
                           <tr>
                             <th class="text-dark">ID</th>
                             <th class="text-dark">Nama Pembeli</th>
+                            <th class="text-dark">Jenis Baju</th>
                             <th class="text-dark">Rating</th>
                             <th class="text-dark">Ulasan</th>
                             <th class="text-dark">Deskripsi</th>
+                            <th class="text-dark">Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -280,7 +282,8 @@
                               <span class="ps-2 text-dark">Henry Klein</span>
                             </td>
                             <td class="text-dark">02312</td>
-                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">lorem is_a aslada ksort</td>
                             <td class="text-dark">Dashboard</td>
                             <td class="text-dark">
                               <button class= "btn btn-danger">Hapus</button>
@@ -295,7 +298,8 @@
                               <span class="ps-2 text-dark">Estella Bryan</span>
                             </td>
                             <td class="text-dark">02312</td>
-                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">lorem is_a aslada ksort</td>
                             <td class="text-dark">Website</td>
                             <td class="text-dark">
                               <button class= "btn btn-danger">Hapus</button>
@@ -310,7 +314,8 @@
                               <span class="ps-2 text-dark">Lucy Abbott</span>
                             </td>
                             <td class="text-dark">02312</td>
-                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">lorem is_a aslada ksort</td>
                             <td class="text-dark">App design</td>
                             <td class="text-dark">
                               <button class= "btn btn-danger">Hapus</button>
@@ -325,7 +330,8 @@
                               <span class="ps-2 text-dark">Peter Gill</span>
                             </td>
                             <td class="text-dark">02312</td>
-                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">lorem is_a aslada ksort</td>
                             <td class="text-dark">Development</td>
                             <td class="text-dark">
                               <button class= "btn btn-danger">Hapus</button>
@@ -340,7 +346,8 @@
                               <span class="ps-2 text-dark">Sallie Reyes</span>
                             </td>
                             <td class="text-dark">02312</td>
-                            <td class="text-dark">$14,500</td>
+                            <td class="text-dark">02312</td>
+                            <td class="text-dark">lorem is_a aslada ksort</td>
                             <td class="text-dark">Website</td>
                             <td>
                               <button class= "btn btn-danger">Hapus</button>
@@ -361,7 +368,7 @@
                   <div class="card-body">
                     <h4 class="card-title text-dark">Katalog Isna Collection</h4>
                     <div class="table-responsive">
-                      <table class="table">
+                      <table class="table table-hover">
                         <thead>
                           <tr>
                             <th class="text-dark">ID</th>
@@ -449,7 +456,7 @@
                   <div class="card-body">
                     <h4 class="card-title text-dark">Pesan</h4>
                     <div class="table-responsive">
-                        <table>
+                        <table class="table table-hover">
                           <div class="card text-dark">
                             <div class="m-3">
                               <h4>Nama Pelanggan</h4>
