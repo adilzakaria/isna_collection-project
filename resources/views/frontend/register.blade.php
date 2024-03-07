@@ -47,26 +47,48 @@
                     </div>
                     <div class="right-content">
                         <h3 class="form-title">Register</h3>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/register" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input type="nama" placeholder="Nama" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <input type="nama" placeholder="Nama"
+                                    class="form-control @error('nama') is-invalid @enderror" id="nama"
+                                    name="nama" value="{{ old('nama') }}"
+                                    style="background-color: rgb(236, 236, 236)">
+                                @error('nama')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>No Hp</label>
-                                <input type="hp" placeholder="No Hp" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <input type="hp" placeholder="No Hp"
+                                    class="form-control @error('hp') is-invalid @enderror" id="hp" name="hp"
+                                    value="{{ old('hp') }}" style="background-color: rgb(236, 236, 236)">
+                                @error('hp')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group" style="margin-top: -15px">
                                 <label>Email</label>
-                                <input type="email" placeholder="Email" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <input type="email" placeholder="Email"
+                                    class="form-control @error('email') is-invalid @enderror" id="email"
+                                    name="email" value="{{ old('email') }}"
+                                    style="background-color: rgb(236, 236, 236)">
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" placeholder="Password" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <input type="password" placeholder="Create Password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    name="password" style="background-color: rgb(236, 236, 236)">
+                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                @error('password')
+                                    <span class="text-danger">
+                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <button class="btn signin" style="margin-top: 20px">Register</button>
                         </form>
@@ -76,5 +98,20 @@
         </div>
     </div>
 </body>
+<script>
+    // Show/Hide Password
+    document.getElementById('showPassword').addEventListener('click', function() {
+        var passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            this.classList.remove('bx-hide');
+            this.classList.add('bx-show');
+        } else {
+            passwordInput.type = 'password';
+            this.classList.remove('bx-show');
+            this.classList.add('bx-hide');
+        }
+    });
+</script>
 
 </html>

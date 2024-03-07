@@ -28,13 +28,30 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/login.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
+                @if (session()->has('success'))
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <h4 style="font-family: Poppins, sans-serif">{{ session('success') }}</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if (session()->has('LoginError'))
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <h4 style="font-family: Poppins, sans-serif">{{ session('LoginError') }}</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 <div class="form-container">
                     <div class="left-content">
                         <h3 class="title" style="margin-bottom: 5px">Isna</h3>
@@ -47,16 +64,29 @@
                     </div>
                     <div class="right-content">
                         <h3 class="form-title">Login</h3>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/login" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <label>Username / Email</label>
-                                <input type="email" placeholder="Username / Email" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Email"
+                                    class="form-control @error('email') is-invalid @enderror" id="email"
+                                    name="email" value="{{ old('email') }}"
+                                    style="background-color: rgb(236, 236, 236)" autofocus required>
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" placeholder="Password" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <input type="password" placeholder="Password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    name="password" style="background-color: rgb(236, 236, 236)" required>
+                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                @error('password')
+                                    <span class="text-danger">
+                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <button class="btn signin">Login</button>
                             <div class="remember-me">

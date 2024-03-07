@@ -28,11 +28,18 @@ use App\Http\Controllers\EditAkunController;
 // });
 
 Route::get('/', [WelcomeController::class,'index']);
-Route::get('/home', [HomeController::class,'home']);
-Route::get('/login', [LoginController::class,'login']);
-Route::get('/register', [RegisterController::class, 'register']);
+Route::get('/home', [HomeController::class,'home'])->middleware('auth');
+
+Route::get('/login', [LoginController::class,'login'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class,'authenticate']);
+Route::post('/logout', [LoginController::class,'logout']);
+
+Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
+
 Route::get('/akun', [AkunController::class, 'akun']);
 Route::get('/edit_akun', [EditAkunController::class, 'edit_akun']);
+
 Route::get('/forgot', [ForgotController::class, 'forgot']);
 Route::get('/order-pesan', [OrderController::class, 'order']);
 Route::get('/dash',[AdminController::class, 'showDash']);
