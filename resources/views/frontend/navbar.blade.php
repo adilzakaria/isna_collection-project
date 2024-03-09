@@ -60,7 +60,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a href="/akun" class="dropdown-item">Akun Saya <i class="bi bi-person-circle"></i></a></li>
-                            <li><a href="#" class="dropdown-item">
+                            <li><a href="/pesanan" class="dropdown-item">
                                     <span>Pesanan</span>
                                     <span class="notification-order"></span><i class="bi bi-bag-fill"></i>
                                 </a></li>
@@ -70,7 +70,7 @@
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item">Logout <i class="bi bi-box-arrow-right"></i></button>
+                                    <a href="/register" type="submit" class="dropdown-item">Keluar <i class="bi bi-box-arrow-right"></i></a>
                                 </form>
                             </li>
                         </ul>

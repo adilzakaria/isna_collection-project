@@ -39,7 +39,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul style="padding-top: 15px">
-                    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+                    <li><a class="nav-link scrollto active" href="/home">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#portfolio">Katalog</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
@@ -51,11 +51,11 @@
                         </a>
                         <ul>
                             <li><a href="/akun">Akun Saya</a></li>
-                            <li><a href="#">
+                            <li><a href="/pesanan">
                                     <span>Pesanan</span>
                                     <span class="notification-order"></span>
                                 </a></li>
-                            <li><a href="#">Keluar</a></li>
+                            <li><a href="/register">Keluar</a></li>
                         </ul>
                     </li>
                 </ul>
