@@ -27,12 +27,12 @@ use App\Http\Controllers\EditAkunController;
 //     return view('welcome');
 // });
 
-Route::get('/', [WelcomeController::class,'index']);
-Route::get('/home', [HomeController::class,'home'])->middleware('auth');
+Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'home'])->middleware('auth');
 
-Route::get('/login', [LoginController::class,'login'])->name('login')->middleware('guest');
-Route::post('/login', [LoginController::class,'authenticate']);
-Route::post('/logout', [LoginController::class,'logout']);
+Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
@@ -42,8 +42,17 @@ Route::get('/edit_akun', [EditAkunController::class, 'edit_akun']);
 
 Route::get('/forgot', [ForgotController::class, 'forgot']);
 Route::get('/order-pesan', [OrderController::class, 'order']);
-Route::get('/dash',[AdminController::class, 'showDash']);
-Route::get('/form',[AdminController::class, 'showForm']);
-Route::get('/pembayaran', function(){return view('frontend.pembayaran');});
-Route::get('/pesanan', function(){return view('frontend.pesanan');});
-Route::get('/order-admin', function(){return view('admin.order');});
+Route::get('/pembayaran', function () {
+    return view('frontend.pembayaran');
+});
+Route::get('/pesanan', function () {
+    return view('frontend.pesanan');
+});
+
+Route::resource('/dash', AdminController::class)->except('show')->middleware('admin');
+Route::get('/form', function () {
+    return view('admin.form');
+});
+Route::get('/order-admin', function () {
+    return view('admin.order');
+});

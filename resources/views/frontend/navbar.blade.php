@@ -59,18 +59,37 @@
                             <span class="notification-badge"></span><!-- Change '3' to the actual notification count -->
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a href="/akun" class="dropdown-item">Akun Saya <i class="bi bi-person-circle"></i></a></li>
-                            <li><a href="/pesanan" class="dropdown-item">
-                                    <span>Pesanan</span>
-                                    <span class="notification-order"></span><i class="bi bi-bag-fill"></i>
-                                </a></li>
+                            <li>
+                                <a href="/akun" class="dropdown-item">Akun Saya <i
+                                        class="bi bi-person-circle"></i></a>
+                            </li>
+
+                            @cannot('admin')
+                                <li>
+                                    <a href="/pesanan" class="dropdown-item">
+                                        <span>Pesanan</span>
+                                        <span class="notification-order"></span><i class="bi bi-bag-fill"></i>
+                                    </a>
+                                </li>
+                            @endcannot
+
+                            @can('admin')
+                                <li>
+                                    <a class="{{ Request::is('dash*') ? 'active' : '' }} dropdown-item" href="/dash">
+                                        <span>Dashboard Admin</span>
+                                        </span><i class="bi bi-columns-gap"></i>
+                                    </a>
+                                </li>
+                            @endcan
+
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <a href="/register" type="submit" class="dropdown-item">Keluar <i class="bi bi-box-arrow-right"></i></a>
+                                    <button type="submit" class="dropdown-item">Keluar <i
+                                            class="bi bi-box-arrow-right"></i></button>
                                 </form>
                             </li>
                         </ul>
