@@ -33,7 +33,7 @@ class LoginController extends Controller
             return redirect()->intended('/home');
         }
 
-        return back()->with('LoginError', 'Login Gagal');
+        return back()->with('LoginError', 'Login Gagal, Email atau Password Salah.');
     }
 
     public function logout(Request $request)

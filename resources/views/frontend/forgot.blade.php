@@ -47,21 +47,41 @@
                     </div>
                     <div class="right-content">
                         <h3 class="form-title">Forgot Password</h3>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/forgot" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <label>Username / Email</label>
-                                <input type="username" placeholder="Username / Email" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <label>Email</label>
+                                <input type="email" placeholder="Email"
+                                    class="form-control @error('email') is-invalid @enderror" id="email"
+                                    name="email" value="{{ old('email') }}"
+                                    style="background-color: rgb(236, 236, 236)" autofocus required>
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label>Passowrd</label>
-                                <input type="Password" placeholder="Password" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <label>Buat Password Baru</label>
+                                <input type="password" placeholder="Buat Password Baru"
+                                    class="form-control @error('password1') is-invalid @enderror" id="password1"
+                                    name="password1" style="background-color: rgb(236, 236, 236)" required>
+                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                @error('password1')
+                                    <span class="text-danger">
+                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label> Confirm Password</label>
-                                <input type="confirm" placeholder=" Confirm Password" class="form-control"
-                                    style="background-color: rgb(219, 219, 219)">
+                                <label>Konfirmasi Password</label>
+                                <input type="password" placeholder="Konfirmasi Password"
+                                    class="form-control @error('password2') is-invalid @enderror" id="password2"
+                                    name="password2" style="background-color: rgb(236, 236, 236)" required>
+                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                @error('password2')
+                                    <span class="text-danger">
+                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
+                                    </span>
+                                @enderror
                             </div>
                             <button class="btn signin" style="margin-top: 50px">Change</button>
                         </form>
