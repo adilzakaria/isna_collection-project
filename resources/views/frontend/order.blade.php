@@ -40,7 +40,7 @@
         style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
         <h1
             style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
-            Hai, Pengguna</h1>
+            Hai, {{ auth()->user()->nama }}</h1>
     </nav>
 <div class="container">
     <div class="row justify-content-center">
@@ -80,7 +80,7 @@
                 <input style="width: 73%;" type="text" class="form-control input_form" id="alamat" placeholder="Alamat Lengkap">
                 <input style="width: 20%; margin-left: 2rem;" type="text" class="form-control input_form" id="kode" placeholder="Kode Pos">
                 </div>
-                
+
                 <div style="margin-top:2rem;">
                 <h2 class="m-3">Detail Pesanan</h2>
                 </div>

@@ -39,6 +39,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/akun', [AkunController::class, 'akun']);
 Route::get('/edit_akun', [EditAkunController::class, 'edit_akun']);
+Route::post('/edit_akun', [EditAkunController::class, 'editProfile']);
 
 Route::get('/forgot', [ForgotController::class, 'forgot'])->middleware('guest');
 Route::post('/forgot', [ForgotController::class, 'updatePassword']);

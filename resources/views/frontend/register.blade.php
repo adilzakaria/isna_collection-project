@@ -50,8 +50,8 @@
                         <form class="form-horizontal" action="/register" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label>Nama</label>
-                                <input type="nama" placeholder="Nama"
+                                <label>Username</label>
+                                <input type="nama" placeholder="Username"
                                     class="form-control @error('nama') is-invalid @enderror" id="nama"
                                     name="nama" value="{{ old('nama') }}"
                                     style="background-color: rgb(236, 236, 236)">
