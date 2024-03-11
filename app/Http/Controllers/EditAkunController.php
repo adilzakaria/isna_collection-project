@@ -12,12 +12,23 @@ class EditAkunController extends Controller
         return view('frontend.edit_akun');
     }
 
-    public function editProfile(Request $request)
+    public function editNama(Request $request)
     {
         DB::table('users')
             ->where('id', auth()->id()) // Ubah data untuk pengguna yang sedang login
             ->update([
                 'nama' => $request->input('nama'),
+            ]);
+
+        // Redirect atau tampilkan pesan sukses
+        return redirect('/akun')->with('sukses', 'Profil berhasil diperbarui!');
+    }
+
+    public function editTelepon(Request $request)
+    {
+        DB::table('users')
+        ->where('id', auth()->id()) // Ubah data untuk pengguna yang sedang login
+            ->update([
                 'hp' => $request->input('hp'),
             ]);
 
