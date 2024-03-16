@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
@@ -11,7 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\EditAkunController;
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,10 +53,29 @@ Route::get('/pesanan', function () {
     return view('frontend.pesanan');
 });
 
-Route::resource('/dash', AdminController::class)->except('show')->middleware('admin');
-Route::get('/form', function () {
-    return view('admin.form');
+
+// admin
+// Route::resource('/dash', AdminController::class, )->middleware('admin');
+// Route::get('/form', function () {
+//     return view('admin.form');
+// });
+
+// Route::get('/formkatalog', function () {
+//     return view('admin.formkatalog');
+// });
+Route::middleware('admin')->group(function () {
+    Route::get('/dash', [AdminController::class, 'admin'])->name('admin');
+    Route::get('/dash/buatkatalog', [AdminController::class, 'buatkatalog'])->name('buat_katalog');
+    Route::post('/dash/buatkatalog', [AdminController::class, 'simpankatalog'])->name('simpan_katalog');
+    Route::get('/dash/editkatalog/{katalog}', [AdminController::class, 'editkatalog'])->name('edit_katalog');
+    Route::patch('/admin/updatekatalog/{katalog}', [AdminController::class, 'updatekatalog'])->name('update_katalog');
+    Route::get('/admin/hapuskatalog/{katalog}', [AdminController::class, 'hapuskatalog'])->name('hapus_katalog');
+    Route::delete('/admin/hapuskatalog/{katalog}', [AdminController::class, 'destroykatalog'])->name('destroy_katalog');
+
+    Route::get('/admin/hapusulasan/{ulasan}', [AdminController::class, 'hapusulasan'])->name('hapus_ulasan');
+    Route::delete('/admin/hapusulasan/{ulasan}', [AdminController::class, 'destroyulasan'])->name('destroy_ulasan');
 });
+
 Route::get('/order-admin', function () {
     return view('admin.order');
 });

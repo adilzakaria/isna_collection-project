@@ -8767,7 +8767,7 @@ body {
     text-align: var(--bs-body-text-align);
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 hr {
@@ -10469,11 +10469,11 @@ progress {
 .jsgrid .jsgrid-table {
     --bs-table-bg: transparent;
     --bs-table-accent-bg: transparent;
-    --bs-table-striped-color: #212529;
+    --bs-table-striped-color: #ffffff;
     --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-    --bs-table-active-color: #212529;
+    --bs-table-active-color: #ffffff;
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-    --bs-table-hover-color: #212529;
+    --bs-table-hover-color: #ffffff;
     --bs-table-hover-bg: #ffffff;
     width: 100%;
     margin-bottom: 1rem;
@@ -10722,7 +10722,7 @@ progress {
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1;
-    color: #212529;
+    color: #ffffff;
     background-color: #2a3038;
     background-clip: padding-box;
     border: 1px solid #2c2e33;
