@@ -23,10 +23,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
+// User
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth');
 
@@ -55,14 +53,6 @@ Route::get('/pesanan', function () {
 
 
 // admin
-// Route::resource('/dash', AdminController::class, )->middleware('admin');
-// Route::get('/form', function () {
-//     return view('admin.form');
-// });
-
-// Route::get('/formkatalog', function () {
-//     return view('admin.formkatalog');
-// });
 Route::middleware('admin')->group(function () {
     Route::get('/dash', [AdminController::class, 'admin'])->name('admin');
     Route::get('/dash/buatkatalog', [AdminController::class, 'buatkatalog'])->name('buat_katalog');
