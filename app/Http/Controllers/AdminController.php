@@ -27,7 +27,22 @@ class AdminController extends Controller
 
         return view('admin.dash', compact('katalogs', 'ulasans'));
     }
+    public function adminulasan()
+    {
+        $ulasans = ulasan::all();
+        return view('admin.dashulasan', compact('ulasans'));
+    }    
+    
+    public function adminkatalog()
+    {
+        $katalogs = katalog::all();
 
+        return view('admin.dashkatalog',compact('katalogs'));
+    }    
+    public function adminpesanan()
+    {
+        return view('admin.dashpesanan');
+    }
     public function buatkatalog()
     {
         return view('admin.form');

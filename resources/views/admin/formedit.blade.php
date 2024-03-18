@@ -18,7 +18,7 @@
                       <div class="form-group mb-3">  <label class="text-dark mb-1">Gambar</label>  
                         <div class="input-group">
                           <input type="file" class="file-upload-default bg-white text-black @error('gambar') is-invalid @enderror" id="gambar" name="gambar" value="{{ old('gambar') ?? $katalog->gambar }}">
-                          <input type="text" class="form-control file-upload-info bg-white text-black" disabled placeholder="format .jpg/.png">
+                          <input type="text" class="form-control file-upload-info bg-white text-black" disabled placeholder="{{ old('gambar') ?? $katalog->gambar }}">
                           <span class="input-group-append">
                             <button class="btn btn-primary file-upload-browse ms-3 mt-1" type="button">Unggah</button>
                           </span>
@@ -28,7 +28,7 @@
                       <div class="form-group mb-3">  
                         <label for="kategori" class="text-dark mb-1">Kategori Baju</label>  
                         <select class="form-control bg-white text-black @error('kategori') is-invalid @enderror" id="kategori" name="kategori" value="{{ old('kategori') ?? $katalog->kategori}}">
-                          <option selected value="atasan">Atasan</option>
+                          <option value="atasan">Atasan</option>
                           <option value="dress">Dress</option>
                           <option value="kebaya">Kebaya</option>
                           <option value="lainnya">Lainnya</option>
