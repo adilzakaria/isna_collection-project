@@ -28,6 +28,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 </head>
 
@@ -78,40 +79,70 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group input-container">
                                 <label>Password</label>
-                                <input type="password" placeholder="Create Password"
-                                    class="form-control @error('password') is-invalid @enderror" id="password"
-                                    name="password" style="background-color: rgb(236, 236, 236)">
-                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                <input type="password" id="password" placeholder="Create Password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    style="background-color: rgb(236, 236, 236)">
+                                <i class="far fa-eye" id="togglePassword"
+                                    style="margin-top: 12px; cursor: pointer;"></i>
                                 @error('password')
-                                    <span class="text-danger">
-                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
-                                    </span>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <button class="btn signin" style="margin-top: 20px">Register</button>
+                            <div class="remember-me" style="margin-top: -15px; width: 100%;">
+                                <input class="checkbox" type="checkbox" id="agreementCheckbox">
+                                <span class="check-label" for="agreementCheckbox">
+                                    Saya menyetujui ketentuan yang berlaku
+                                </span>
+                            </div>
+                            <button class="btn signin" id="registerButton" disabled
+                                style="background-color: #ccc; margin-top: 20px; margin-bottom: -20px;">Register</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function(e) {
+            // Toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // Toggle the eye slash icon
+            if (this.classList.contains('fa-eye-slash')) {
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            } else {
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            }
+        });
+
+        const agreementCheckbox = document.getElementById('agreementCheckbox');
+        const registerButton = document.getElementById('registerButton');
+
+        agreementCheckbox.addEventListener('change', function() {
+            registerButton.disabled = !this.checked;
+            if (this.checked) {
+                registerButton.style.backgroundColor = '#007bff'; // Ganti dengan warna asal
+            } else {
+                registerButton.style.backgroundColor = '#ccc'; // Ganti dengan warna abu-abu
+            }
+        });
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            if (!agreementCheckbox.checked) {
+                event.preventDefault();
+                alert('Anda harus menyetujui ketentuan yang berlaku.');
+            }
+        });
+    </script>
 </body>
-<script>
-    // Show/Hide Password
-    document.getElementById('showPassword').addEventListener('click', function() {
-        var passwordInput = document.getElementById('password');
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            this.classList.remove('bx-hide');
-            this.classList.add('bx-show');
-        } else {
-            passwordInput.type = 'password';
-            this.classList.remove('bx-show');
-            this.classList.add('bx-hide');
-        }
-    });
-</script>
 
 </html>

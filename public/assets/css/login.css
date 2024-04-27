@@ -261,3 +261,18 @@
         font-size: 40px;
     }
 }
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    padding-right: 30px; /* Sesuaikan ukuran ikon */
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px; /* Sesuaikan posisi ikon */
+    top: 50%; /* Sesuaikan posisi ikon */
+    transform: translateY(-50%); /* Menengahkan ikon secara vertikal */
+}

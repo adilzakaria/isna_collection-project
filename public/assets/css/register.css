@@ -160,6 +160,64 @@
     display: block;
 }
 
+.form-container .form-horizontal .remember-me {
+    width: calc(100% - 105px);
+    display: inline-block;
+}
+
+.form-container .form-horizontal .remember-me .check-label {
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.form-container .form-horizontal .remember-me .checkbox {
+    height: 17px;
+    width: 17px;
+    min-height: auto;
+    margin: 0 1px 0 0;
+    border: 2px solid #ff97a8;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .remember-me .checkbox:before {
+    content: "";
+    height: 5px;
+    width: 10px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 2px;
+    top: 2.5px;
+    transition: all 0.3s ease;
+}
+
+.form-container .form-horizontal .remember-me .checkbox:checked {
+    background-color: #ff97a8;
+}
+
+.form-container .form-horizontal .remember-me .checkbox:checked:before {
+    opacity: 1;
+}
+
+.form-container .form-horizontal .remember-me .checkbox:not(:checked):before {
+    opacity: 0;
+}
+
+.form-container .form-horizontal .remember-me .checkbox:focus {
+    outline: none;
+}
+
 @media only screen and (max-width: 767px) {
     .form-container .left-content,
     .form-container .right-content {
@@ -175,3 +233,19 @@
         font-size: 40px;
     }
 }
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    padding-right: 30px; /* Sesuaikan ukuran ikon */
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px; /* Sesuaikan posisi ikon */
+    top: 50%; /* Sesuaikan posisi ikon */
+    transform: translateY(-50%); /* Menengahkan ikon secara vertikal */
+}
+

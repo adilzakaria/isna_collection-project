@@ -42,90 +42,153 @@
             style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4">
-           <div class="card border-card">
-                <h2 class="m-3">Panduan Ukuran</h2>
-                <!-- <div style="display: inline-flex; margin-left:1rem;">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <label for="exampleFormControlInput1" class="form-label" style="margin-left: 130px;">Email address</label>
-                </div>
-                <div style="display: inline-flex; margin-left:1rem;">
-                <input style="width: 45%;" type="number" class="form-control" id="exampleFormControlInput1">
-                <input style="width: 45%; margin-left: 2rem;" type="number" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div style="display: inline-flex; margin-left:1rem;">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <label for="exampleFormControlInput1" class="form-label" style="margin-left: 130px;">Email address</label>
-                </div>
-                <div style="display: inline-flex; margin-left:1rem; margin-bottom: 1rem;">
-                <input style="width: 45%;" type="number" class="form-control" id="exampleFormControlInput1">
-                <input style="width: 45%; margin-left: 2rem;" type="number" class="form-control" id="exampleFormControlInput1">
-                </div> -->
-                <div style="display: inline-flex;">
-                <img src="assets/img/sizechart1.jpg" class="img-fluid"alt="">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card border-card">
+                    <h2 class="m-3">Panduan Ukuran</h2>
+                    <div style="display: inline-flex;">
+                        <img src="assets/img/sizechart1.jpg" class="img-fluid" alt="">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-           <div class="card border-card">
-                <h2 class="m-3">Alamat Pengiriman</h2>
-                <div class="form-group"style="display: inline-flex; margin-left:1rem;">
-                <input style="width: 35%;" type="text" class="form-control input_form" id="provinsi" placeholder="Provinsi">
-                <input style="width: 30%; margin-left: 2rem;" type="text" class="form-control input_form" id="kota" placeholder="Kota">
-                <input style="width: 25%; margin-left: 2rem;" type="text" class="form-control input_form" id="kecamatan" placeholder="Kecamatan">
-                </div>
-                <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;">
-                <input style="width: 73%;" type="text" class="form-control input_form" id="alamat" placeholder="Alamat Lengkap">
-                <input style="width: 20%; margin-left: 2rem;" type="text" class="form-control input_form" id="kode" placeholder="Kode Pos">
-                </div>
+            <div class="col-md-6">
+                <form action="/order" method="POST" class="card border-card">
+                    @csrf
+                    @auth
+                        <h2 class="m-3">Informasi Pemesan</h2>
+                        <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
+                            <input style="width: 40%;" type="text" class="form-control input_form" id="nama"
+                                name="nama" readonly value="{{ Auth::user()->nama }}">
+                            <div
+                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                            </div>
+                            <input style="width: 40%;" type="text" class="form-control input_form" id="hp"
+                                name="hp" readonly value="{{ Auth::user()->hp }}">
+                            <div
+                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                            </div>
+                            <input style="width: 40%;" type="text" class="form-control input_form" id="email"
+                                name="email" readonly value="{{ Auth::user()->email }}">
+                            <div
+                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                            </div>
+                        </div>
+                    @endauth
 
-                <div style="margin-top:2rem;">
-                <h2 class="m-3">Detail Pesanan</h2>
-                </div>
-                <div style="margin-left:1rem; font-size: 14px;">
-                <label for="exampleFormControlInput1" class="form-label">Ukuran</label>
-                </div>
-                <div class="form-group" style="display: inline-flex; margin-left:1rem;">
-                <select style="width: 50%;" class="form-select-lg" aria-label="Default select example">
-                    <option selected>S</option>
-                    <option value="1">M</option>
-                    <option value="2">L</option>
-                    <option value="3">XL</option>
-                    <option value="4">XXL</option>
-                </select>
-                </div>
-                <div style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                <label for="exampleFormControlInput1" class="form-label">Jenis Baju</label>
-                </div>
-                <div class="form-group" style="display: inline-flex; margin-left:1rem;">
-                <select style="width: 50%;" class="form-select-lg" aria-label="Default select example">
-                    <option selected>Kameja Wanita</option>
-                    <option value="1">Kameja Pria</option>
-                    <option value="2">Tunik</option>
-                    <option value="3">Long Dress</option>
-                    <option value="4">Blazer Pria</option>
-                    <option value="4">Blazer Wanita</option>
-                </select>
-                </div>
-                <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                <label for="exampleFormControlInput1" class="form-label">Unggah Gambar</label>
-                </div>
-                <div class="form-group" style="display: inline-flex; margin-left:1rem;">
-                <input class="form-control input_form form-control-lg" id="formFileLg" type="file" style="width: 90%;" placeholder="format .jpg/.png">
-                </div>
-                <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                <label for="exampleFormControlInput1" class="form-label">Tambahan</label>
-                </div>
-                <div class="form-group" style="display: inline-flex; margin-left:1rem;">
-                <textarea class="form-control input_form" id="exampleFormControlTextarea1" rows="3"style="width: 90%; height: 90px;"></textarea>
-                </div>
-                <div class="m-3 text-center">
-                <button type="submit" class="btn btn-body kirim" style="width: 50%; font-size: 14px;">Kirim</button>
-                </div>
+
+                    <div style="margin-top:2rem;">
+                        <h2 class="m-3">Alamat Pengiriman</h2>
+                    </div>
+                    <div>
+                        <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
+                            <input style="width: 40%;" type="text" class="form-control input_form" id="provinsi"
+                                name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
+                            @error('provinsi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                            <input style="width: 40%; margin-left: 2rem;" type="text" class="form-control input_form"
+                                id="kota" name="kota" placeholder="Kota" value="{{ old('kota') }}">
+                            @error('kota')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                            <input style="width: 40%; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="kecamatan" name="kecamatan"
+                                placeholder="Kecamatan" value="{{ old('kecamatan') }}">
+                            @error('kecamatan')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
+                            <input style="width: 75%;" type="text" class="form-control input_form" id="alamat"
+                                name="alamat_lengkap" placeholder="Alamat Lengkap"
+                                value="{{ old('alamat_lengkap') }}">
+                            @error('alamat_lengkap')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                            <input style="width: 25%; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="kode" name="kode" placeholder="Kode Pos"
+                                value="{{ old('kode') }}">
+                            @error('kode')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div style="margin-top:2rem;">
+                        <h2 class="m-3">Detail Pesanan</h2>
+                    </div>
+                    <div style="margin-left:1rem; font-size: 14px;">
+                        <label for="ukuran" class="form-label">Ukuran</label>
+                    </div>
+                    <div class="form-group" style="display: inline-flex; margin-left:1rem;">
+                        <select style="width: 50%;" class="form-select-lg" id="ukuran" name="ukuran"
+                            aria-label="Default select example">
+                            <option selected disabled value="">--PILIH UKURAN--</option>
+                            <option value="S" {{ old('ukuran') == 'S' ? 'checked' : '' }}>S</option>
+                            <option value="M" {{ old('ukuran') == 'M' ? 'checked' : '' }}>M</option>
+                            <option value="L" {{ old('ukuran') == 'L' ? 'checked' : '' }}>L</option>
+                            <option value="XL" {{ old('ukuran') == 'XL' ? 'checked' : '' }}>XL</option>
+                            <option value="XXL" {{ old('ukuran') == 'XXL' ? 'checked' : '' }}>XXL</option>
+                        </select>
+                        @error('ukuran')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="jenis" class="form-label">Jenis Baju</label>
+                    </div>
+                    <div class="form-group" style="display: inline-flex; margin-left:1rem;">
+                        <select style="width: 50%;" class="form-select-lg" id="jenis" name="jenis"
+                            aria-label="Default select example">
+                            <option selected disabled value="">--PILIH JENIS BAJU--</option>
+                            <option value="Kameja Wanita" {{ old('jenis') == 'Kemeja Wanita' ? 'checked' : '' }}>
+                                Kameja Wanita</option>
+                            <option value="Kameja Pria" {{ old('jenis') == 'Kemeja Pria' ? 'checked' : '' }}>Kameja
+                                Pria</option>
+                            <option value="Tunik" {{ old('jenis') == 'XXL' ? 'Tunik' : '' }}>Tunik</option>
+                            <option value="Long Dress" {{ old('jenis') == 'Long Dress' ? 'checked' : '' }}>Long Dress
+                            </option>
+                            <option value="Blazer Pria" {{ old('jenis') == 'Blazer Pria' ? 'checked' : '' }}>Blazer
+                                Pria</option>
+                            <option value="Blazer Wanita" {{ old('jenis') == 'Blazer Wanita' ? 'checked' : '' }}>
+                                Blazer Wanita</option>
+                        </select>
+                        @error('jenis')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="gambar" class="form-label">Unggah Gambar</label>
+                    </div>
+                    <div class="form-group" style="display: inline-flex; margin-left:1rem;">
+                        <input class="form-control input_form form-control-lg" id="gambar" name="gambar"
+                            type="file" style="width: 90%;" placeholder="format .jpg/.png">
+                        @error('gambar')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="tambahan" class="form-label">Tambahan</label>
+                    </div>
+                    <div class="form-group" style="display: inline-flex; margin-left:1rem;">
+                        <textarea class="form-control input_form" id="tambahan" name="tambahan" rows="3"
+                            style="width: 90%; height: 90px;">{{ old('tambahan') }}</textarea>
+                        @error('tambahan')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="m-3 text-center">
+                        <button type="submit" class="btn btn-body kirim"
+                            style="width: 50%; font-size: 14px;">Kirim</button>
+                    </div>
+                    @if (session('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                </form>
             </div>
         </div>
     </div>
-</div>
 </body>

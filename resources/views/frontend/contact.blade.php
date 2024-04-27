@@ -23,7 +23,7 @@
             </div>
           </div>
 
-          <div class="col"">
+          <div class="col">
             <div class="info">
               <div class="email">
                 <i class="bi bi-envelope"></i>
@@ -32,7 +32,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col">
             <div class="info">
               <div class="phone">
