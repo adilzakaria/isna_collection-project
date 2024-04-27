@@ -37,13 +37,13 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/akun', [AkunController::class, 'akun']);
 Route::get('/edit_akun', [EditAkunController::class, 'edit_akun']);
-Route::post('/edit_akun', [EditAkunController::class, 'editNama']);
-Route::post('/edit_akun', [EditAkunController::class, 'editTelepon']);
+Route::post('/edit_akun', [EditAkunController::class, 'editAkun']);
 
 Route::get('/forgot', [ForgotController::class, 'forgot'])->middleware('guest');
 Route::post('/forgot', [ForgotController::class, 'updatePassword']);
 
-Route::get('/order-pesan', [OrderController::class, 'order']);
+Route::get('/order', [OrderController::class, 'order']);
+Route::post('/order', [OrderController::class, 'pesan']);
 Route::get('/pembayaran', function () {
     return view('frontend.pembayaran');
 });
