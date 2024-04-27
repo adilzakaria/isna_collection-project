@@ -29,8 +29,8 @@
                       
                       <div class="form-group mb-3">  
                         <label for="kategori" class="text-dark mb-1">Kategori Baju</label>  
-                        <select class="form-control bg-white text-black @error('kategori') is-invalid @enderror" id="kategori" name="kategori" value="{{ old('kategori') ?? $katalog->kategori}}">
-                          <option selected value="atasan">Atasan</option>
+                        <select class="form-control bg-white text-black @error('kategori') is-invalid @enderror" id="kategori" name="kategori" selectedvalue="{{ old('kategori') ?? $katalog->kategori}}">
+                          <option value="atasan">Atasan</option>
                           <option value="dress">Dress</option>
                           <option value="kebaya">Kebaya</option>
                           <option value="lainnya">Lainnya</option>

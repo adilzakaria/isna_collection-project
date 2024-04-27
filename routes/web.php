@@ -64,6 +64,9 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/admin/hapusulasan/{ulasan}', [AdminController::class, 'hapusulasan'])->name('hapus_ulasan');
     Route::delete('/admin/hapusulasan/{ulasan}', [AdminController::class, 'destroyulasan'])->name('destroy_ulasan');
+    Route::get('/dash/ulasan', [AdminController::class, 'adminulasan'])->name('admin_ulasan');
+    Route::get('/dash/katalog', [AdminController::class, 'adminkatalog'])->name('admin_katalog');
+    Route::get('/dash/pesanan', [AdminController::class, 'adminpesanan'])->name('admin_pesanan');
 });
 
 Route::get('/order-admin', function () {
