@@ -18,19 +18,19 @@ class LoginController extends Controller
     {
         $credentials = $request->validate(
             [
-                'email' => 'required',
+                'email' => 'required|email:dns',
                 'password' => 'required'
             ],
             [
                 'email.required' => 'Email Harus Diisi',
-                'password.required' => 'Kata Sandi Harus Diisi',
+                'password.required' => 'Password Harus Diisi',
             ]
         );
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/home');
+            return redirect()->route('home');
         }
 
         return back()->with('LoginError', 'Login Gagal, Email atau Password Salah.');

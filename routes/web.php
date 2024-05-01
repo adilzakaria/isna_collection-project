@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 // User
 Route::get('/', [WelcomeController::class, 'index']);
-Route::get('/home', [HomeController::class, 'home'])->middleware('auth');
+Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -43,12 +43,10 @@ Route::get('/forgot', [ForgotController::class, 'forgot'])->middleware('guest');
 Route::post('/forgot', [ForgotController::class, 'updatePassword']);
 
 Route::get('/order', [OrderController::class, 'order']);
-Route::post('/order', [OrderController::class, 'pesan']);
+Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
+Route::get('/pesanan', [OrderController::class, 'showPesanan']);
 Route::get('/pembayaran', function () {
     return view('frontend.pembayaran');
-});
-Route::get('/pesanan', function () {
-    return view('frontend.pesanan');
 });
 
 
