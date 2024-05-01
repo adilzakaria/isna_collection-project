@@ -12,27 +12,36 @@ class EditAkunController extends Controller
         return view('frontend.edit_akun');
     }
 
-    public function editNama(Request $request)
+    public function editAkun(Request $request)
     {
-        DB::table('users')
-            ->where('id', auth()->id()) // Ubah data untuk pengguna yang sedang login
-            ->update([
-                'nama' => $request->input('nama'),
-            ]);
 
-        // Redirect atau tampilkan pesan sukses
-        return redirect('/akun')->with('sukses', 'Profil berhasil diperbarui!');
-    }
+        $request->validate([
+            'nama' => 'required',
+            'hp' => 'required',
+        ], [
+            'nama.required' => 'Nama Tidak Boleh Kosong',
+            'hp.required' => 'No Hp Tidak Boleh Kosong',
+        ]);
 
-    public function editTelepon(Request $request)
-    {
-        DB::table('users')
-        ->where('id', auth()->id()) // Ubah data untuk pengguna yang sedang login
-            ->update([
-                'hp' => $request->input('hp'),
-            ]);
+        $updates = [];
 
-        // Redirect atau tampilkan pesan sukses
-        return redirect('/akun')->with('sukses', 'Profil berhasil diperbarui!');
+        if ($request->has('nama')) {
+            $updates['nama'] = $request->input('nama');
+        }
+
+        if ($request->has('hp')) {
+            $updates['hp'] = $request->input('hp');
+        }
+
+        if (!empty($updates)) {
+            DB::table('users')
+                ->where('id', auth()->id())
+                ->update($updates);
+
+            return redirect('/akun')->with('sukses', 'Profil berhasil diperbarui!');
+        }
+
+        // Jika tidak ada input yang diterima
+        return redirect('/akun')->with('error', 'Tidak ada data yang diperbarui.');
     }
 }

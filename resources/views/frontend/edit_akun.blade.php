@@ -82,23 +82,29 @@
                         </form>
                     </div>
                     <div class="right-content" style="border-bottom-right: 15px; border-top-right-radius: 15px;">
-                        <h2 class="title" style="margin-top: 10px">Edit Profile</h2>
+                        <h2 class="title" style="margin-top: 10px">Edit Profil</h2>
                         <form class="form-horizontal" style="margin-top: 30px" action="/edit_akun" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label style="color: black">Username :</label>
                                 <input class="form-control" name="nama" placeholder="{{ auth()->user()->nama }}"
-                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black; opacity: 0.7;"></input>
+                                    style="background-color: rgb(255, 255, 255); font-size: 18px; color: black; opacity: 0.7;"></input>
+                                @error('nama')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group" style="margin-top: -10px">
-                                <label style="color: black">No Hp :</label>
+                                <label style="color: black">Nomor Hp :</label>
                                 <input class="form-control" name="hp" placeholder="{{ auth()->user()->hp }}"
-                                    style="background-color: rgb(255, 255, 255); font-size: 20px; color: black; opacity: 0.7;"></input>
+                                    style="background-color: rgb(255, 255, 255); font-size: 18px; color: black; opacity: 0.7;"></input>
+                                @error('hp')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group" style="margin-top: -25px">
                                 <label style="color: black">Email :</label>
                                 <output class="form-control"
-                                    style="background-color: rgb(246, 246, 246); font-size: 20px; color: rgb(137, 137, 137); font-weight: bold;">{{ auth()->user()->email }}</output>
+                                    style="background-color: rgb(255, 255, 255); font-size: 18px; color: black; font-weight: bold">{{ auth()->user()->email }}</output>
                                     <p class="text-danger" style="font-style: italic">*Email Tidak Bisa Diubah.</p>
                             </div>
                             <button type="submit" class="btn btnkiri" style="margin-top: 20px;">Simpan</button>
@@ -111,5 +117,4 @@
     </div>
 
 </body>
-
 </html>

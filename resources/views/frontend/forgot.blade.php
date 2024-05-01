@@ -28,6 +28,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
 
 </head>
 
@@ -46,7 +47,7 @@
                         <h4 class="sub-title" style="word-break: break-all">Benang</h4>
                     </div>
                     <div class="right-content">
-                        <h3 class="form-title">Forgot Password</h3>
+                        <h3 class="form-title">Lupa Kata Sandi</h3>
                         <form class="form-horizontal" action="/forgot" method="POST">
                             @csrf
                             <div class="form-group">
@@ -59,31 +60,31 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Buat Password Baru</label>
-                                <input type="password" placeholder="Buat Password Baru"
+                            <div class="form-group" style="position: relative;">
+                                <label>Buat Kata Sandi Baru</label>
+                                <input type="password" placeholder="Buat Kata Sandi Baru"
                                     class="form-control @error('password1') is-invalid @enderror" id="password1"
                                     name="password1" style="background-color: rgb(236, 236, 236)" required>
-                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password1')
                                     <span class="text-danger">
                                         <i class="bx bx-error-circle error-icon"></i>{{ $message }}
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="position: relative;">
                                 <label>Konfirmasi Password</label>
                                 <input type="password" placeholder="Konfirmasi Password"
                                     class="form-control @error('password2') is-invalid @enderror" id="password2"
                                     name="password2" style="background-color: rgb(236, 236, 236)" required>
-                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password2')
                                     <span class="text-danger">
                                         <i class="bx bx-error-circle error-icon"></i>{{ $message }}
                                     </span>
                                 @enderror
                             </div>
-                            <button class="btn signin" style="margin-top: 50px">Change</button>
+                            <button class="btn signin" style="margin-top: 50px">Ubah</button>
                         </form>
                     </div>
                 </div>
@@ -91,5 +92,30 @@
         </div>
     </div>
 </body>
+
+<script>
+    const togglePassword1 = document.querySelector('#togglePassword1');
+    const togglePassword2 = document.querySelector('#togglePassword2');
+    const password1 = document.querySelector('#password1');
+    const password2 = document.querySelector('#password2');
+
+    togglePassword1.addEventListener('click', function(e) {
+        // Toggle the type attribute
+        const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+        password1.setAttribute('type', type);
+
+        // Toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    togglePassword2.addEventListener('click', function(e) {
+        // Toggle the type attribute
+        const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+        password2.setAttribute('type', type);
+
+        // Toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 
 </html>

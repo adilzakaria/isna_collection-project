@@ -26,11 +26,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/login.css') }}">
+    <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
+    <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet') }}"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js') }}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 </head>
@@ -63,11 +64,11 @@
                         <h4 class="sub-title" style="word-break: break-all">Benang</h4>
                     </div>
                     <div class="right-content">
-                        <h3 class="form-title">Login</h3>
+                        <h3 class="form-title">Masuk</h3>
                         <form class="form-horizontal" action="/login" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label>Email Address</label>
+                                <label>Email</label>
                                 <input type="email" placeholder="Email"
                                     class="form-control @error('email') is-invalid @enderror" id="email"
                                     name="email" value="{{ old('email') }}"
@@ -76,33 +77,52 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" placeholder="Password"
+                            <div class="form-group" style="position: relative;">
+                                <label>Kata Sandi</label>
+                                <input type="password" placeholder="Kata Sandi"
                                     class="form-control @error('password') is-invalid @enderror" id="password"
-                                    name="password" style="background-color: rgb(236, 236, 236)" required>
-                                <i class="bx bx-hide show-icon" id="showPassword"></i>
+                                    name="password" style="background-color: rgb(236, 236, 236)" required/>
+                                <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password')
                                     <span class="text-danger">
                                         <i class="bx bx-error-circle error-icon"></i>{{ $message }}
                                     </span>
                                 @enderror
                             </div>
-                            <button class="btn signin">Login</button>
+                            <button class="btn signin">Masuk</button>
                             <div class="remember-me">
                                 <input type="checkbox" class="checkbox">
-                                <span class="check-label">Remember Me</span>
+                                <span class="check-label">Ingat saya</span>
                             </div>
-                            <a href="/forgot" class="forgot">Forgot Password</a>
+                            <a href="/forgot" class="forgot">Lupa Kata Sandi</a>
                         </form>
 
-                        <div class="signup-link" style="margin-top: 125px">Don't have an account? Sign up <a
-                                href="/register">here</a></div>
+                        <div class="signup-link" style="margin-top: 125px">Tidak memiliki akun? Daftar sekarang <a
+                                href="/register">di sini</a></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function(e) {
+            // Toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+
+            // Toggle the eye slash icon
+            if (this.classList.contains('fa-eye-slash')) {
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            } else {
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
 </body>
 
 </html>

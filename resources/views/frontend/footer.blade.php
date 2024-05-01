@@ -29,7 +29,7 @@
     <!-- You can delete the links only if you purchased the pro version. -->
     <!-- Licensing information: https://bootstrapmade.com/license/ -->
     <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/ -->
-    Designed by <a href="https://bootstrapmade.com/">Alsam</a>
+    <strong>Designed by Kelompok 7 PSI</strong>
   </div>
 </div>
 </footer><!-- End Footer -->

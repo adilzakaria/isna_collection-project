@@ -1,5 +1,6 @@
 #akun {
     position: relative;
+    text-decoration: none;
 }
 
 #akun .notification-badge {
