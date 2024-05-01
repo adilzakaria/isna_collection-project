@@ -84,17 +84,16 @@
                                     name="password" style="background-color: rgb(236, 236, 236)">
                                 <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password')
-                                    <div class="text-danger">{{ $message }}</div>
+                                    <span class="text-danger">
+                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
+                                    </span>
                                 @enderror
                             </div>
-                            <div class="remember-me" style="margin-top: -15px; width: 100%;">
-                                <input class="checkbox" type="checkbox" id="agreementCheckbox">
-                                <span class="check-label" for="agreementCheckbox">
-                                    Saya menyetujui ketentuan yang berlaku
-                                </span>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="check-label"><span><span></span></span>Saya menyetujui <a type="button" class="term-service" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ketentuan yang berlaku</a></label>
                             </div>
-                            <button class="btn signin" id="registerButton" disabled
-                                style="background-color: #ccc; margin-top: 20px; margin-bottom: -20px;">Register</button>
+                            <button class="btn signin" name="register" id="register" style="margin-top: 20px">Daftar</button>
                         </form>
                     </div>
                 </div>
@@ -120,17 +119,16 @@
             }
         });
 
-        const agreementCheckbox = document.getElementById('agreementCheckbox');
-        const registerButton = document.getElementById('registerButton');
+        const agreementCheckbox = document.getElementById('agree-term');
+        const registerButton = document.getElementById('register');
 
-        agreementCheckbox.addEventListener('change', function() {
-            registerButton.disabled = !this.checked;
-            if (this.checked) {
-                registerButton.style.backgroundColor = '#007bff'; // Ganti dengan warna asal
-            } else {
-                registerButton.style.backgroundColor = '#ccc'; // Ganti dengan warna abu-abu
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var checkbox = document.getElementById('agree-term');
+            var submitButton = document.getElementById('register');
+            checkbox.addEventListener('change', function() {
+                submitButton.disabled = !checkbox.checked;
+            });
+            });
 
         const form = document.querySelector('form');
         form.addEventListener('submit', function(event) {
