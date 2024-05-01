@@ -51,7 +51,7 @@
                         <form class="form-horizontal" action="/forgot" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label>Email</label>
+                                <label for="email">Email</label>
                                 <input type="email" placeholder="Email"
                                     class="form-control @error('email') is-invalid @enderror" id="email"
                                     name="email" value="{{ old('email') }}"
@@ -67,9 +67,7 @@
                                     name="password1" style="background-color: rgb(236, 236, 236)" required>
                                 <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password1')
-                                    <span class="text-danger">
-                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
-                                    </span>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group" style="position: relative;">
@@ -79,9 +77,7 @@
                                     name="password2" style="background-color: rgb(236, 236, 236)" required>
                                 <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password2')
-                                    <span class="text-danger">
-                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
-                                    </span>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <button class="btn signin" style="margin-top: 50px">Ubah</button>
@@ -91,6 +87,31 @@
             </div>
         </div>
     </div>
+    <script>
+        const togglePassword1 = document.querySelector('#togglePassword1');
+        const togglePassword2 = document.querySelector('#togglePassword2');
+        const password1 = document.querySelector('#password1');
+        const password2 = document.querySelector('#password2');
+
+        togglePassword1.addEventListener('click', function(e) {
+            // Toggle the type attribute
+            const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+            password1.setAttribute('type', type);
+
+            // Toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        togglePassword2.addEventListener('click', function(e) {
+            // Toggle the type attribute
+            const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+            password2.setAttribute('type', type);
+
+            // Toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+
 </body>
 
 <script>

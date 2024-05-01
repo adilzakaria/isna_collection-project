@@ -34,6 +34,7 @@
     <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js') }}"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
 </head>
 
 <body>
@@ -84,9 +85,7 @@
                                     name="password" style="background-color: rgb(236, 236, 236)" required/>
                                 <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password')
-                                    <span class="text-danger">
-                                        <i class="bx bx-error-circle error-icon"></i>{{ $message }}
-                                    </span>
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <button class="btn signin">Masuk</button>

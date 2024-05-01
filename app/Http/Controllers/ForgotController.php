@@ -18,7 +18,7 @@ class ForgotController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password1' => 'required',
+            'password1' => 'required|min:5|max:255',
             'password2' => 'required|same:password1',
         ], [
             'email.required' => 'Email Harus Diisi',

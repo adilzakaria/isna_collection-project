@@ -33,7 +33,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4" data-aos="fade-left">
+          <div class="col">
             <div class="info">
               <div class="phone">
                 <i class="bi bi-phone"></i>
