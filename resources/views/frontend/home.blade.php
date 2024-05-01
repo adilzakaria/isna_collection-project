@@ -49,6 +49,8 @@
     </div>
   </section> -->
 
+  {{-- @dd(Auth::user()) --}}
+
 @include('frontend.navbar')
 
     <!-- ======= Hero Section ======= -->

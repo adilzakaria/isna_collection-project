@@ -34,6 +34,8 @@
 </head>
 
 <body>
+
+    {{-- @dd(Auth::user()) --}}
     @include('frontend.navcontent')
 
     <nav id="navbar" class="navbar"
@@ -53,7 +55,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <form action="/order" method="POST" class="card border-card">
+                <form action="{{ route('pesan') }}" method="POST" class="card border-card">
                     @csrf
                     @auth
                         <h2 class="m-3">Informasi Pemesan</h2>
@@ -101,9 +103,9 @@
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
                             <input style="width: 75%;" type="text" class="form-control input_form" id="alamat"
-                                name="alamat_lengkap" placeholder="Alamat Lengkap"
-                                value="{{ old('alamat_lengkap') }}">
-                            @error('alamat_lengkap')
+                                name="alamat" placeholder="Alamat Lengkap"
+                                value="{{ old('alamat') }}">
+                            @error('alamat')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             <input style="width: 25%; margin-left: 2rem;" type="text"

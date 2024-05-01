@@ -82,24 +82,28 @@
                                 </svg><span>Log Out</span></button>
                         </form>
                     </div>
+
                     <div class="right-content">
                         <!-- detail pesanan -->
                         <form class="form-horizontal">
+                            @foreach ($pesanan as $pesan)
                             <div class="card">
                             <div class="form-group m-3">
                             <label for="" class="text-dark" style="font-size: 20px;">Detail Pesanan</label>
-                            <h5 for="" class="text-dark" style="font-size: 15px;">Jenis Baju</h5>
-                            <h5 for="" class="text-dark" style="font-size: 15px;">Ukuran</h5>
-                            <h5 for="" class="text-dark" style="font-size: 15px;">Tambahan</h5>
+                            <h5 for="" class="text-dark" style="font-size: 15px;">Jenis : {{ $pesan->jenis }}</h5>
+                            <h5 for="" class="text-dark" style="font-size: 15px;">Ukuran : {{ $pesan->ukuran }}</h5>
+                            <h5 for="" class="text-dark" style="font-size: 15px;">Tambahan : {{ $pesan->tambahan }}</h5>
                             <hr>
                             <h5 for="" class="text-dark">Harga</h5>
                             <h5 for="" class="text-dark">Estimasi Waktu</h5>
                             </div>
                             <a href="/pembayaran" type="submit" class="btn btn-body kirim" style="height: 100%;font-size: 15px;">Bayar</a>
                             </div>
+                            @endforeach
                         </form>
                         <!-- detail pesanan -->
                     </div>
+
                 </div>
             </div>
         </div>

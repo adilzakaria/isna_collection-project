@@ -12,7 +12,7 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    
+
     public function index()
     {
         $this->authorize('admin');
@@ -31,14 +31,14 @@ class AdminController extends Controller
     {
         $ulasans = ulasan::all();
         return view('admin.dashulasan', compact('ulasans'));
-    }    
-    
+    }
+
     public function adminkatalog()
     {
         $katalogs = katalog::all();
 
         return view('admin.dashkatalog',compact('katalogs'));
-    }    
+    }
     public function adminpesanan()
     {
         return view('admin.dashpesanan');
@@ -55,14 +55,14 @@ class AdminController extends Controller
             'nama_produk' => 'required',
             'kategori' => 'required',
         ],  [
-            
+
         ]);
 
         $input = $request->all();
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar')->getClientOriginalExtension();
             $nama_image = 'katalog-' . time() . '.' . $image;
-            $path = $request->file('gambar')->move(public_path('assets/img/portofolio'), $nama_image);
+            $request->file('gambar')->move(public_path('assets/img/portofolio'), $nama_image);
 
             $input['gambar'] = $nama_image;
         }
