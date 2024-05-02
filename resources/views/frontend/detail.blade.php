@@ -47,8 +47,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="{{ route('detail', ['id' => $pesan->nomor]) }}" method="POST" enctype="multipart/form-data"
-                    class="card border-card">
+                <form action="{{ route('detail', ['id' => $pesan->nomor]) }}" method="POST"
+                    enctype="multipart/form-data" class="card border-card">
                     @csrf
                     @auth
                         <h2 class="m-3">Informasi Pemesan</h2>
@@ -112,14 +112,6 @@
                         <input style="width: 40%;" type="text" class="form-control input_form" id="jenis"
                             name="jenis" placeholder="Jenis" readonly value="{{ $pesan->jenis }}">
                     </div>
-                    {{-- Gambar --}}
-                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="gambar" class="form-label">Gambar</label>
-                    </div>
-                    <div class="form-group" style="margin-left:1rem;">
-                        <img src="{{ asset('storage/images/' . $pesan->gambar) }}"
-                            class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
-                    </div>
                     {{-- Tambahan --}}
                     <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="tambahan" class="form-label">Tambahan</label>
@@ -129,6 +121,39 @@
                             name="tambahan" readonly value="{{ $pesan->tambahan }}">
                     </div>
                 </form>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-card">
+                    {{-- Gambar --}}
+                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="gambar" class="form-label">Gambar</label>
+                    </div>
+                    <div class="form-group" style="margin-left:1rem;">
+                        <img src="{{ asset('storage/images/' . $pesan->gambar) }}"
+                            class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
+                    </div>
+                    {{-- Harga --}}
+                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="Harga" class="form-label">Harga</label>
+                    </div>
+                    <div class="form-group" style="margin-left:1rem;">
+                        -
+                    </div>
+                    {{-- Estimasi --}}
+                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="estimasi" class="form-label">Estimasi</label>
+                    </div>
+                    <div class="form-group" style="margin-left:1rem;">
+                        -
+                    </div>
+                    {{-- Status --}}
+                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                        <label for="status" class="form-label">Status</label>
+                    </div>
+                    <div class="form-group" style="margin-left:1rem;">
+                        -
+                    </div>
+                </div>
             </div>
         </div>
     </div>
