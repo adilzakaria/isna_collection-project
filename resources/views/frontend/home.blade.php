@@ -79,75 +79,93 @@
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-blouse">
-        <img src="{{ url('assets/img/portfolio/baju1.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Blouse Polos</h4>
-            <a href="assets/img/portfolio/baju1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"></a>
-        </div>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju1.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Blouse Polos</h4>
+                    <a href="assets/img/portfolio/baju1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
-        <img src="{{ url('assets/img/portfolio/baju2.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Atasan Kebaya</h4>
-            <a href="assets/img/portfolio/baju2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"></a>
-        </div>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju2.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Atasan Kebaya</h4>
+                    <a href="assets/img/portfolio/baju2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-dress">
-        <img src="{{ url('assets/img/portfolio/baju3.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Dress</h4>
-            <a href="assets/img/portfolio/baju3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"></a>
-        </div>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju3.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Dress</h4>
+                    <a href="assets/img/portfolio/baju3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
-        <img src="{{ url('assets/img/portfolio/baju4.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Atasan Batik</h4>
-            <a href="assets/img/portfolio/baju4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"></a>
-        </div>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju4.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Atasan Batik</h4>
+                    <a href="assets/img/portfolio/baju4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-blouse">
-        <img src="{{ url('assets/img/portfolio/baju5.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Blouse Motif Bunga</h4>
-            <a href="assets/img/portfolio/baju5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"></a>
-        </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-dress">
-        <img src="{{ url('assets/img/portfolio/baju6.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Dress Batik</h4>
-            <a href="assets/img/portfolio/baju6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"></a>
-        </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
-        <img src="{{ url('assets/img/portfolio/baju7.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Atasan Batik</h4>
-            <a href="assets/img/portfolio/baju7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"></a>
-        </div>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju5.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Blouse Motif Bunga</h4>
+                    <a href="assets/img/portfolio/baju5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-dress">
-        <img src="{{ url('assets/img/portfolio/baju8.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Dress</h4>
-            <a href="assets/img/portfolio/baju8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"></a>
-        </div>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju6.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Dress Batik</h4>
+                    <a href="assets/img/portfolio/baju6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"></a>
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
-        <img src="{{ url('assets/img/portfolio/baju9.jpg') }}" class="img-fluid" alt="">
-        <div class="portfolio-info">
-            <h4>Atasan Batik</h4>
-            <a href="assets/img/portfolio/baju9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"></a>
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju7.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Atasan Batik</h4>
+                    <a href="assets/img/portfolio/baju7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"></a>
+                </div>
+            </div>
         </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-dress">
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju8.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Dress</h4>
+                    <a href="assets/img/portfolio/baju8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
+            <div class="card">
+                <img src="{{ url('assets/img/portfolio/baju9.jpg') }}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>Atasan Batik</h4>
+                    <a href="assets/img/portfolio/baju9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"></a>
+                </div>
+            </div>
         </div>
     </div>
     </div>
@@ -165,6 +183,9 @@
             <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
             <h3>Adil Zakaria</h3>
             <h4>Ceo &amp; Founder</h4>
+            <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
             <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -178,6 +199,9 @@
             <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
             <h3>Sara Wilsson</h3>
             <h4>Designer</h4>
+            <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
             <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -191,6 +215,9 @@
             <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
             <h3>Jena Karlis</h3>
             <h4>Store Owner</h4>
+            <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
             <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -204,6 +231,9 @@
             <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
             <h3>Matt Brandon</h3>
             <h4>Freelancer</h4>
+            <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
             <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -217,6 +247,9 @@
             <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
             <h3>John Larson</h3>
             <h4>Entrepreneur</h4>
+            <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
             <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                 Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.

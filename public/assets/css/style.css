@@ -777,8 +777,8 @@ section {
 .portfolio .portfolio-item .portfolio-info {
     opacity: 0;
     position: absolute;
-    left: 15px;
-    right: 15px;
+    left: 0px;
+    right: 0px;
     bottom: -50px;
     z-index: 3;
     transition: all ease-in-out 0.3s;
@@ -825,6 +825,13 @@ section {
     opacity: 1;
     bottom: 0;
 }
+
+.portfolio .card {
+    border: 1px solid #cd74c9;
+    position: relative;
+    border-radius: 0;
+    height: 100%;
+  }
 
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -997,6 +1004,15 @@ section {
         width: 80%;
     }
 }
+
+.testimonials .testimonial-item .stars {
+    margin-bottom: 15px;
+  }
+
+  .testimonials .testimonial-item .stars i {
+    color: #ffc107;
+    margin: 0 1px;
+  }
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
