@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string('jenis');
             $table->string('gambar');
             $table->text('tambahan')->nullable();
+            $table->string('harga');
+            $table->string('estimasi');
+            $table->string('status');
             $table->timestamps();
         });
     }
