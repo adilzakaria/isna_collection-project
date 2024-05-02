@@ -1,7 +1,5 @@
 <?php
 
-
-
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\LoginController;
@@ -11,7 +9,9 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\EditAkunController;
+use App\Http\Controllers\DetailController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +45,7 @@ Route::post('/forgot', [ForgotController::class, 'updatePassword']);
 Route::get('/order', [OrderController::class, 'order']);
 Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
 Route::get('/pesanan', [OrderController::class, 'showPesanan']);
+Route::get('/detail/{nomor}', [DetailController::class, 'show'])->name('detail');
 Route::get('/pembayaran', function () {
     return view('frontend.pembayaran');
 });
@@ -64,7 +65,11 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/hapusulasan/{ulasan}', [AdminController::class, 'destroyulasan'])->name('destroy_ulasan');
     Route::get('/dash/ulasan', [AdminController::class, 'adminulasan'])->name('admin_ulasan');
     Route::get('/dash/katalog', [AdminController::class, 'adminkatalog'])->name('admin_katalog');
+
     Route::get('/dash/pesanan', [AdminController::class, 'adminpesanan'])->name('admin_pesanan');
+    Route::get('/dash/detailpesanan/{pesanan}', [AdminController::class, 'editpesanan'])->name('status_pesanan_admin');
+    Route::patch('/dash/updatepesanan/{pesanan}', [AdminController::class, 'updatestatuspesanan'])->name('update_status_pesanan_admin');
+
 });
 
 Route::get('/order-admin', function () {

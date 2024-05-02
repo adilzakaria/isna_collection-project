@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\katalog;
 use App\Models\ulasan;
+use App\Models\Pesanan;
 
 class AdminController extends Controller
 {
@@ -23,9 +24,9 @@ class AdminController extends Controller
     {
         $katalogs = katalog::all();
         $ulasans = ulasan::all();
+        $pesanans = Pesanan::all();
 
-
-        return view('admin.dash', compact('katalogs', 'ulasans'));
+        return view('admin.dash', compact('katalogs', 'ulasans', 'pesanans'));
     }
     public function adminulasan()
     {
@@ -39,9 +40,37 @@ class AdminController extends Controller
 
         return view('admin.dashkatalog',compact('katalogs'));
     }    
+
     public function adminpesanan()
     {
-        return view('admin.dashpesanan');
+        $pesanans = Pesanan::all();
+
+        return view('admin.dashpesanan',compact('pesanans'));
+    }  
+
+
+    public function editpesanan($pesanan)
+    {
+        $pesanan = Pesanan::where('id', $pesanan)->first();
+        return view('admin.order', compact('pesanan'));
+    }
+
+    public function updatestatuspesanan(Request $request, $pesanan)
+    {
+        $request->validate([
+        'harga' => 'required',
+        'estimasi' => 'required',
+        'status' => 'required',
+        ]);
+
+        $input = $request->only([
+            'status',
+            'estimasi',
+            'harga',
+        ]);
+        Pesanan::findOrFail($pesanan)->update($input);
+        
+        return redirect('/dash')->with('success', "Data berhasil di ubah");
     }
     public function buatkatalog()
     {

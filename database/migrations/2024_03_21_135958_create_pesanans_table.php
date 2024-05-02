@@ -23,8 +23,12 @@ return new class extends Migration
             $table->string('kode');
             $table->string('ukuran');
             $table->string('jenis');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->text('tambahan')->nullable();
+            $table->string('nomor')->nullable();
+            $table->string('harga')->nullable();
+            $table->string('estimasi')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

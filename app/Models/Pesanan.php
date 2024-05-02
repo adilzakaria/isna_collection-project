@@ -19,6 +19,9 @@ class Pesanan extends Model
         'jenis',
         'gambar',
         'tambahan',
+        'harga',
+        'estimasi',
+        'status',
     ];
 
     // Kolom yang bersifat read-only dari tabel users

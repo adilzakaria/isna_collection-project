@@ -9,7 +9,7 @@
         <h1>Isna Collection</h1>
         <h2>Mewujudkan Kreativitas Melalui Jarum dan Benang <br> Isna Collection, Solusi Terbaik untuk Busana Personal
             yang Berkualitas.</h2>
-            <a href="/order-pesan" class="btn-get-started scrollto" style="text-decoration: none;">Pesan Sekarang</a>
+            <a href="/order" class="btn-get-started scrollto" style="text-decoration: none;">Pesan Sekarang</a>
     </div>
 </section><!-- End Hero -->
 
