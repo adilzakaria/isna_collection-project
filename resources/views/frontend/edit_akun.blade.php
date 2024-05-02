@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    <link rel="stylesheet" href="{{ url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/bootstrap.min.css"> -->
@@ -27,9 +27,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/akun.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/akun.css') }}">
+    <script src="{{ url('https://code.jquery.com/jquery-3.6.0.min.js') }}"></script>
 </head>
 
 <body>
@@ -60,7 +60,7 @@
                         <form class="form-horizontal" action="/logout" method="POST">
                             @csrf
                             <a href="/edit_akun" class="btn kiri" style="margin-top: 20px">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17"
+                                <svg xmlns="{{ url('http://www.w3.org/2000/svg') }}" height="17" width="17"
                                     style="position: relative; left: -50px; top: -2px"
                                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                     <path fill="#ffffff"
@@ -68,7 +68,7 @@
                                 </svg><span>Edit Profil</span></a>
 
                             <a href="/pesanan" class="btn kiri" style="margin-top: 20px">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="17" width="18.75"
+                                <svg xmlns="{{ url('http://www.w3.org/2000/svg') }}" height="17" width="18.75"
                                     style="position: relative; left: -35px;"
                                     viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                     <path fill="#ffffff"
@@ -76,7 +76,7 @@
                                 </svg><span>Pesanan Saya</span></a>
 
                             <button type="submit" class="btn kiri" style="margin-top: 20px"><svg
-                                    xmlns="http://www.w3.org/2000/svg" height="17" width="18.75"
+                                    xmlns="{{ url('http://www.w3.org/2000/svg') }}" height="17" width="18.75"
                                     style="position: relative; left: -55px;"
                                     viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                                     <path fill="#ffffff"
@@ -111,7 +111,7 @@
                                     <p class="text-danger" style="font-style: italic">*Email Tidak Bisa Diubah.</p>
                             </div>
                             <button type="submit" class="btn btnkiri">Simpan</button>
-                            <button type="button" class="btn btnkanan" style="float: right;">Batal</button>
+                            <button type="button" class="btn btnkanan" style="float: right;" onclick="window.location.href='/akun';">Batal</button>
                         </form>
                     </div>
                 </div>

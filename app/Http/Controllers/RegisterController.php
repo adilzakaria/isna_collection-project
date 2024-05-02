@@ -25,8 +25,8 @@ class RegisterController extends Controller
         ], [
             'nama.required' => 'Nama Harus Diisi',
             'nama.min' => 'Nama Harus Lebih Dari 3 Karakter',
-            'hp.required' => 'No Hp Harus Diisi',
-            'hp.digits_between' => 'No Hp harus memiliki panjang antara 10 dan 15 digit',
+            'hp.required' => 'Nomor Hp Harus Diisi',
+            'hp.digits_between' => 'Nomor Hp harus memiliki panjang antara 10 dan 15 digit',
             'email.required' => 'Email Harus Diisi',
             'password.required' => 'Kata Sandi Harus Diisi',
             'password.min' => 'Kata Sandi Harus Lebih Dari 5 Karakter'

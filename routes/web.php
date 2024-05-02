@@ -70,3 +70,9 @@ Route::middleware('admin')->group(function () {
 Route::get('/order-admin', function () {
     return view('admin.order');
 });
+
+Route::post('review-kami', 'ReviewController@reviewStore')->name('review.store');
+
+Route::get('/test', function () {
+    return view('frontend.review');
+});

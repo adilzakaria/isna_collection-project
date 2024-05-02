@@ -41,14 +41,14 @@
 
             <nav id="navbar" class="navbar">
                 <ul style="padding-top: 15px">
-                    <li><a class="nav-link scrollto active" href="/home">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-                    <li><a class="nav-link scrollto" href="#portfolio">Katalog</a></li>
+                    <li><a class="nav-link scrollto" href="/home">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="/home">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="/home">Katalog</a></li>
                     <li><a class="nav-link scrollto" href="/order-pesan">Buat Pesanan</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
+                    <li><a class="nav-link scrollto" href="/home">Hubungi Kami</a></li>
                     <li class="dropdown">
-                        <a href="#" id="akun">
-                            <span>Akun</span>
+                        <a class="nav-link scrollto active" href="#" id="akun">
+                            <span>Hai, {{ auth()->user()->nama }}</span>
                             <i class="bi bi-chevron-down"></i>
                             <span class="notification-badge"></span><!-- Change '3' to the actual notification count -->
                         </a>

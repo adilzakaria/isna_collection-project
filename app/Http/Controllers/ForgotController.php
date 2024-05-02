@@ -22,9 +22,9 @@ class ForgotController extends Controller
             'password2' => 'required|same:password1',
         ], [
             'email.required' => 'Email Harus Diisi',
-            'password1.required' => 'Password Harus Diisi',
-            'password2.required' => 'Password Harus Diisi',
-            'password2.same' => 'Password Tidak Sama',
+            'password1.required' => 'Kata Sandi Harus Diisi',
+            'password2.required' => 'Kata Sandi Harus Diisi',
+            'password2.same' => 'Kata Sandi Tidak Sama',
         ]);
 
         $email = $request->email;
@@ -36,12 +36,12 @@ class ForgotController extends Controller
             DB::table('users')->where('email', $email)->update(['password' => $password]);
 
             // Jika berhasil mengupdate password
-            return redirect('/login')->with('success', 'Password Berhasil Diubah.');
+            return redirect('/login')->with('success', 'Password Berhasil Diubah');
         }
 
         // Jika email tidak ditemukan dalam database
         throw ValidationException::withMessages([
-            'email' => ['Email Tidak Ditemukan.'],
+            'email' => ['Email Tidak Ditemukan'],
         ]);
     }
 }

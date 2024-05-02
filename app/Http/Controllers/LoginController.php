@@ -23,7 +23,7 @@ class LoginController extends Controller
             ],
             [
                 'email.required' => 'Email Harus Diisi',
-                'password.required' => 'Password Harus Diisi',
+                'password.required' => 'Kata Sandi Harus Diisi',
             ]
         );
 
@@ -33,7 +33,7 @@ class LoginController extends Controller
             return redirect()->route('home');
         }
 
-        return back()->with('LoginError', 'Login Gagal, Email atau Password Salah.');
+        return back()->with('LoginError', 'Login Gagal, Email atau Kata Sandi Salah');
     }
 
     public function logout(Request $request)
