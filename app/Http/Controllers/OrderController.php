@@ -17,6 +17,9 @@ class OrderController extends Controller
     public function pesan(Request $request)
     {
         try {
+
+            $random = random_int(1, 999999);
+
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
             $simpan->nama = $request->nama;
@@ -29,8 +32,14 @@ class OrderController extends Controller
             $simpan->kode = $request->kode;
             $simpan->ukuran = $request->ukuran;
             $simpan->jenis = $request->jenis;
-            $simpan->gambar = $request->gambar;
+            if ($request->hasFile('gambar')) {
+                $image = $request->file('gambar');
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('public/images', $filename);
+                $simpan->gambar = $filename;
+            }
             $simpan->tambahan = $request->tambahan;
+            $simpan->nomor = $random;
             $simpan->save();
 
             return redirect('/pesanan')->with('success', 'Pesanan berhasil dibuat!');

@@ -55,7 +55,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <form action="{{ route('pesan') }}" method="POST" class="card border-card">
+                <form action="{{ route('pesan') }}" method="POST" enctype="multipart/form-data"
+                    class="card border-card">
                     @csrf
                     @auth
                         <h2 class="m-3">Informasi Pemesan</h2>
@@ -75,6 +76,7 @@
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
+
                         </div>
                     @endauth
 
@@ -89,8 +91,9 @@
                             @error('provinsi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input style="width: 40%; margin-left: 2rem;" type="text" class="form-control input_form"
-                                id="kota" name="kota" placeholder="Kota" value="{{ old('kota') }}">
+                            <input style="width: 40%; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="kota" name="kota" placeholder="Kota"
+                                value="{{ old('kota') }}">
                             @error('kota')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -103,8 +106,7 @@
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
                             <input style="width: 75%;" type="text" class="form-control input_form" id="alamat"
-                                name="alamat" placeholder="Alamat Lengkap"
-                                value="{{ old('alamat') }}">
+                                name="alamat" placeholder="Alamat Lengkap" value="{{ old('alamat') }}">
                             @error('alamat')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -165,11 +167,14 @@
                     </div>
                     <div class="form-group" style="display: inline-flex; margin-left:1rem;">
                         <input class="form-control input_form form-control-lg" id="gambar" name="gambar"
-                            type="file" style="width: 90%;" placeholder="format .jpg/.png">
+                            onchange="previewImage()" type="file" style="width: 90%;"
+                            placeholder="format .jpg/.png">
                         @error('gambar')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <img class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
+
                     <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="tambahan" class="form-label">Tambahan</label>
                     </div>
@@ -193,4 +198,19 @@
             </div>
         </div>
     </div>
+    <script>
+        function previewImage() {
+            const gambar = document.querySelector('#gambar');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const fileGambar = new FileReader();
+            fileGambar.readAsDataURL(gambar.files[0]);
+
+            fileGambar.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
 </body>

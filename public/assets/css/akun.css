@@ -93,6 +93,8 @@
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     border: 4px solid #ec71a9;
+    max-height: 80vh; /* Menetapkan tinggi maksimum */
+    overflow-y: auto; /* Mengaktifkan overflow vertical */
 }
 
 .form-container .right-content .title {
