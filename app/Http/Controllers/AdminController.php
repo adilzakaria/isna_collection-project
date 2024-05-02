@@ -48,18 +48,13 @@ class AdminController extends Controller
         return view('admin.dashpesanan',compact('pesanans'));
     }  
 
-    public function detailpesanan()
-    {
-        $pesanans = Pesanan::all();
-
-        return view('admin.order',compact('pesanans'));
-    } 
 
     public function editpesanan($pesanan)
     {
         $pesanan = Pesanan::where('id', $pesanan)->first();
-        return view('admin.formedit', compact('pesanan'));
+        return view('admin.order', compact('pesanan'));
     }
+
     public function updatestatuspesanan(Request $request, $pesanan)
     {
         $request->validate([

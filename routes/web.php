@@ -66,11 +66,8 @@ Route::middleware('admin')->group(function () {
     Route::get('/dash/katalog', [AdminController::class, 'adminkatalog'])->name('admin_katalog');
     
     Route::get('/dash/pesanan', [AdminController::class, 'adminpesanan'])->name('admin_pesanan');
-
-    Route::get('/dash/detailpesanan/{pesanan}', [AdminController::class, 'detailpesanan'])->name('status_pesanan_admin');
+    Route::get('/dash/detailpesanan/{pesanan}', [AdminController::class, 'editpesanan'])->name('status_pesanan_admin');
     Route::patch('/dash/updatepesanan/{pesanan}', [AdminController::class, 'updatestatuspesanan'])->name('update_status_pesanan_admin');
-
-    Route::get('/dash/editkatalog/{katalog}', [AdminController::class, 'editkatalog'])->name('edit_katalog');
 
 });
 

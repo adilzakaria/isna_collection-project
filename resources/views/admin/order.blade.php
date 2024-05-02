@@ -11,7 +11,7 @@
           <!-- Start Pesan -->
 
           <div class="row justify-content-center">
-            @forelse ($pesanans as $pesanan) 
+
             <!-- username -->
               <div class="col-md-10">
                 <div class="card">
@@ -71,8 +71,6 @@
                               </div>                              
                             </div>
                         </div>
-                        @empty
-                        @endforelse
                     </div>
                 </div>
     
@@ -101,8 +99,9 @@
                             </div>
                         </div>
                     </div>
+                  </div>
                 </div>
-            </div>
+
         </div>
           
             

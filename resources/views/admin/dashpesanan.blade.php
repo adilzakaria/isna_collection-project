@@ -19,7 +19,7 @@
                                 </div>
                                 <p class="mb-0">Pesanan Milik {{$pesanan->nama}} dengan jenis {{$pesanan->jenis}} ukuran {{$pesanan->ukuran}}. Klik "Lihat" untuk detail pesanan ({{$pesanan->status}})</p>
                             </div>
-                        </div><br>
+                        </div>
                           @empty
                           @endforelse
                         </table>
