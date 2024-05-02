@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('review_ratings', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->foreign('email')->references('email')->on('users');
             $table->string('kode')->foreign('kode')->references('kode')->on('pesanans');
+            $table->string('email')->foreign('email')->references('email')->on('users');
             $table->string('nama')->foreign('nama')->references('nama')->on('users');
             $table->string('jenis')->foreign('jenis')->references('jenis')->on('pesanans');
             $table->longText('rating');

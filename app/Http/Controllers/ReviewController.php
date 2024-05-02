@@ -9,11 +9,13 @@ class BookingController extends Controller
     public function reviewStore()
     {
         $review = new ReviewRating();
-        $review->order_id = $request->order_id;
-        $review->review = $request->review;
+        $review->kode = $request->kode;
+        $review->email = $request->email;
+        $review->nama = $request->nama;
+        $review->jenis = $request->jenis;
         $review->rating = $request->rating;
-        $review->$email = $request->email;
+        $review->review = $request->review;
         $review->save();
-        return redirect()->back->with(swal("Terima kasih!", "Penilaian berhasil ditambahkan!", "success"));
+        return redirect()->back->with('success', 'Penilaian berhasil ditambahkan');
     }
 }
