@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('review_ratings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('order_id');
-            $table->longText('review')->nullable();
-            $table->integer('rating');
-            $table->enum('status', ['active', 'deactive']);
+            $table->string('email')->foreign('email')->references('email')->on('users');
+            $table->string('kode')->foreign('kode')->references('kode')->on('pesanans');
+            $table->string('nama')->foreign('nama')->references('nama')->on('users');
+            $table->string('jenis')->foreign('jenis')->references('jenis')->on('pesanans');
+            $table->longText('rating');
+            $table->integer('review')->nullable();
             $table->timestamps();
         });
     }
