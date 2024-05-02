@@ -7,30 +7,21 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title text-dark">Pesan</h4>
+                    <h4 class="card-title text-dark">Pesanan Customer</h4>
                     <div class="table-responsive">
                         <table class="table table-hover">
-                          <div class="card text-dark" href="/order-admin">
-                            <div class="m-3">
-                              <h4>Nama Pelanggan</h4>
-                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (BELUM TERBACA)
-                              <a href="/order-admin" class="btn-get-started scrollto mx-5">Lihat</a>
+                          @forelse ($pesanans as $pesanan)
+                          <div class="card text-dark mt-3 {{ $pesanan->status == 'DISETUJUI' ? 'bg-white' : ($pesanan->status == 'TELAH MEMBAYAR' ? 'bg-green' : '') }}">
+                            <div class="m-3 d-grid gap-2">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0">Pesanan {{$pesanan->nama}}, {{$pesanan->jenis}} ({{$pesanan->ukuran}})</h4>
+                                    <a class="btn btn-warning" href="{{ route('status_pesanan_admin',['pesanan' => $pesanan->id]) }}" title="Edit"><i>Edit</i></a>
+                                </div>
+                                <p class="mb-0">Pesanan Milik {{$pesanan->nama}} dengan jenis {{$pesanan->jenis}} ukuran {{$pesanan->ukuran}}. Klik "Lihat" untuk detail pesanan ({{$pesanan->status}})</p>
                             </div>
-                          </div>
-                          <div class="card text-dark mt-3">
-                            <div class="m-3">
-                              <h4>Nama Pelanggan</h4>
-                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (BELUM TERBACA)
-                              <a href="/order-admin" class="btn-get-started scrollto mx-5">Lihat</a>
-                            </div>
-                          </div>
-                          <div class="card text-dark mt-3 bg-white">
-                            <div class="m-3">
-                              <h4>Nama Pelanggan</h4>
-                              lorem ipsum assalamualaikum wr wb sholawawt serta salam terhadap junjungan kami nabi besar saw (SUDAH TERBACA)
-                              <a href="/order-admin" class="btn-get-started scrollto mx-5">Lihat</a>
-                            </div>
-                          </div>
+                        </div><br>
+                          @empty
+                          @endforelse
                         </table>
                     </div>
                   </div>

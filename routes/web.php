@@ -64,9 +64,13 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/hapusulasan/{ulasan}', [AdminController::class, 'destroyulasan'])->name('destroy_ulasan');
     Route::get('/dash/ulasan', [AdminController::class, 'adminulasan'])->name('admin_ulasan');
     Route::get('/dash/katalog', [AdminController::class, 'adminkatalog'])->name('admin_katalog');
+    
     Route::get('/dash/pesanan', [AdminController::class, 'adminpesanan'])->name('admin_pesanan');
+
+    Route::get('/dash/detailpesanan/{pesanan}', [AdminController::class, 'detailpesanan'])->name('status_pesanan_admin');
+    Route::patch('/dash/updatepesanan/{pesanan}', [AdminController::class, 'updatestatuspesanan'])->name('update_status_pesanan_admin');
+
+    Route::get('/dash/editkatalog/{katalog}', [AdminController::class, 'editkatalog'])->name('edit_katalog');
+
 });
 
-Route::get('/order-admin', function () {
-    return view('admin.order');
-});

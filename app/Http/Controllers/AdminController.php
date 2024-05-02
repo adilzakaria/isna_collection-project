@@ -48,33 +48,33 @@ class AdminController extends Controller
         return view('admin.dashpesanan',compact('pesanans'));
     }  
 
+    public function detailpesanan()
+    {
+        $pesanans = Pesanan::all();
+
+        return view('admin.order',compact('pesanans'));
+    } 
+
     public function editpesanan($pesanan)
     {
         $pesanan = Pesanan::where('id', $pesanan)->first();
         return view('admin.formedit', compact('pesanan'));
     }
-    public function updatepesanan(Request $request, $pesanan)
+    public function updatestatuspesanan(Request $request, $pesanan)
     {
         $request->validate([
-        'nama' => 'required',
-        'hp' => 'required',
-        'email' => 'required',
-        'provinsi' => 'required',
-        'kota' => 'required',
-        'kecamatan' => 'required',
-        'alamat' => 'required',
-        'kode' => 'required',
-        'ukuran' => 'required',
-        'jenis' => 'required',
-        'gambar' => 'required',
-        'tambahan' => 'required',
         'harga' => 'required',
         'estimasi' => 'required',
         'status' => 'required',
         ]);
 
-        $input = $request->all();
+        $input = $request->only([
+            'status',
+            'estimasi',
+            'harga',
+        ]);
         Pesanan::findOrFail($pesanan)->update($input);
+        
         return redirect('/dash')->with('success', "Data berhasil di ubah");
     }
     public function buatkatalog()
