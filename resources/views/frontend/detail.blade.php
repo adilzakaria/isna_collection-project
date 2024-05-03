@@ -47,7 +47,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="{{ route('detail', ['id' => $pesan->nomor]) }}" method="POST"
+                <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
                     enctype="multipart/form-data" class="card border-card">
                     @csrf
                     @auth
@@ -137,21 +137,21 @@
                         <label for="Harga" class="form-label">Harga</label>
                     </div>
                     <div class="form-group" style="margin-left:1rem;">
-                        -
+                        {{ $pesan->harga }}
                     </div>
                     {{-- Estimasi --}}
                     <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="estimasi" class="form-label">Estimasi</label>
                     </div>
-                    <div class="form-group" style="margin-left:1rem;">
-                        -
+                    <div class="form-group" style="margin-left:1rem; ont-size: 14px">
+                        {{ $pesan->estimasi }}
                     </div>
                     {{-- Status --}}
                     <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="status" class="form-label">Status</label>
                     </div>
                     <div class="form-group" style="margin-left:1rem;">
-                        -
+                        {{ $pesan->status }}
                     </div>
                 </div>
             </div>
