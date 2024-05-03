@@ -85,7 +85,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item menu-items">
+          <li class="nav-item menu-items active">
             <a class="nav-link" href="{{ route('admin_ulasan')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
@@ -134,6 +134,37 @@
                   id="notificationDropdown"
                   href="#"
                   data-bs-toggle="dropdown">
+                  <i class="mdi mdi-bell"></i>
+                  <span class="count bg-danger"></span>
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                  aria-labelledby="notificationDropdown">
+                  <h6 class="p-3 mb-0">Notifikasi</h6>
+                  @forelse ($notifikasi as $pesanan)
+                        @if ($pesanan->status == '' || $pesanan->status == "")
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item preview-item" href="/dash/pesanan">
+                          <div class="preview-thumbnail">
+                            <div class="preview-icon bg-dark rounded-circle">
+                              <i class="mdi mdi-message text-success"></i>
+                            </div>
+                          </div>
+                                <div class="preview-item-content">
+                                    <p class="preview-subject mb-1">{{$pesanan->nama}}</p>
+                                    <p class="text-muted ellipsis mb-0">
+                                        Hallo, Segera Konfirmasi Pesanan {{$pesanan->nama}}
+                                    </p>
+                                </div>
+                            </a>
+                        @endif
+                        @empty
+                        @endforelse
+                        
+                        <!-- Tidak ada pesanan yang tidak disetujui -->
+                  <p class="p-3 mb-0 text-center">Lihat lebih banyak</p>
+                </div>
+              </li>
               <li class="nav-item dropdown">
                 <a
                   class="nav-link"

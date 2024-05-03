@@ -25,8 +25,11 @@ class AdminController extends Controller
         $katalogs = katalog::all();
         $ulasans = ulasan::all();
         $pesanans = Pesanan::all();
+        $notifikasi = Pesanan::all();
 
-        return view('admin.dash', compact('katalogs', 'ulasans', 'pesanans'));
+        // $notifikasi = Pesanan::where('status', $notifikasi)->first();
+
+        return view('admin.dash', compact('katalogs', 'ulasans', 'pesanans', 'notifikasi'));
     }
     public function adminulasan()
     {
@@ -51,7 +54,7 @@ class AdminController extends Controller
 
     public function editpesanan($pesanan)
     {
-        $pesanan = Pesanan::where('id', $pesanan)->first();
+        $pesanan = Pesanan::where('nomor', $pesanan)->first();
         return view('admin.order', compact('pesanan'));
     }
 

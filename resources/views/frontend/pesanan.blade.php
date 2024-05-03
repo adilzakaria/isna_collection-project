@@ -110,7 +110,7 @@
                                         <h5 for="" class="text-dark">Harga</h5>
                                         <h5 for="" class="text-dark">Estimasi Waktu</h5>
                                     </div>
-                                    <a href="{{ route('detail', ['id' => $pesan->nomor]) }}" type="submit"
+                                    <a href="{{ route('detail', ['nomor' => $pesan->nomor]) }}" type="submit"
                                         class="btn btn-body kirim" style="height: 100%;font-size: 15px;">Lihat
                                         Detail</a>
                                 </div>
