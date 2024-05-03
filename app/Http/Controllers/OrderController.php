@@ -18,7 +18,7 @@ class OrderController extends Controller
     {
         try {
 
-            $random = random_int(1, 999999);
+            $random = random_int(1, 999999999);
 
             // Simpan data pesanan ke database
             $simpan = new Pesanan;

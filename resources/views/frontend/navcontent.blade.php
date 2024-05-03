@@ -44,7 +44,7 @@
                     <li><a class="nav-link scrollto" href="/home">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="/home">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="/home">Katalog</a></li>
-                    <li><a class="nav-link scrollto" href="/order-pesan">Buat Pesanan</a></li>
+                    <li><a class="nav-link scrollto" href="/order">Buat Pesanan</a></li>
                     <li><a class="nav-link scrollto" href="/home">Hubungi Kami</a></li>
                     <li class="dropdown">
                         <a class="nav-link scrollto active" href="#" id="akun">
