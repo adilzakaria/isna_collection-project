@@ -921,7 +921,7 @@ section {
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(2, 2, 2, 0.7);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .testimonials .section-header {
@@ -956,6 +956,20 @@ section {
     font-size: 14px;
     color: #ddd;
     margin: 0 0 15px 0;
+}
+
+.testimonial-item .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    color: #cf28be;
+    font-weight: bold;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
@@ -999,9 +1013,9 @@ section {
     background-color: #cf28be;
 }
 
-@media (min-width: 992px) {
-    .testimonials .testimonial-item p {
-        width: 80%;
+@media (min-width: 1365px) {
+    .testimonials {
+        background-attachment: fixed;
     }
 }
 
