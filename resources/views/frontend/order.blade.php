@@ -61,17 +61,17 @@
                     @auth
                         <h2 class="m-3">Informasi Pemesan</h2>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%;" type="text" class="form-control input_form" id="nama"
+                            <input style="width: 40%; font-size: 17px;" type="text" class="form-control input_form" id="nama"
                                 name="nama" readonly value="{{ Auth::user()->nama }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
-                            <input style="width: 40%;" type="text" class="form-control input_form" id="hp"
+                            <input style="width: 40%; font-size: 17px; margin-left: 2rem;" type="text" class="form-control input_form" id="hp"
                                 name="hp" readonly value="{{ Auth::user()->hp }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
-                            <input style="width: 40%;" type="text" class="form-control input_form" id="email"
+                            <input style="width: 40%; font-size: 17px; margin-left: 2rem;" type="text" class="form-control input_form" id="email"
                                 name="email" readonly value="{{ Auth::user()->email }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
@@ -80,24 +80,23 @@
                         </div>
                     @endauth
 
-
                     <div style="margin-top:2rem;">
                         <h2 class="m-3">Alamat Pengiriman</h2>
                     </div>
                     <div>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%;" type="text" class="form-control input_form" id="provinsi"
+                            <input style="width: 40%; font-size: 17px;" type="text" class="form-control input_form" id="provinsi"
                                 name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
                             @error('provinsi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input style="width: 40%; margin-left: 2rem;" type="text"
+                            <input style="width: 40%; font-size: 17px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kota" name="kota" placeholder="Kota"
                                 value="{{ old('kota') }}">
                             @error('kota')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input style="width: 40%; margin-left: 2rem;" type="text"
+                            <input style="width: 40%; font-size: 17px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kecamatan" name="kecamatan"
                                 placeholder="Kecamatan" value="{{ old('kecamatan') }}">
                             @error('kecamatan')
@@ -105,12 +104,12 @@
                             @enderror
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
-                            <input style="width: 75%;" type="text" class="form-control input_form" id="alamat"
+                            <input style="width: 75%; font-size: 17px;" type="text" class="form-control input_form" id="alamat"
                                 name="alamat" placeholder="Alamat Lengkap" value="{{ old('alamat') }}">
                             @error('alamat')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input style="width: 25%; margin-left: 2rem;" type="text"
+                            <input style="width: 25%; font-size: 17px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kode" name="kode" placeholder="Kode Pos"
                                 value="{{ old('kode') }}">
                             @error('kode')
@@ -167,7 +166,7 @@
                     </div>
                     <div class="form-group" style="display: inline-flex; margin-left:1rem;">
                         <input class="form-control input_form form-control-lg" id="gambar" name="gambar"
-                            onchange="previewImage()" type="file" style="width: 90%;"
+                            onchange="previewImage()" type="file" style="width: 90%; font-size: 15px;"
                             placeholder="format .jpg/.png">
                         @error('gambar')
                             <div class="alert alert-danger">{{ $message }}</div>
