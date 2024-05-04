@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Testimoni</title>
+    <title>Penilaian Tentang Kami</title>
     <link href="{{ url('assets/css/review.css') }}" rel="stylesheet">
     <link href='{{ url('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css') }}' rel='stylesheet'>
+    <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 
 </head>
 <body>
     @include('frontend.navcontent')
 
     <!-- Jika ada pesan sukses -->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    @if (session()->has('success'))
+    <script>
+        swal("Berhasil!", "{{ session('success') }}", "success");
+    </script>
     @endif
 
     <!-- Jika ada pesan tidak berhasil -->
     @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
+        <script>
+            swal("Gagal!", "{{ session('error') }}", "error");
+        </script>
     @endif
 
     {{-- Testimonial --}}
