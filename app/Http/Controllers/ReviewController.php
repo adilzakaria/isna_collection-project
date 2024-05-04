@@ -34,9 +34,7 @@ class ReviewController extends Controller
                 $existing_rating = ReviewRating::where('email', Auth::user()->email)->where('nomor', $product_id)->first();
                 if($existing_rating)
                 {
-                    $existing_rating->rating = $rating;
-                    $existing_rating->review = $review;
-                    $existing_rating->update();
+                    return redirect('/tentang-kami')->with('error', 'Anda sudah memberikan penilaian sebelumnya, silahkan edit penilaian anda di halaman penilaian');
                 }
                 else
                 {

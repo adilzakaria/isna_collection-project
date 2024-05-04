@@ -206,11 +206,11 @@
                     @if ($pesan->status == 'TELAH MEMBAYAR')
                         <div style="text-align: right;">
                             <a href="/ulasan" class="btn mt-3"
-                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 50px; border-radius: 10px; transition: all 0.3s ease 0s;">
                                 Beri Ulasan
                             </a>
                             <a href="{{ route('home') }}" class="btn mt-3"
-                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 45px; border-radius: 10px; transition: all 0.3s ease 0s;">
                                 Selesai
                             </a>
                         </div>
