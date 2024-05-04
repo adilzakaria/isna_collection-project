@@ -9,6 +9,7 @@ class DetailController extends Controller
 {
     public function show($nomor)
     {
+
         $pesan = Pesanan::where('nomor', $nomor)->firstOrFail();
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -18,22 +19,20 @@ class DetailController extends Controller
         // Set 3DS transaction for credit card to true
         \Midtrans\Config::$is3ds = true;
 
-        $params = array(
-        'transaction_details' => array(
-            'order_id' => rand(),
-            'gross_amount' => 10000,
-        ),
-        'customer_details' => array(
-            'first_name' => 'budi',
-            'last_name' => 'pratama',
-            'email' => 'budi.pra@example.com',
-            'phone' => '08111222333',
-        ),
-        );
+        $params = [
+            'transaction_details' => [
+                'order_id' => $nomor,
+                'gross_amount' => $pesan->harga,
+            ],
+            'customer_details' => [
+                'name' => $pesan->nama,
+                'email' => $pesan->email,
+                'phone' => $pesan->hp,
+            ],
+        ];
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken);
         return view('frontend.detail', compact('snapToken', 'pesan'));
     }
-
 }

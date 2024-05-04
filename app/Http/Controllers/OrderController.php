@@ -19,7 +19,7 @@ class OrderController extends Controller
         try {
 
             $random = random_int(1, 999999999);
-            $request->request->add(['status' => 'BELUM DISETUJUI']);
+            $request->request->add(['status' => 'TIDAK DISETUJUI']);
 
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
@@ -41,32 +41,10 @@ class OrderController extends Controller
             }
             $simpan->tambahan = $request->tambahan;
             $simpan->nomor = $random;
-            $simpan->harga = $request->harga;
+            // $simpan->harga = $request->harga;
             $simpan->status = $request->status;
             $simpan->save();
             // dd($simpan);
-
-            // Konfigurasi Midtrans
-            \Midtrans\Config::$serverKey = config('midtrans.server_key');
-            \Midtrans\Config::$isProduction = false;
-            \Midtrans\Config::$isSanitized = true;
-            \Midtrans\Config::$is3ds = true;
-
-            // Parameter transaksi
-            $params = [
-                'transaction_details' => [
-                    'order_id' => $simpan->nomor,
-                    'gross_amount' => $request->harga,
-                ],
-                'customer_details' => [
-                    'name' => $request->nama,
-                    'email' => $request->email,
-                    'phone' => $request->hp,
-                ],
-            ];
-
-            $snapToken = \Midtrans\Snap::getSnapToken($params);
-            // dd($snapToken);
 
             return redirect('/pesanan')->with('success', 'Pesanan berhasil dibuat!');
         } catch (\Exception $e) {
