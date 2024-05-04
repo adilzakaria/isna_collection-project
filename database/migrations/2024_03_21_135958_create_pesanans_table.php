@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('kode');
             $table->string('ukuran');
             $table->string('jenis');
-            $table->string('gambar')->nullable();
+            $table->mediumBlob('gambar')->nullable();
             $table->text('tambahan')->nullable();
             $table->string('nomor')->nullable();
             $table->string('harga')->nullable();

@@ -18,7 +18,7 @@ class OrderController extends Controller
     {
         try {
 
-            $random = random_int(1, 999999);
+            $random = random_int(1, 999999999);
 
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
@@ -52,7 +52,36 @@ class OrderController extends Controller
     {
         $getPesanan = Auth::user();
         $pesanan = Pesanan::where('email', $getPesanan->email)->get();
+
+        if (!$pesanan) {
+            return redirect()->back()->with('error', 'Tidak ada pesanan yang ditemukan.');
+        }
+
         //dd($getPesanan);
-        return view('frontend.pesanan', compact('pesanan'));
+        \Midtrans\Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+
+        $params = array(
+        'transaction_details' => array(
+            'order_id' => rand(),
+            'gross_amount' => 10000,
+        ),
+        'customer_details' => array(
+            'first_name' => 'budi',
+            'last_name' => 'pratama',
+            'email' => 'budi.pra@example.com',
+            'phone' => '08111222333',
+        ),
+        );
+
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        // dd($snapToken);
+        return view('frontend.pesanan', compact('snapToken', 'pesanan'));
+        // return view('frontend.pesanan', compact('pesanan'));
     }
 }

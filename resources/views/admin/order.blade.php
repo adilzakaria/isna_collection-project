@@ -68,12 +68,12 @@
                                           </div>
                                       </div>
                                   </div>
-                              </div>                              
+                              </div>
                             </div>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="card-body">
@@ -88,7 +88,6 @@
                                         <option value="DISETUJUI">Disetujui</option>
                                         <option value="TIDAK DISETUJUI">Tidak Disetujui</option>
                                         <option value="TELAH MEMBAYAR">Telah Membayar</option>
-                                        <option value="BELUM MEMBAYAR">Belum Membayar</option>
                                       </select>
                                       <input type="text" class="form-control bg-white text-black my-3" id="estimasi" name="estimasi" value="{{ old('estimasi') ?? $pesanan->estimasi }}" placeholder="Estimasi Waktu">
                                       <input type="text" class="form-control bg-white text-black my-3" id="harga" name="harga" value="{{ old('harga') ?? $pesanan->harga }}" placeholder="Harga">
@@ -103,6 +102,6 @@
                 </div>
 
         </div>
-          
-            
+
+
         @endsection

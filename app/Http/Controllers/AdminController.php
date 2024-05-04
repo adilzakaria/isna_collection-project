@@ -13,7 +13,7 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    
+
     public function index()
     {
         $this->authorize('admin');
@@ -35,21 +35,21 @@ class AdminController extends Controller
     {
         $ulasans = ulasan::all();
         return view('admin.dashulasan', compact('ulasans'));
-    }    
-    
+    }
+
     public function adminkatalog()
     {
         $katalogs = katalog::all();
 
         return view('admin.dashkatalog',compact('katalogs'));
-    }    
+    }
 
     public function adminpesanan()
     {
         $pesanans = Pesanan::all();
 
         return view('admin.dashpesanan',compact('pesanans'));
-    }  
+    }
 
 
     public function editpesanan($pesanan)
@@ -61,8 +61,8 @@ class AdminController extends Controller
     public function updatestatuspesanan(Request $request, $pesanan)
     {
         $request->validate([
-        'harga' => 'required',
-        'estimasi' => 'required',
+        'harga',
+        'estimasi',
         'status' => 'required',
         ]);
 
@@ -72,7 +72,7 @@ class AdminController extends Controller
             'harga',
         ]);
         Pesanan::findOrFail($pesanan)->update($input);
-        
+
         return redirect('/dash')->with('success', "Data berhasil di ubah");
     }
     public function buatkatalog()
@@ -87,7 +87,7 @@ class AdminController extends Controller
             'nama_produk' => 'required',
             'kategori' => 'required',
         ],  [
-            
+
         ]);
 
         $input = $request->all();
