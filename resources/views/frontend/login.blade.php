@@ -29,30 +29,27 @@
     <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/login.css') }}">
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
-    <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet') }}"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js') }}"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet') }}">
+    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
                 @if (session()->has('success'))
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        <h4 style="font-family: Poppins, sans-serif">{{ session('success') }}</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    <script>
+                        swal("Daftar Akun Berhasil!", "{{ session('success') }}", "success");
+                    </script>
                 @endif
 
                 @if (session()->has('LoginError'))
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <h4 style="font-family: Poppins, sans-serif">{{ session('LoginError') }}</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                    <script>
+                        swal("Daftar Akun Gagal!", "{{ session('LoginError') }}", "error");
+                    </script>
                 @endif
                 <div class="form-container">
                     <div class="left-content">

@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/register.css') }}">
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
+    <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 
 
 <body>
@@ -134,7 +135,7 @@
         form.addEventListener('submit', function(event) {
             if (!agreementCheckbox.checked) {
                 event.preventDefault();
-                alert('Anda harus menyetujui ketentuan yang berlaku.');
+                swal("Pendaftaran terhambat!", "Anda harus menyetujui ketentuan yang berlaku", "error");
             }
         });
     </script>

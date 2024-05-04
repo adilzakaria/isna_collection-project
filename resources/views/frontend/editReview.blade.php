@@ -7,23 +7,24 @@
     <link href="{{ url('assets/css/review.css') }}" rel="stylesheet">
     <link href="{{ url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}"
     rel="stylesheet">
+    <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 	<title>Perbarui Penilaian</title>
 </head>
 <body>
     @include('frontend.navcontent')
 
     <!-- Jika ada pesan sukses -->
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    @if (session()->has('success'))
+        <script>
+            swal("Berhasil!", "{{ session('success') }}", "success");
+        </script>
     @endif
 
     <!-- Jika ada pesan tidak berhasil -->
     @if (session('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
+        <script>
+            swal("Gagal!", "{{ session('LoginError') }}", "error");
+        </script>
     @endif
 
 
