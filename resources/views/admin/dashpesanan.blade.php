@@ -11,7 +11,7 @@
                     <div class="table-responsive">
                         <table class="table table-hover">
                           @forelse ($pesanans as $pesanan)
-                          <div class="card text-dark mt-3 {{ $pesanan->status == 'DISETUJUI' ? 'bg-white' : ($pesanan->status == 'TELAH MEMBAYAR' ? 'bg-green' : ($pesanan->status == 'TIDAK DISETUJUI' ? 'bg-red' : '')) }}">
+                          <div class="card text-dark mt-3 {{ $pesanan->status == 'DISETUJUI' ? 'bg-white' : ($pesanan->status == 'BELUM DISETUJUI' ? 'bg-green' : ($pesanan->status == 'TELAH MEMBAYAR' ? 'bg-green' : ($pesanan->status == 'TIDAK DISETUJUI' ? 'bg-red' : ''))) }}">
                             <div class="m-3 d-grid gap-2">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0">Pesanan {{$pesanan->nama}}, {{$pesanan->jenis}} ({{$pesanan->ukuran}})</h4>

@@ -26,7 +26,7 @@ use App\Http\Controllers\ReviewController;
 
 
 // User
-Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/', [WelcomeController::class, 'index'])->middleware('guest');;
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
@@ -43,10 +43,15 @@ Route::post('/edit_akun', [EditAkunController::class, 'editAkun']);
 Route::get('/forgot', [ForgotController::class, 'forgot'])->middleware('guest');
 Route::post('/forgot', [ForgotController::class, 'updatePassword']);
 
-Route::get('/order', [OrderController::class, 'order']);
-Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
-Route::get('/pesanan', [OrderController::class, 'showPesanan']);
-Route::get('/detail/{nomor}', [DetailController::class, 'show'])->name('detail');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/order', [OrderController::class, 'order']);
+    Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
+    Route::get('/pesanan', [OrderController::class, 'showPesanan']);
+    Route::get('/detail/{nomor}', [DetailController::class, 'show'])->name('detail');
+});
+
 // Route::get('/pembayaran', function () {
 //     return view('frontend.pembayaran');
 // });

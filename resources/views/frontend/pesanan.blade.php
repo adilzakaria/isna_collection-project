@@ -108,8 +108,17 @@
                                             {{ $pesan->tambahan }}</h5>
                                         <hr>
                                         <h5 for="" class="text-dark">Harga : {{ $pesan->harga }}</h5>
-                                        <h5 for="" class="text-dark">Estimasi Waktu : {{ $pesan->estimasi }}</h5>
-                                        <h5 for="" class="text-dark">Status Pesanan : {{ $pesan->status }}</h5>
+                                        <h5 for="" class="text-dark">Estimasi Waktu : {{ $pesan->estimasi }}
+                                        </h5>
+                                        <h5 class="text-dark" style="display: inline-block;">Status Pesanan : </h5>
+                                        <h5 class="text" style="display: inline-block; color:
+                                            @if ($pesan->status == 'DISETUJUI') blue;
+                                            @elseif($pesan->status == 'TELAH MEMBAYAR') green;
+                                            @elseif($pesan->status == 'TIDAK DISETUJUI') red;
+                                            @else black;
+                                            @endif">
+                                            {{ $pesan->status }}
+                                        </h5>
                                     </div>
                                     <a href="{{ route('detail', ['nomor' => $pesan->nomor]) }}" type="submit"
                                         class="btn btn-body kirim" style="height: 100%;font-size: 15px;">Lihat

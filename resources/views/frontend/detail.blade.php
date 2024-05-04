@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="https://app.stg.midtrans.com/snap/snap.js"
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
         data-client-key="{{ config('midtrans.client_key') }}"></script>
     <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
     <title>Pesan Produk</title>
@@ -142,31 +142,58 @@
                             class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
                     </div>
                     {{-- Harga --}}
-                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                    <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="Harga" class="form-label">Harga</label>
                     </div>
-                    <div class="form-group" style="margin-left:1rem; font-size: 15px;">
-                        {{ $pesan->harga }}
-                    </div>
+                    @if ($pesan->status == 'DISETUJUI' || $pesan->status == 'TELAH MEMBAYAR')
+                        <div class="form-group" style="margin-left: 1rem; font-size: 15px;">
+                            <button class="btn disabled"
+                                style="font-size: 15px; font-weight: bold; border: 2px solid #e966a0; letter-spacing: 0.5px;
+                                font-family: 'Poppins' , sans-serif; text-transform: capitalize; padding: 6px 11px; margin-top: -10px;
+                                border-radius: 10px; transition: all 0.3s ease 0s;">
+                                {{ $pesan->harga }}
+                            </button>
+                        </div>
+                    @elseif ($pesan->status == 'TIDAK DISETUJUI')
+                        <div class="form-group" style="margin-left: 1rem; font-size: 15px; font-weight: bold;">
+                            -
+                        </div>
+                    @endif
+
                     {{-- Estimasi --}}
-                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                    <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="estimasi" class="form-label">Estimasi</label>
                     </div>
-                    <div class="form-group" style="margin-left:1rem; font-size: 15px">
-                        {{ $pesan->estimasi }}
-                    </div>
+                    @if ($pesan->status == 'DISETUJUI' || $pesan->status == 'TELAH MEMBAYAR')
+                        <div class="form-group" style="margin-left: 1rem; font-size: 15px;">
+                            <button class="btn disabled"
+                                style="font-size: 15px; font-weight: bold; border: 2px solid #e966a0; letter-spacing: 0.5px;
+                                font-family: 'Poppins' , sans-serif; text-transform: capitalize; padding: 6px 11px; margin-top: -10px;
+                                border-radius: 10px; transition: all 0.3s ease 0s;">
+                                {{ $pesan->estimasi }}
+                            </button>
+                        </div>
+                    @elseif ($pesan->status == 'TIDAK DISETUJUI')
+                        <div class="form-group" style="margin-left: 1rem; font-size: 15px; font-weight: bold;">
+                            -
+                        </div>
+                    @endif
+
                     {{-- Status --}}
-                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                    <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="status" class="form-label">Status</label>
                     </div>
-                    <div class="form-group"
-                        style="margin-left:1rem; font-size: 15px; color:
-                        @if ($pesan->status == 'DISETUJUI') blue;
-                        @elseif($pesan->status == 'TELAH MEMBAYAR')
-                            green;
-                        @elseif($pesan->status == 'TIDAK DISETUJUI')
-                            red; @endif font-weight: bold;">
-                        {{ $pesan->status }}
+                    <div class="form-group" style="margin-left: 1rem;">
+                        <button class="btn disabled"
+                            style="font-size: 15px; color:
+                            @if ($pesan->status == 'DISETUJUI') blue;
+                            @elseif($pesan->status == 'TELAH MEMBAYAR') green;
+                            @elseif($pesan->status == 'TIDAK DISETUJUI') red; @endif
+                            font-weight: bold; font-size: 15px; font-weight: 600; border: 2px solid #e966a0;
+                            letter-spacing: 0.5px; font-family: 'Poppins' , sans-serif; text-transform: capitalize;
+                            padding: 6px 11px; margin-top: -10px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                            {{ $pesan->status }}
+                        </button>
                     </div>
 
                     @if ($pesan->status == 'DISETUJUI')
@@ -176,20 +203,31 @@
                                 type="button" id="pay-button">Bayar Sekarang</button>
                         </div>
                     @endif
+                    @if ($pesan->status == 'TELAH MEMBAYAR')
+                        <div style="text-align: right;">
+                            <a href="/ulasan" class="btn mt-3"
+                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                                Beri Ulasan
+                            </a>
+                            <a href="{{ route('home') }}" class="btn mt-3"
+                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                                Selesai
+                            </a>
+                        </div>
+                    @endif
                 </div>
-                <div id="snap-container"></div>
             </div>
         </div>
     </div>
+
+    <div id="snap-container"></div>
 
     <script type="text/javascript">
         // For example trigger on button clicked, or any time you need
         var payButton = document.getElementById('pay-button');
         payButton.addEventListener('click', function() {
-            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token.
-            // Also, use the embedId that you defined in the div above, here.
-            window.snap.embed('{{ $snapToken }}', {
-                embedId: 'snap-container',
+            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
+            window.snap.pay('{{ $snapToken }}', {
                 onSuccess: function(result) {
                     /* You may add your own implementation here */
                     alert("payment success!");
@@ -209,7 +247,7 @@
                     /* You may add your own implementation here */
                     alert('you closed the popup without finishing the payment');
                 }
-            });
+            })
         });
     </script>
 

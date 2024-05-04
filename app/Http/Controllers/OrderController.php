@@ -19,6 +19,7 @@ class OrderController extends Controller
         try {
 
             $random = random_int(1, 999999999);
+            $request->request->add(['status' => 'BELUM DISETUJUI']);
 
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
@@ -40,7 +41,32 @@ class OrderController extends Controller
             }
             $simpan->tambahan = $request->tambahan;
             $simpan->nomor = $random;
+            $simpan->harga = $request->harga;
+            $simpan->status = $request->status;
             $simpan->save();
+            // dd($simpan);
+
+            // Konfigurasi Midtrans
+            \Midtrans\Config::$serverKey = config('midtrans.server_key');
+            \Midtrans\Config::$isProduction = false;
+            \Midtrans\Config::$isSanitized = true;
+            \Midtrans\Config::$is3ds = true;
+
+            // Parameter transaksi
+            $params = [
+                'transaction_details' => [
+                    'order_id' => $simpan->nomor,
+                    'gross_amount' => $request->harga,
+                ],
+                'customer_details' => [
+                    'name' => $request->nama,
+                    'email' => $request->email,
+                    'phone' => $request->hp,
+                ],
+            ];
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+            // dd($snapToken);
 
             return redirect('/pesanan')->with('success', 'Pesanan berhasil dibuat!');
         } catch (\Exception $e) {
@@ -58,30 +84,6 @@ class OrderController extends Controller
         }
 
         //dd($getPesanan);
-        \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-        \Midtrans\Config::$isProduction = false;
-        // Set sanitization on (default)
-        \Midtrans\Config::$isSanitized = true;
-        // Set 3DS transaction for credit card to true
-        \Midtrans\Config::$is3ds = true;
-
-        $params = array(
-        'transaction_details' => array(
-            'order_id' => rand(),
-            'gross_amount' => 10000,
-        ),
-        'customer_details' => array(
-            'first_name' => 'budi',
-            'last_name' => 'pratama',
-            'email' => 'budi.pra@example.com',
-            'phone' => '08111222333',
-        ),
-        );
-
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        // dd($snapToken);
-        return view('frontend.pesanan', compact('snapToken', 'pesanan'));
-        // return view('frontend.pesanan', compact('pesanan'));
+        return view('frontend.pesanan', compact('pesanan'));
     }
 }
