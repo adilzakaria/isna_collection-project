@@ -19,7 +19,7 @@ class OrderController extends Controller
         try {
 
             $random = random_int(1, 999999999);
-            $request->request->add(['status' => 'TIDAK DISETUJUI']);
+            $request->request->add(['status' => 'BELUM DISETUJUI']);
 
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
