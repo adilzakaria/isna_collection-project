@@ -7,7 +7,7 @@
     <link href="{{ url('assets/css/review.css') }}" rel="stylesheet">
     <link href="{{ url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i') }}"
     rel="stylesheet">
-	<title>Form Reviews</title>
+	<title>Perbarui Penilaian</title>
 </head>
 <body>
     @include('frontend.navcontent')
@@ -26,30 +26,37 @@
         </div>
     @endif
 
+
+
     <div class="container">
         <div class="wrapper">
-            <h3>Berikan Penilaian kepada Isna Collection</h3>
-            <form action="{{ url('/review') }}" method="POST">
+            <h3>Perbarui Penilaian kepada Isna Collection</h3>
+            <form action="{{ url('/update-review') }}" method="POST">
                 @csrf
-                @foreach ($pesanan as $item)
-                <input type="text" name="product_id" value="{{ $item->nomor }}" hidden>
+                @foreach ($review as $item)
+                    <input type="text" name="review_id" value="{{ $item->nomor }}" hidden>
+                    @if ($item->email == Auth::user()->email)
+                        <div class="rating">
+                            <input type="number" name="rating" hidden value="{{ $item->rating }}">
+                            @for ($i = 1; $i <= 5; $i++)
+                                @if ($i <= $item->rating)
+                                    <i class='bx bxs-star star' value="{{ $i }}" name="rating" style="--i: {{ $i - 1 }};"></i>
+                                @else
+                                    <i class='bx bx-star star' value="{{ $i }}" name="rating" style="--i: {{ $i - 1 }};"></i>
+                                @endif
+                            @endfor
+                        </div>
+                        <textarea name="review" cols="30" rows="5">{{ $item->review }}</textarea>
+                    @endif
                 @endforeach
-                <div class="rating">
-                    <input type="number" name="rating" hidden>
-                    <i class='bx bx-star star' value="1" name="rating" style="--i: 0;"></i>
-                    <i class='bx bx-star star' value="2" name="rating" style="--i: 1;"></i>
-                    <i class='bx bx-star star' value="3" name="rating" style="--i: 2;"></i>
-                    <i class='bx bx-star star' value="4" name="rating" style="--i: 3;"></i>
-                    <i class='bx bx-star star' value="5" name="rating" style="--i: 4;"></i>
-                </div>
-                <textarea name="review" cols="30" rows="5" placeholder="Tulis Komentarmu disini"></textarea>
                 <div class="btn-group">
-                    <button type="submit" class="btn submit">Kirim</button>
-                    <button class="btn cancel">Batal</button>
+                    <button type="submit" class="btn submit">Perbarui</button>
+                    <a class="btn cancel" href="/tentang-kami">Batalkan</a>
                 </div>
             </form>
         </div>
     </div>
+
 
 
     <script>

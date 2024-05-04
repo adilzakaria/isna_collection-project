@@ -19,6 +19,7 @@ class Pesanan extends Model
         'jenis',
         'gambar',
         'tambahan',
+        'nomor',
         'harga',
         'estimasi',
         'status',

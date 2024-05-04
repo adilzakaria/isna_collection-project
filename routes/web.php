@@ -11,6 +11,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\EditAkunController;
 use App\Http\Controllers\DetailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,8 +77,9 @@ Route::get('/order-admin', function () {
     return view('admin.order');
 });
 
-Route::post('review-kami', 'ReviewController@reviewStore')->name('review.store');
-
-Route::get('/test', function () {
-    return view('frontend.review');
-});
+// Rating dan Review
+Route::post('/review', [ReviewController::class, 'review']);
+Route::get('/ulasan', [ReviewController::class, 'ulasan']);
+Route::get('/tentang-kami', [ReviewController::class, 'allReviewRating']);
+Route::get('edit-penilaian/{ulasan_nomor}/penilaianpengguna', [ReviewController::class, 'edit']);
+Route::post('update-review', [ReviewController::class, 'update']);

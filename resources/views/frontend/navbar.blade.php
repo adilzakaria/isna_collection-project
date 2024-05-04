@@ -49,7 +49,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#portfolio">Katalog</a></li>
-                    <li><a class="nav-link scrollto" href="/order-pesan">Buat Pesanan</a></li>
+                    <li><a class="nav-link scrollto" href="/order">Buat Pesanan</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
                     <li class="dropdown">
                         <a href="#" id="akun">

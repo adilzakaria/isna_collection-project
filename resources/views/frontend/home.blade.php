@@ -180,7 +180,6 @@
 
         <div class="swiper-slide">
             <div class="testimonial-item">
-            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
             <h3>Adil Zakaria</h3>
             <h4>Ceo &amp; Founder</h4>
             <div class="stars">
