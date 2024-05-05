@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\katalog;
-use App\Models\ulasan;
+use App\Models\ReviewRating;
 use App\Models\Pesanan;
 
 class AdminController extends Controller
@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function admin()
     {
         $katalogs = katalog::all();
-        $ulasans = ulasan::all();
+        $ulasans = ReviewRating::all();
         $pesanans = Pesanan::all();
         $notifikasi = Pesanan::all();
 
