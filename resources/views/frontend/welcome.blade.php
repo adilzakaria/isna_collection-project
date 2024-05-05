@@ -223,6 +223,18 @@
                     </div>
                 </div>
             </div>
+
+            @foreach ($katalogs as $katalog)
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
+                <div class="card">
+                    <img src="{{ url('assets/img/portfolio/' . $katalog->gambar) }}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{ $katalog->nama_produk }}</h4>
+                        <a href="assets/img/portfolio/baju9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
         </div>
     </section><!-- End Portfolio Section -->
