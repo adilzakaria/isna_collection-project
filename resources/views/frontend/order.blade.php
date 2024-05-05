@@ -45,7 +45,7 @@
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin-top: 20%;">
             <div class="col-md-4">
                 <div class="card border-card">
                     <h2 class="m-3">Panduan Ukuran</h2>
@@ -61,18 +61,20 @@
                     @auth
                         <h2 class="m-3">Informasi Pemesan</h2>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form" id="nama"
-                                name="nama" readonly value="{{ Auth::user()->nama }}">
+                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                                id="nama" name="nama" readonly value="{{ Auth::user()->nama }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text" class="form-control input_form" id="hp"
-                                name="hp" readonly value="{{ Auth::user()->hp }}">
+                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="hp" name="hp" readonly
+                                value="{{ Auth::user()->hp }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text" class="form-control input_form" id="email"
-                                name="email" readonly value="{{ Auth::user()->email }}">
+                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="email" name="email" readonly
+                                value="{{ Auth::user()->email }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
@@ -85,8 +87,8 @@
                     </div>
                     <div>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form" id="provinsi"
-                                name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
+                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                                id="provinsi" name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
                             @error('provinsi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -104,8 +106,9 @@
                             @enderror
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
-                            <input style="width: 75%; font-size: 15px;" type="text" class="form-control input_form" id="alamat"
-                                name="alamat" placeholder="Alamat Lengkap" value="{{ old('alamat') }}">
+                            <input style="width: 75%; font-size: 15px;" type="text"
+                                class="form-control input_form" id="alamat" name="alamat"
+                                placeholder="Alamat Lengkap" value="{{ old('alamat') }}">
                             @error('alamat')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -172,7 +175,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
+                    <img class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;" id="gambar-zoom">
 
                     <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="tambahan" class="form-label">Tambahan</label>
@@ -197,6 +200,42 @@
             </div>
         </div>
     </div>
+
+    {{-- JavaScript untuk zoom gambar --}}
+    <script>
+        document.getElementById('gambar-zoom').addEventListener('click', function() {
+            // Membuat elemen modal untuk menampilkan gambar dalam modal
+            var modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '9999';
+
+            // Membuat elemen gambar di dalam modal
+            var img = document.createElement('img');
+            img.src = this.src;
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90%';
+            img.style.borderRadius = '5px';
+
+            // Menutup modal ketika gambar di dalamnya diklik
+            modal.addEventListener('click', function() {
+                modal.remove();
+            });
+
+            // Menambahkan gambar ke dalam modal
+            modal.appendChild(img);
+
+            // Menambahkan modal ke dalam body dokumen
+            document.body.appendChild(modal);
+        });
+    </script>
     <script>
         function previewImage() {
             const gambar = document.querySelector('#gambar');

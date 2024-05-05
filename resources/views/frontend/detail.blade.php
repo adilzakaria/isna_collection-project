@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="assets/css/order.css">
     <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/akun.css') }}">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -48,7 +49,7 @@
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
     <div class="container" style="margin-top: -50px">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="margin-top: 20%">
             <div class="col-md-6">
                 <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
                     enctype="multipart/form-data" class="card border-card">
@@ -138,8 +139,9 @@
                         <label for="gambar" class="form-label">Gambar</label>
                     </div>
                     <div class="form-group" style="margin-left:1rem;">
-                        <img src="{{ asset('storage/images/' . $pesan->gambar) }}"
-                            class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
+                        <img src="{{ asset('storage/images/' . $pesan->gambar) }}" id="gambar-zoom"
+                            class="img-preview img-fluid mb-3 col-sm-4"
+                            style="margin-right: 10px; border: none; cursor: pointer;">
                     </div>
                     {{-- Harga --}}
                     <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
@@ -195,12 +197,44 @@
                             {{ $pesan->status }}
                         </button>
                     </div>
+                    <div class="form-group" style="margin-left: 1rem;">
+                        <label for="pembayaran" class="form-label" style="font-size: 15px;">Transfer ke Nomor
+                            Rekening ini untuk Membayar</label><br>
+                        <div class="form-label card border-light" style="padding: 10px;">
+                            <p style="font-size: 15px; font-weight: bold;">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    height="17" width="17" style="margin-top: -3px; margin-right: 5px;"
+                                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path fill="#000000"
+                                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                </svg><span> Bank Mandiri : 1440022288762</span></p>
+                        </div>
+                        <label for="pembayaran" class="form-label" style="font-size: 15px;">Bisa Juga Transfer ke
+                            Nomor ini untuk Membayar</label><br>
+                        <div class="form-label card border-light" style="padding: 10px;">
+                            <p style="font-size: 15px; font-weight: bold;">
+                                <img src="{{ url('assets/img/icon/dana.png') }}" alt="Dana"
+                                    style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
+                                Dana : 089697083392 <br>
+                                <img src="{{ url('assets/img/icon/ovo.png') }}" alt="OVO"
+                                    style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
+                                OVO : 089697083392 <br>
+                                <img src="{{ url('assets/img/icon/shopee.png') }}" alt="ShopeePay"
+                                    style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
+                                ShopeePay : 089697083392
+                            </p>
+                        </div>
+                    </div>
+
 
                     @if ($pesan->status == 'DISETUJUI')
                         <div style="text-align: right;">
-                            <button class="btn mt-3"
-                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s;"
-                                type="button" id="pay-button">Bayar Sekarang</button>
+                            <a href="https://wa.link/roi6v6" style="text-decoration: none;">
+                                <p class="text-danger" style="font-style: italic; margin-bottom: -5px; margin-right: 10px;">* Silahkan Konfirmasi Pembayaran Dengan Klik Tombol Dibawah</p>
+                                <button class="btn mt-3"
+                                    style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s; width: auto;"
+                                    type="button">Konfirmasi Pembayaran</button>
+                            </a>
                         </div>
                     @endif
                     @if ($pesan->status == 'TELAH MEMBAYAR')
@@ -220,34 +254,39 @@
         </div>
     </div>
 
-    <div id="snap-container"></div>
+    {{-- JavaScript untuk zoom gambar --}}
+    <script>
+        document.getElementById('gambar-zoom').addEventListener('click', function() {
+            // Membuat elemen modal untuk menampilkan gambar dalam modal
+            var modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '9999';
 
-    <script type="text/javascript">
-        // For example trigger on button clicked, or any time you need
-        var payButton = document.getElementById('pay-button');
-        payButton.addEventListener('click', function() {
-            // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-            window.snap.pay('{{ $snapToken }}', {
-                onSuccess: function(result) {
-                    /* You may add your own implementation here */
-                    alert("payment success!");
-                    console.log(result);
-                },
-                onPending: function(result) {
-                    /* You may add your own implementation here */
-                    alert("wating your payment!");
-                    console.log(result);
-                },
-                onError: function(result) {
-                    /* You may add your own implementation here */
-                    alert("payment failed!");
-                    console.log(result);
-                },
-                onClose: function() {
-                    /* You may add your own implementation here */
-                    alert('you closed the popup without finishing the payment');
-                }
-            })
+            // Membuat elemen gambar di dalam modal
+            var img = document.createElement('img');
+            img.src = this.src;
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90%';
+            img.style.borderRadius = '5px';
+
+            // Menutup modal ketika gambar di dalamnya diklik
+            modal.addEventListener('click', function() {
+                modal.remove();
+            });
+
+            // Menambahkan gambar ke dalam modal
+            modal.appendChild(img);
+
+            // Menambahkan modal ke dalam body dokumen
+            document.body.appendChild(modal);
         });
     </script>
 
