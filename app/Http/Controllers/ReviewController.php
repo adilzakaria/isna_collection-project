@@ -65,6 +65,11 @@ class ReviewController extends Controller
         return view('frontend.ulasan', compact('ulasans'));
     }
 
+    public function ulasanIsna() {
+        $ulasans = ReviewRating::all();
+        return view('frontend.welcomeUlasan', compact('ulasans'));
+    }
+
     public function edit($nomor_ulasan) {
         $pesanan = Pesanan::where('nomor', $nomor_ulasan)->whereIn('status', [null, 'DISETUJUI', 'BELUM MEMBAYAR', 'TELAH MEMBAYAR'])->first();
         if($pesanan)
