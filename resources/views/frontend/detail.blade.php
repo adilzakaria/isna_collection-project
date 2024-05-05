@@ -139,7 +139,7 @@
                         <label for="gambar" class="form-label">Gambar</label>
                     </div>
                     <div class="form-group" style="margin-left:1rem;">
-                        <img src="{{ asset('storage/images/' . $pesan->gambar) }}" id="gambar-zoom"
+                        <img src="{{ asset('assets/img/gambarpesanan/' . $pesan->gambar) }}" id="gambar-zoom"
                             class="img-preview img-fluid mb-3 col-sm-4"
                             style="margin-right: 10px; border: none; cursor: pointer;">
                     </div>

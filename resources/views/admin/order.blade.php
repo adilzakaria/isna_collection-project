@@ -64,7 +64,7 @@
                                       <!-- Sisi Kanan -->
                                       <div class="card bg-white card-border mb-3" style="flex: 1;">
                                           <div style="height: 100%;">
-                                              <img src="{{ asset('storage/images/' . $pesanan->gambar) }}" alt="Tidak ada foto" style="width: 100%; height: 100%; object-fit: cover; ">
+                                              <img src="{{ asset('assets/img/gambarpesanan/' . $pesanan->gambar) }}" alt="Tidak ada foto" style="width: 100%; height: 100%; object-fit: cover; ">
                                           </div>
                                       </div>
                                   </div>

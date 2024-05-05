@@ -100,7 +100,7 @@
                                             {{ $pesan->ukuran }}</h5>
                                         <!-- Tampilkan gambar -->
                                         <h5 for="" class="text-dark" style="font-size: 15px;">Gambar :
-                                            <img src="{{ asset('storage/images/' . $pesan->gambar) }}"
+                                            <img src="{{ asset('assets/img/gambarpesanan/' . $pesan->gambar) }}"
                                                 alt="Gambar Pesanan" style="max-width: 100px;">
                                         </h5>
                                         <!-- Akhir tampilan gambar -->
