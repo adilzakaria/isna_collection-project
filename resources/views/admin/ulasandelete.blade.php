@@ -16,39 +16,39 @@
                         <input type="text" 
                         class="form-control bg-white text-black" 
                         id="nama_pelanggan" name="nama_pelanggan" 
-                        disabled placeholder="{{ old('nama_pelanggan') ?? $ulasan->nama_pelanggan }}">
+                        disabled placeholder="{{ old('nama_pelanggan') ?? $ulasan->nama }}">
                       </div>
 
                       <div class="form-group mb-3">  
-                        <label for="kategori" class="text-dark mb-1">jenis Baju</label>  
+                        <label for="kategori" class="text-dark mb-1">Email Pembeli</label>  
                         <input type="text" 
                         class="form-control bg-white text-black" 
                         id="kategori" name="kategori" 
-                        disabled placeholder="{{ old('kategori') ?? $ulasan->kategori }}">
+                        disabled placeholder="{{ old('kategori') ?? $ulasan->email }}">
                       </div>
                       
                       <div class="form-group mb-3">  
-                        <label for="rating" class="text-dark mb-1">Rating</label>  
+                        <label for="rating" class="text-dark mb-1">Jenis Baju</label>  
                         <input type="text" 
                         class="form-control bg-white text-black" 
                         id="rating" name="rating" 
-                        disabled placeholder="{{ old('rating') ?? $ulasan->rating }}">
+                        disabled placeholder="{{ old('rating') ?? $ulasan->jenis }}">
                       </div>
                       
                       <div class="form-group mb-3">  
-                        <label for="ulasan" class="text-dark mb-1">Ulasan</label>  
+                        <label for="ulasan" class="text-dark mb-1">Rating</label>  
                         <input type="text" 
                         class="form-control bg-white text-black" 
                         id="ulasan" name="ulasan" 
-                        disabled placeholder="{{ old('ulasan') ?? $ulasan->ulasan }}">
+                        disabled placeholder="{{ old('ulasan') ?? $ulasan->rating }}">
                       </div>
 
                       <div class="form-group mb-3">  
-                        <label for="deskripsi" class="text-dark mb-1">Deskripsi</label>  
+                        <label for="deskripsi" class="text-dark mb-1">Ulasan</label>  
                         <input type="text" 
                         class="form-control bg-white text-black" 
                         id="deskripsi" name="deskripsi" 
-                        disabled placeholder="{{ old('deskripsi') ?? $ulasan->deskripsi }}">
+                        disabled placeholder="{{ old('deskripsi') ?? $ulasan->review }}">
                       </div>
 
                       <button type="submit" class="btn btn-danger me-2">Hapus</button>

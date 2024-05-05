@@ -17,10 +17,9 @@ class OrderController extends Controller
     public function pesan(Request $request)
     {
         try {
-
             $random = random_int(1, 999999999);
             $request->request->add(['status' => 'BELUM DISETUJUI']);
-
+    
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
             $simpan->nama = $request->nama;
@@ -33,24 +32,30 @@ class OrderController extends Controller
             $simpan->kode = $request->kode;
             $simpan->ukuran = $request->ukuran;
             $simpan->jenis = $request->jenis;
+            
+            // Check if file is present in the request
             if ($request->hasFile('gambar')) {
-                $image = $request->file('gambar');
-                $filename = time() . '.' . $image->getClientOriginalExtension();
-                $image->storeAs('public/images', $filename);
+                // Get file extension
+                $extension = $request->file('gambar')->getClientOriginalExtension();
+                // Generate unique name for the image
+                $filename = 'pesanan-' . time() . '.' . $extension;
+                // Store the image in the specified directory
+                $request->file('gambar')->move(public_path('assets/img/gambarpesanan'), $filename);
+                // Set the filename to the database field
                 $simpan->gambar = $filename;
             }
+            
             $simpan->tambahan = $request->tambahan;
             $simpan->nomor = $random;
-            // $simpan->harga = $request->harga;
             $simpan->status = $request->status;
             $simpan->save();
-            // dd($simpan);
-
+    
             return redirect('/pesanan')->with('success', 'Pesanan berhasil dibuat!');
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
     }
+    
 
     public function showPesanan()
     {

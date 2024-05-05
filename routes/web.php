@@ -52,9 +52,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail/{nomor}', [DetailController::class, 'show'])->name('detail');
 });
 
-// Route::get('/pembayaran', function () {
-//     return view('frontend.pembayaran');
-// });
 
 
 // admin
