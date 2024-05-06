@@ -35,7 +35,7 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="/">Isna Collection</a></h1>
+        <h1 class="text-light"><a href="#">Isna Collection</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -45,12 +45,12 @@
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
-          <li><a class="nav-link scrollto" href="login">Buat Pesanan</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('login') }}">Buat Pesanan</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
           <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
            <ul>
-            <li><a href="/register">Daftar</a></li>
-            <li><a href="/login">Masuk</a></li>
+            <li><a href="{{ route('register') }}">Daftar</a></li>
+            <li><a href="{{ route('login') }}">Masuk</a></li>
            </ul>
           </li>
         </ul>
@@ -65,7 +65,7 @@
     <div class="hero-container" data-aos="fade-up">
       <h1>Isna Collection</h1>
       <h2>Mewujudkan Kreativitas Melalui Jarum dan Benang: Isna Collection, Solusi Terbaik untuk Busana Personal yang Berkualitas.</h2>
-      <a href="login" class="btn-get-started scrollto">Pesan Sekarang</a>
+      <a href="{{ route('login') }}" class="btn-get-started scrollto">Pesan Sekarang</a>
     </div>
   </section><!-- End Hero -->
 
@@ -251,7 +251,7 @@
                 Temukan keindahan dan kepuasan yang dibagikan oleh pelanggan kami di Isna Collection. Jelajahi ulasan yang penuh inspirasi dan pengalaman nyata dari pelanggan kami, yang dapat membantu Anda memilih produk yang sempurna untuk gaya dan kebutuhan Anda.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <a href="{{ url('isna-collection/public/penilaian-isna') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
+            <a href="{{ route('login') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
             </div>
         </div>
     </div>

@@ -9,7 +9,7 @@
         <h1>Isna Collection</h1>
         <h2>Mewujudkan Kreativitas Melalui Jarum dan Benang <br> Isna Collection, Solusi Terbaik untuk Busana Personal
             yang Berkualitas.</h2>
-            <a href="/order" class="btn-get-started scrollto" style="text-decoration: none;">Pesan Sekarang</a>
+            <a href="{{ route('order') }}" class="btn-get-started scrollto" style="text-decoration: none;">Pesan Sekarang</a>
     </div>
 </section><!-- End Hero -->
 
@@ -179,7 +179,7 @@
             </div>
         </div>
         @endforeach
-        
+
     </div>
     </div>
 </section><!-- End Portfolio Section -->
@@ -196,7 +196,7 @@
                 Temukan keindahan dan kepuasan yang dibagikan oleh pelanggan kami di Isna Collection. Jelajahi ulasan yang penuh inspirasi dan pengalaman nyata dari pelanggan kami, yang dapat membantu Anda memilih produk yang sempurna untuk gaya dan kebutuhan Anda.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <a href="/tentang-kami" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
+            <a href="{{ route('tentang-kami') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
             </div>
         </div>
     </div>

@@ -78,7 +78,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/dash">
+            <a class="nav-link" href="{{ route('admin')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -160,7 +160,7 @@
                   <form id="logout-form" action="/logout" method="POST" style="display: none;">
                     @csrf
                 </form>
-                
+
                 <a class="dropdown-item preview-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">

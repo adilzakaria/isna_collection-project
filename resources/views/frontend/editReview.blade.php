@@ -52,7 +52,7 @@
                 @endforeach
                 <div class="btn-group">
                     <button type="submit" class="btn submit">Perbarui</button>
-                    <a class="btn cancel" href="/tentang-kami">Batalkan</a>
+                    <a class="btn cancel" href="{{ route('tentang-kami') }}">Batalkan</a>
                 </div>
             </form>
         </div>

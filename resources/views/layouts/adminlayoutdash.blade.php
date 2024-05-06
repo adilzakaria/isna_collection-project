@@ -78,7 +78,7 @@
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/dash">
+            <a class="nav-link" href="{{ route('admin') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -142,7 +142,7 @@
                   aria-labelledby="notificationDropdown">
                   <h6 class="p-3 mb-0">Notifikasi</h6>
                   @forelse ($notifikasi as $pesanan)
-                        @if ($pesanan->status == '' || $pesanan->status == "")
+                        @if ($pesanan->status == 'BELUM DISETUJUI' || $pesanan->status == "")
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item" href="/dash/pesanan">
                           <div class="preview-thumbnail">
@@ -160,7 +160,7 @@
                         @endif
                         @empty
                         @endforelse
-                        
+
                         <!-- Tidak ada pesanan yang tidak disetujui -->
                   <p class="p-3 mb-0 text-center">Lihat lebih banyak</p>
                 </div>
@@ -191,7 +191,7 @@
                   <form id="logout-form" action="/logout" method="POST" style="display: none;">
                     @csrf
                 </form>
-                
+
                 <a class="dropdown-item preview-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">
