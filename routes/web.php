@@ -84,5 +84,5 @@ Route::get('/ulasan', [ReviewController::class, 'ulasan']);
 Route::post('/review', [ReviewController::class, 'review']);
 Route::get('/tentang-kami', [ReviewController::class, 'allReviewRating']);
 Route::get('edit-penilaian/{ulasan_nomor}/penilaianpengguna', [ReviewController::class, 'edit']);
-Route::post('update-review', [ReviewController::class, 'update']);
-Route::get('penilaian-isna', [ReviewController::class, 'ulasanIsna']);
+Route::post('/update-review', [ReviewController::class, 'update']);
+Route::get('/penilaian-isna', [ReviewController::class, 'ulasanIsna']);

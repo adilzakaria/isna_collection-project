@@ -49,7 +49,7 @@
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
     <div class="container" style="margin-top: -50px">
-        <div class="row justify-content-center" style="margin-top: 20%">
+        <div class="row justify-content-center" style="margin-top: 2%">
             <div class="col-md-6">
                 <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
                     enctype="multipart/form-data" class="card border-card">
@@ -228,7 +228,7 @@
                             </div>
                         </div>
                         <div style="text-align: right;">
-                            <a href="https://wa.link/roi6v6" style="text-decoration: none;">
+                            <a href="https://wa.link/9tioc1" style="text-decoration: none;">
                                 <p class="text-danger"
                                     style="font-style: italic; margin-bottom: -5px; margin-right: 10px;">* Silahkan
                                     Konfirmasi Pembayaran Dengan Klik Tombol Dibawah</p>

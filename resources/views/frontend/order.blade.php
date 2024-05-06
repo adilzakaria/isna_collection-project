@@ -148,9 +148,9 @@
                         <select style="width: 50%;" class="form-select-lg" id="jenis" name="jenis"
                             aria-label="Default select example">
                             <option selected disabled value="">--PILIH JENIS BAJU--</option>
-                            <option value="Kameja Wanita" {{ old('jenis') == 'Kemeja Wanita' ? 'checked' : '' }}>
-                                Kameja Wanita</option>
-                            <option value="Kameja Pria" {{ old('jenis') == 'Kemeja Pria' ? 'checked' : '' }}>Kameja
+                            <option value="Kemeja Wanita" {{ old('jenis') == 'Kemeja Wanita' ? 'checked' : '' }}>
+                                Kemeja Wanita</option>
+                            <option value="Kemeja Pria" {{ old('jenis') == 'Kemeja Pria' ? 'checked' : '' }}>Kemeja
                                 Pria</option>
                             <option value="Tunik" {{ old('jenis') == 'XXL' ? 'Tunik' : '' }}>Tunik</option>
                             <option value="Long Dress" {{ old('jenis') == 'Long Dress' ? 'checked' : '' }}>Long Dress

@@ -14,7 +14,7 @@
     </div>
     <div class="social-links">
       <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-      <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+      <a href="https://wa.link/xd048u" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
     </div>
 
   </div>
