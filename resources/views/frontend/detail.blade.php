@@ -50,7 +50,7 @@
     </nav>
     <div class="container" style="margin-top: -50px">
         <div class="row justify-content-center" style="margin-top: 2%">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
                     enctype="multipart/form-data" class="card border-card">
                     @csrf
