@@ -40,39 +40,6 @@
                   <span>Admin</span>
                 </div>
               </div>
-              <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"
-                ><i class="mdi mdi-dots-vertical"></i
-              ></a>
-              <div
-                class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
-                aria-labelledby="profile-dropdown">
-                <a href="#home" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">
-                      Account Settings
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword text-info"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">
-                      Change Password
-                    </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-              </div>
-            </div>
           </li>
           <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
@@ -114,12 +81,6 @@
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
-          <div
-            class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"
-              ><img src="admin/assets/images/logo-mini.svg" alt="logo"
-            /></a>
-          </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button
               class="navbar-toggler navbar-toggler align-self-center"
@@ -128,12 +89,6 @@
               <span class="mdi mdi-menu"></span>
             </button>
             <ul class="navbar-nav navbar-nav-right">
-              <li class="nav-item dropdown border-left">
-                <a
-                  class="nav-link count-indicator dropdown-toggle"
-                  id="notificationDropdown"
-                  href="#"
-                  data-bs-toggle="dropdown">
               <li class="nav-item dropdown">
                 <a
                   class="nav-link"
