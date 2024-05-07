@@ -39,7 +39,6 @@
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
 
-    <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 @if (session()->has('sukses'))
@@ -108,7 +107,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
 </body>
 

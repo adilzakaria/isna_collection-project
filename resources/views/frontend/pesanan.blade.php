@@ -43,7 +43,6 @@
             Pesanan Saya</h1>
     </nav>
 
-    <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="form-container">
@@ -134,5 +133,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>
