@@ -26,35 +26,32 @@ use App\Http\Controllers\ReviewController;
 
 
 // User
-Route::get('/', [WelcomeController::class, 'index'])->middleware('guest');;
+Route::get('/', [WelcomeController::class, 'index'])->middleware('guest');
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/register', [RegisterController::class, 'register'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/akun', [AkunController::class, 'akun']);
-Route::get('/edit_akun', [EditAkunController::class, 'edit_akun']);
+Route::get('/akun', [AkunController::class, 'akun'])->name('akun');
+Route::get('/edit_akun', [EditAkunController::class, 'edit_akun'])->name('edit_akun');
 Route::post('/edit_akun', [EditAkunController::class, 'editAkun']);
 
-Route::get('/forgot', [ForgotController::class, 'forgot'])->middleware('guest');
+Route::get('/forgot', [ForgotController::class, 'forgot'])->name('forgot')->middleware('guest');
 Route::post('/forgot', [ForgotController::class, 'updatePassword']);
 
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/order', [OrderController::class, 'order']);
+    Route::get('/order', [OrderController::class, 'order'])->name('order');
     Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
-    Route::get('/pesanan', [OrderController::class, 'showPesanan']);
+    Route::get('/pesanan', [OrderController::class, 'showPesanan'])->name('pesanan');
     Route::get('/detail/{nomor}', [DetailController::class, 'show'])->name('detail');
 });
 
-// Route::get('/pembayaran', function () {
-//     return view('frontend.pembayaran');
-// });
 
 
 // admin
@@ -80,11 +77,12 @@ Route::middleware('admin')->group(function () {
 
 Route::get('/order-admin', function () {
     return view('admin.order');
-});
+})->name('order-admin');
 
 // Rating dan Review
-Route::get('/ulasan', [ReviewController::class, 'ulasan']);
-Route::post('/review', [ReviewController::class, 'review']);
-Route::get('/tentang-kami', [ReviewController::class, 'allReviewRating']);
-Route::get('edit-penilaian/{ulasan_nomor}/penilaianpengguna', [ReviewController::class, 'edit']);
-Route::post('update-review', [ReviewController::class, 'update']);
+Route::get('/ulasan', [ReviewController::class, 'ulasan'])->name('ulasan');
+Route::post('/review', [ReviewController::class, 'review'])->name('review');
+Route::get('/tentang-kami', [ReviewController::class, 'allReviewRating'])->name('tentang-kami');
+Route::get('/edit-penilaian/{ulasan_nomor}/penilaianpengguna', [ReviewController::class, 'edit'])->name('edit-penilaian');
+Route::post('/update-review', [ReviewController::class, 'update'])->name('update-review');
+Route::get('/penilaian-isna', [ReviewController::class, 'ulasanIsna'])->name('penilaian-isna');

@@ -35,7 +35,7 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="/">Isna Collection</a></h1>
+        <h1 class="text-light"><a href="#">Isna Collection</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -45,12 +45,12 @@
           <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
-          <li><a class="nav-link scrollto" href="login">Buat Pesanan</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('login') }}">Buat Pesanan</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
           <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
            <ul>
-            <li><a href="/register">Daftar</a></li>
-            <li><a href="/login">Masuk</a></li>
+            <li><a href="{{ route('register') }}">Daftar</a></li>
+            <li><a href="{{ route('login') }}">Masuk</a></li>
            </ul>
           </li>
         </ul>
@@ -65,7 +65,7 @@
     <div class="hero-container" data-aos="fade-up">
       <h1>Isna Collection</h1>
       <h2>Mewujudkan Kreativitas Melalui Jarum dan Benang: Isna Collection, Solusi Terbaik untuk Busana Personal yang Berkualitas.</h2>
-      <a href="login" class="btn-get-started scrollto">Pesan Sekarang</a>
+      <a href="{{ route('login') }}" class="btn-get-started scrollto">Pesan Sekarang</a>
     </div>
   </section><!-- End Hero -->
 
@@ -223,103 +223,41 @@
                     </div>
                 </div>
             </div>
+
+            @foreach ($katalogs as $katalog)
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atasan">
+                <div class="card">
+                    <img src="{{ url('assets/img/portfolio/' . $katalog->gambar) }}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        <h4>{{ $katalog->nama_produk }}</h4>
+                        <a href="assets/img/portfolio/baju9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"></a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
         </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
+        <!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
 
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Adil Zakaria</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-                <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                </div>
-            </div><!-- End testimonial item -->
-
+        <div class="swiper-slide">
+            <div class="testimonial-item">
+            <h3>Apa kata mereka mengenai Isna Collection?</h3>
+            <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Temukan keindahan dan kepuasan yang dibagikan oleh pelanggan kami di Isna Collection. Jelajahi ulasan yang penuh inspirasi dan pengalaman nyata dari pelanggan kami, yang dapat membantu Anda memilih produk yang sempurna untuk gaya dan kebutuhan Anda.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <a href="{{ route('login') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
+    </div>
 
-        </div>
-    </section><!-- End Testimonials Section -->
+    </div>
+</section><!-- End Testimonials Section -->
 
   @include ('frontend.contact')
 

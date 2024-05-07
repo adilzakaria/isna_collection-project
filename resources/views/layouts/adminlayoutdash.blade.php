@@ -39,46 +39,12 @@
                   <h5 class="mb-0 font-weight-normal">Hai, {{ auth()->user()->nama }}</h5>
                   <span>Admin</span>
                 </div>
-              </div>
-              <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"
-                ><i class="mdi mdi-dots-vertical"></i
-              ></a>
-              <div
-                class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list"
-                aria-labelledby="profile-dropdown">
-                <a href="#home" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">
-                      Account Settings
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword text-info"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">
-                      Change Password
-                    </p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-              </div>
-            </div>
           </li>
           <li class="nav-item nav-category">
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="/dash">
+            <a class="nav-link" href="{{ route('admin') }}">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
@@ -114,12 +80,6 @@
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
-          <div
-            class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"
-              ><img src="admin/assets/images/logo-mini.svg" alt="logo"
-            /></a>
-          </div>
           <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
             <button
               class="navbar-toggler navbar-toggler align-self-center"
@@ -142,7 +102,7 @@
                   aria-labelledby="notificationDropdown">
                   <h6 class="p-3 mb-0">Notifikasi</h6>
                   @forelse ($notifikasi as $pesanan)
-                        @if ($pesanan->status == '' || $pesanan->status == "")
+                        @if ($pesanan->status == 'BELUM DISETUJUI' || $pesanan->status == "")
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item preview-item" href="/dash/pesanan">
                           <div class="preview-thumbnail">
@@ -160,7 +120,7 @@
                         @endif
                         @empty
                         @endforelse
-                        
+
                         <!-- Tidak ada pesanan yang tidak disetujui -->
                   <p class="p-3 mb-0 text-center">Lihat lebih banyak</p>
                 </div>
@@ -191,7 +151,7 @@
                   <form id="logout-form" action="/logout" method="POST" style="display: none;">
                     @csrf
                 </form>
-                
+
                 <a class="dropdown-item preview-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <div class="preview-thumbnail">
                         <div class="preview-icon bg-dark rounded-circle">

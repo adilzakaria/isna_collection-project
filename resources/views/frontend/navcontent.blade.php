@@ -36,16 +36,13 @@
         <div class="container d-flex justify-content-between">
 
             <div class="logo">
-                <h1 class="text-light"><a href="/home">Isna Collection</a></h1>
+                <h1 class="text-light"><a href="{{ route('home') }}">Isna Collection</a></h1>
             </div>
 
             <nav id="navbar" class="navbar">
                 <ul style="padding-top: 15px">
-                    <li><a class="nav-link scrollto" href="/home">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="/home">Tentang Kami</a></li>
-                    <li><a class="nav-link scrollto" href="/home">Katalog</a></li>
-                    <li><a class="nav-link scrollto" href="/order">Buat Pesanan</a></li>
-                    <li><a class="nav-link scrollto" href="/home">Hubungi Kami</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home') }}">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('order') }}">Buat Pesanan</a></li>
                     <li class="dropdown">
                         <a class="nav-link scrollto active" href="#" id="akun">
                             <span>Hai, {{ auth()->user()->nama }}</span>
@@ -54,13 +51,13 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a href="/akun" class="dropdown-item">Akun Saya <i
+                                <a href="{{ route('akun') }}" class="dropdown-item">Akun Saya <i
                                         class="bi bi-person-circle"></i></a>
                             </li>
 
                             @cannot('admin')
                                 <li>
-                                    <a href="/pesanan" class="dropdown-item">
+                                    <a href="{{ route('pesanan') }}" class="dropdown-item">
                                         <span>Pesanan</span>
                                         <span class="notification-order"></span><i class="bi bi-bag-fill"></i>
                                     </a>
@@ -69,7 +66,7 @@
 
                             @can('admin')
                                 <li>
-                                    <a class="{{ Request::is('dash*') ? 'active' : '' }} dropdown-item" href="/dash">
+                                    <a class="{{ Request::is('dash*') ? 'active' : '' }} dropdown-item" href="{{ route('admin') }}">
                                         <span>Dashboard Admin</span>
                                         </span><i class="bi bi-columns-gap"></i>
                                     </a>

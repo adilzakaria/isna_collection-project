@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Models\katalog;
-use App\Models\ulasan;
+use App\Models\ReviewRating;
 use App\Models\Pesanan;
 
 class AdminController extends Controller
@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function admin()
     {
         $katalogs = katalog::all();
-        $ulasans = ulasan::all();
+        $ulasans = ReviewRating::all();
         $pesanans = Pesanan::all();
         $notifikasi = Pesanan::all();
 
@@ -33,7 +33,7 @@ class AdminController extends Controller
     }
     public function adminulasan()
     {
-        $ulasans = ulasan::all();
+        $ulasans = ReviewRating::all();
         return view('admin.dashulasan', compact('ulasans'));
     }
 
@@ -94,7 +94,7 @@ class AdminController extends Controller
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar')->getClientOriginalExtension();
             $nama_image = 'katalog-' . time() . '.' . $image;
-            $path = $request->file('gambar')->move(public_path('assets/img/portofolio'), $nama_image);
+            $path = $request->file('gambar')->move(public_path('assets/img/portfolio'), $nama_image);
 
             $input['gambar'] = $nama_image;
         }
@@ -120,7 +120,7 @@ class AdminController extends Controller
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar')->getClientOriginalExtension();
             $nama_image = 'katalog-' . time() . '.' . $image;
-            $path = $request->file('katalog')->move(public_path('asset/img/artikel'), $nama_image);
+            $path = $request->file('katalog')->move(public_path('asset/img/portfolio'), $nama_image);
 
             $input['gambar'] = $nama_image;
         }
@@ -143,10 +143,10 @@ class AdminController extends Controller
 
     public function hapusulasan($ulasan)
     {
-        $ulasan = ulasan::where('id', $ulasan)->first();
+        $ulasan = ReviewRating::where('id', $ulasan)->first();
         return view('admin.ulasandelete', compact('ulasan'));
     }
-    public function destroyulasan(ulasan $ulasan)
+    public function destroyulasan(ReviewRating $ulasan)
     {
         $ulasan->delete();
         return redirect('/dash')->with('success', "Data berhasil di hapus");

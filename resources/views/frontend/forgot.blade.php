@@ -24,11 +24,13 @@
 
     <link rel="stylesheet" href="../../css/common-1.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
+        href="{{ url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap') }}"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/register.css') }}">
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
+    <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet') }}">
+    <script src="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js') }}"></script>
 
 </head>
 
@@ -61,21 +63,21 @@
                                 @enderror
                             </div>
                             <div class="form-group" style="position: relative;">
-                                <label>Buat Kata Sandi Baru</label>
+                                <label for="password1">Buat Kata Sandi Baru</label>
                                 <input type="password" placeholder="Buat Kata Sandi Baru"
                                     class="form-control @error('password1') is-invalid @enderror" id="password1"
                                     name="password1" style="background-color: rgb(236, 236, 236)" required>
-                                <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
+                                <i class="far fa-eye" id="togglePassword1" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password1')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                            <div class="form-group" style="position: relative;">
-                                <label>Konfirmasi Password</label>
+                            <div class="form-group" style="position: relative; margin-top: -15px;">
+                                <label for="password2">Konfirmasi Password</label>
                                 <input type="password" placeholder="Konfirmasi Password"
                                     class="form-control @error('password2') is-invalid @enderror" id="password2"
                                     name="password2" style="background-color: rgb(236, 236, 236)" required>
-                                <i class="far fa-eye" id="togglePassword" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
+                                <i class="far fa-eye" id="togglePassword2" style="position: absolute; top: 70%; transform: translateY(-50%); right: 10px; cursor: pointer;"></i>
                                 @error('password2')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -113,30 +115,5 @@
     </script>
 
 </body>
-
-<script>
-    const togglePassword1 = document.querySelector('#togglePassword1');
-    const togglePassword2 = document.querySelector('#togglePassword2');
-    const password1 = document.querySelector('#password1');
-    const password2 = document.querySelector('#password2');
-
-    togglePassword1.addEventListener('click', function(e) {
-        // Toggle the type attribute
-        const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
-        password1.setAttribute('type', type);
-
-        // Toggle the eye slash icon
-        this.classList.toggle('fa-eye-slash');
-    });
-
-    togglePassword2.addEventListener('click', function(e) {
-        // Toggle the type attribute
-        const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
-        password2.setAttribute('type', type);
-
-        // Toggle the eye slash icon
-        this.classList.toggle('fa-eye-slash');
-    });
-</script>
 
 </html>

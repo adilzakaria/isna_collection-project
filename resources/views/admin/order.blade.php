@@ -64,7 +64,7 @@
                                       <!-- Sisi Kanan -->
                                       <div class="card bg-white card-border mb-3" style="flex: 1;">
                                           <div style="height: 100%;">
-                                              <img src="{{ asset('storage/images/' . $pesanan->gambar) }}" alt="Tidak ada foto" style="width: 100%; height: 100%; object-fit: cover; ">
+                                              <img src="{{ asset('assets/img/gambarpesanan/' . $pesanan->gambar) }}" alt="Tidak ada foto" style="width: 100%; height: 100%; object-fit: cover; ">
                                           </div>
                                       </div>
                                   </div>
@@ -91,8 +91,8 @@
                                       </select>
                                       <input type="text" class="form-control bg-white text-black my-3" id="estimasi" name="estimasi" value="{{ old('estimasi') ?? $pesanan->estimasi }}" placeholder="Estimasi Waktu">
                                       <input type="text" class="form-control bg-white text-black my-3" id="harga" name="harga" value="{{ old('harga') ?? $pesanan->harga }}" placeholder="Harga">
-                                    <button href="/dash/pesanan" type="submit" class="btn btn-success text-bold mb-3 " style="width: 49%; height: 50px;">Kirim</button>
-                                    <a href="/dash/pesanan" class="btn btn-danger text-middle mb-3" style="width: 49%; height: 50px; line-height: 40px; text-align: center;">Kembali</a>
+                                    <button href="{{ route('admin_pesanan') }}" type="submit" class="btn btn-success text-bold mb-3 " style="width: 49%; height: 50px;">Kirim</button>
+                                    <a href="{{ route('admin_pesanan') }}" class="btn btn-danger text-middle mb-3" style="width: 49%; height: 50px; line-height: 40px; text-align: center;">Kembali</a>
                                   </form>
                                 </div>
                             </div>

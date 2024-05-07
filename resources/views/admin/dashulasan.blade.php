@@ -14,10 +14,10 @@
                           <tr>
                             <th class="text-dark">ID</th>
                             <th class="text-dark">Nama Pembeli</th>
+                            <th class="text-dark">Email Pembeli</th>
                             <th class="text-dark">Jenis Baju</th>
                             <th class="text-dark">Rating</th>
                             <th class="text-dark">Ulasan</th>
-                            <th class="text-dark">Deskripsi</th>
                             <th class="text-dark">Aksi</th>
                           </tr>
                         </thead>
@@ -28,19 +28,19 @@
                                 <p class="text-dark mb-0">{{$ulasan->id}}</p>
                               </td>
                               <td class="align-middle">
-                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->nama_pelanggan}}</p>
+                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->nama}}</p>
                               </td>
                               <td class="align-middle text-sm">
-                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->kategori}}</p>
+                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->email}}</p>
+                              </td>
+                              <td class="align-middle">
+                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->jenis}}</p>
                               </td>
                               <td class="align-middle">
                                 <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->rating}}</p>
                               </td>
                               <td class="align-middle">
-                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->ulasan}}</p>
-                              </td>
-                              <td class="align-middle">
-                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->deskripsi}}</p>
+                                <p class="text-xs text-dark font-weight-normal mb-0">{{$ulasan->review}}</p>
                               </td>
                               <td class="align-middle">
                                 <a class="btn btn-danger" href="{{ route('hapus_ulasan',['ulasan' => $ulasan->id]) }}"><i title="Delete">Hapus</i></a>

@@ -39,7 +39,7 @@
         <div class="container d-flex justify-content-between">
 
             <div class="logo">
-                <h1 class="text-light"><a href="/home">Isna Collection</a></h1>
+                <h1 class="text-light"><a href="{{ route('home') }}">Isna Collection</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -49,7 +49,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
                     <li><a class="nav-link scrollto" href="#portfolio">Katalog</a></li>
-                    <li><a class="nav-link scrollto" href="/order">Buat Pesanan</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('order') }}">Buat Pesanan</a></li>
                     <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
                     <li class="dropdown">
                         <a href="#" id="akun">
@@ -59,13 +59,13 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li>
-                                <a href="/akun" class="dropdown-item">Akun Saya <i
+                                <a href="{{ route('akun') }}" class="dropdown-item">Akun Saya <i
                                         class="bi bi-person-circle"></i></a>
                             </li>
 
                             @cannot('admin')
                                 <li>
-                                    <a href="/pesanan" class="dropdown-item">
+                                    <a href="{{ route('pesanan') }}" class="dropdown-item">
                                         <span>Pesanan</span>
                                         <span class="notification-order"></span><i class="bi bi-bag-fill"></i>
                                     </a>
@@ -74,7 +74,7 @@
 
                             @can('admin')
                                 <li>
-                                    <a class="{{ Request::is('dash*') ? 'active' : '' }} dropdown-item" href="/dash">
+                                    <a class="{{ Request::is('dash*') ? 'active' : '' }} dropdown-item" href="{{ route('admin') }}">
                                         <span>Dashboard Admin</span>
                                         </span><i class="bi bi-columns-gap"></i>
                                     </a>

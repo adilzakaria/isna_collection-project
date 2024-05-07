@@ -49,18 +49,20 @@
                     @auth
                         <h2 class="m-3">Informasi Pemesan</h2>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form" id="nama"
-                                name="nama" readonly value="{{ Auth::user()->nama }}">
+                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                                id="nama" name="nama" readonly value="{{ Auth::user()->nama }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text" class="form-control input_form" id="hp"
-                                name="hp" readonly value="{{ Auth::user()->hp }}">
+                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="hp" name="hp" readonly
+                                value="{{ Auth::user()->hp }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text" class="form-control input_form" id="email"
-                                name="email" readonly value="{{ Auth::user()->email }}">
+                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                                class="form-control input_form" id="email" name="email" readonly
+                                value="{{ Auth::user()->email }}">
                             <div
                                 class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
                             </div>
@@ -73,8 +75,8 @@
                     </div>
                     <div>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form" id="provinsi"
-                                name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
+                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                                id="provinsi" name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
                             @error('provinsi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -92,8 +94,9 @@
                             @enderror
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
-                            <input style="width: 75%; font-size: 15px;" type="text" class="form-control input_form" id="alamat"
-                                name="alamat" placeholder="Alamat Lengkap" value="{{ old('alamat') }}">
+                            <input style="width: 75%; font-size: 15px;" type="text"
+                                class="form-control input_form" id="alamat" name="alamat"
+                                placeholder="Alamat Lengkap" value="{{ old('alamat') }}">
                             @error('alamat')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
@@ -133,9 +136,9 @@
                         <select style="width: 50%;" class="form-select-lg" id="jenis" name="jenis"
                             aria-label="Default select example">
                             <option selected disabled value="">--PILIH JENIS BAJU--</option>
-                            <option value="Kameja Wanita" {{ old('jenis') == 'Kemeja Wanita' ? 'checked' : '' }}>
-                                Kameja Wanita</option>
-                            <option value="Kameja Pria" {{ old('jenis') == 'Kemeja Pria' ? 'checked' : '' }}>Kameja
+                            <option value="Kemeja Wanita" {{ old('jenis') == 'Kemeja Wanita' ? 'checked' : '' }}>
+                                Kemeja Wanita</option>
+                            <option value="Kemeja Pria" {{ old('jenis') == 'Kemeja Pria' ? 'checked' : '' }}>Kemeja
                                 Pria</option>
                             <option value="Tunik" {{ old('jenis') == 'XXL' ? 'Tunik' : '' }}>Tunik</option>
                             <option value="Long Dress" {{ old('jenis') == 'Long Dress' ? 'checked' : '' }}>Long Dress
@@ -160,7 +163,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <img class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;">
+                    <img class="img-preview img-fluid mb-3 col-sm-5" style="margin-right: 10px; border: none;" id="gambar-zoom">
 
                     <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
                         <label for="tambahan" class="form-label">Tambahan</label>

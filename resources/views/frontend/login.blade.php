@@ -90,11 +90,11 @@
                                 <input type="checkbox" class="checkbox">
                                 <span class="check-label">Ingat saya</span>
                             </div>
-                            <a href="/forgot" class="forgot">Lupa Kata Sandi</a>
+                            <a href="{{ route('forgot') }}" class="forgot">Lupa Kata Sandi</a>
                         </form>
 
                         <div class="signup-link" style="margin-top: 125px">Tidak memiliki akun? Daftar sekarang <a
-                                href="/register">di sini</a></div>
+                                href="{{ route('register') }}">di sini</a></div>
                     </div>
                 </div>
             </div>
