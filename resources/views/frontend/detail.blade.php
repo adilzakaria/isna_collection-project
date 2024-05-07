@@ -35,7 +35,9 @@
     <link rel="stylesheet" href="{{ url('assets/css/akun.css') }}">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 
+<body>
     {{-- @dd(Auth::user()) --}}
     @include('frontend.navcontent')
 
@@ -45,209 +47,203 @@
             style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
-    <div class="container" style="height: 130vh;">
-        <div class="row justify-content-center" style="margin-top: -30%;">
-            <div class="col-md-8">
-                <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
-                    enctype="multipart/form-data" class="card border-card">
-                    @csrf
-                    @auth
-                        <h2 class="m-3">Informasi Pemesan</h2>
-                        <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
-                                id="nama" name="nama" readonly value="{{ auth()->user()->nama }}">
-                            <div
-                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
-                            </div>
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
-                                class="form-control input_form" id="hp" name="hp" readonly
-                                value="{{ auth()->user()->hp }}">
-                            <div
-                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
-                            </div>
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
-                                class="form-control input_form" id="email" name="email" readonly
-                                value="{{ auth()->user()->email }}">
-                            <div
-                                class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
-                            </div>
-                        </div>
-                    @endauth
-                    <div>
-                        <h2 class="m-3">Alamat Pengiriman</h2>
-                    </div>
-                    <div>
-                        <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
-                                id="provinsi" name="provinsi" placeholder="Provinsi" readonly
-                                value="{{ $pesan->provinsi }}">
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
-                                class="form-control input_form" id="kota" name="kota" placeholder="Kota"
-                                readonly value="{{ $pesan->kota }}">
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
-                                class="form-control input_form" id="kecamatan" name="kecamatan" placeholder="Kecamatan"
-                                readonly value="{{ $pesan->kecamatan }}">
-                        </div>
-                        <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
-                            <input style="width: 75%; font-size: 15px;" type="text"
-                                class="form-control input_form" id="alamat" name="alamat"
-                                placeholder="Alamat Lengkap" readonly value="{{ $pesan->alamat }}">
-                            <input style="width: 25%; font-size: 15px; margin-left: 2rem;" type="text"
-                                class="form-control input_form" id="kode" name="kode" placeholder="Kode Pos"
-                                readonly value="{{ $pesan->kode }}">
-                        </div>
-                    </div>
-
-                    <div class="col" style="margin-top:2rem;">
-                        <h2 class="m-3">Detail Pesanan</h2>
-
-                    </div>
-                    {{-- Ukuran --}}
-                    <div style="margin-left:1rem; font-size: 14px;">
-                        <label for="ukuran" class="form-label">Ukuran</label>
-                    </div>
-                    <div class="form-group" style="margin-left:1rem;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
+                enctype="multipart/form-data" class="card border-card">
+                @csrf
+                @auth
+                    <h2 class="m-3">Informasi Pemesan</h2>
+                    <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
                         <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
-                            id="ukuran" name="ukuran" placeholder="Ukuran" readonly
-                            value="{{ $pesan->ukuran }}">
+                            id="nama" name="nama" readonly value="{{ auth()->user()->nama }}">
+                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                        </div>
+                        <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                            class="form-control input_form" id="hp" name="hp" readonly
+                            value="{{ auth()->user()->hp }}">
+                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                        </div>
+                        <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                            class="form-control input_form" id="email" name="email" readonly
+                            value="{{ auth()->user()->email }}">
+                        <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                        </div>
                     </div>
-                    {{-- Jenis --}}
-                    <div style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="jenis" class="form-label">Jenis Baju</label>
-                    </div>
-                    <div class="form-group" style="margin-left:1rem;">
+                @endauth
+                <div>
+                    <h2 class="m-3">Alamat Pengiriman</h2>
+                </div>
+                <div>
+                    <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
                         <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
-                            id="jenis" name="jenis" placeholder="Jenis" readonly value="{{ $pesan->jenis }}">
+                            id="provinsi" name="provinsi" placeholder="Provinsi" readonly
+                            value="{{ $pesan->provinsi }}">
+                        <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                            class="form-control input_form" id="kota" name="kota" placeholder="Kota" readonly
+                            value="{{ $pesan->kota }}">
+                        <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                            class="form-control input_form" id="kecamatan" name="kecamatan" placeholder="Kecamatan"
+                            readonly value="{{ $pesan->kecamatan }}">
                     </div>
-                    {{-- Tambahan --}}
-                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="tambahan" class="form-label">Tambahan</label>
+                    <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
+                        <input style="width: 75%; font-size: 15px;" type="text" class="form-control input_form"
+                            id="alamat" name="alamat" placeholder="Alamat Lengkap" readonly
+                            value="{{ $pesan->alamat }}">
+                        <input style="width: 25%; font-size: 15px; margin-left: 2rem;" type="text"
+                            class="form-control input_form" id="kode" name="kode" placeholder="Kode Pos"
+                            readonly value="{{ $pesan->kode }}">
                     </div>
-                    <div class="form-group" style="margin-left:1rem;">
-                        <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
-                            id="tambahan" name="tambahan" readonly value="{{ $pesan->tambahan }}">
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4">
-                <div class="card border-card">
-                    {{-- Gambar --}}
-                    <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="gambar" class="form-label">Gambar</label>
-                    </div>
-                    <div class="form-group" style="margin-left:1rem;">
-                        <img src="{{ asset('assets/img/gambarpesanan/' . $pesan->gambar) }}" id="gambar-zoom"
-                            class="img-preview img-fluid mb-3 col-sm-4"
-                            style="margin-right: 10px; border: none; cursor: pointer;">
-                    </div>
-                    {{-- Harga --}}
-                    <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="Harga" class="form-label">Harga</label>
-                    </div>
-                    @if ($pesan->status == 'DISETUJUI' || $pesan->status == 'TELAH MEMBAYAR')
-                        <div class="form-group" style="margin-left: 1rem; font-size: 15px;">
-                            <button class="btn disabled"
-                                style="font-size: 15px; font-weight: bold; border: 2px solid #e966a0; letter-spacing: 0.5px;
-                                font-family: 'Poppins' , sans-serif; text-transform: capitalize; padding: 6px 11px; margin-top: -10px;
-                                border-radius: 10px; transition: all 0.3s ease 0s;">
-                                {{ $pesan->harga }}
-                            </button>
-                        </div>
-                    @elseif ($pesan->status == 'TIDAK DISETUJUI')
-                        <div class="form-group" style="margin-left: 1rem; font-size: 15px; font-weight: bold;">
-                            -
-                        </div>
-                    @endif
+                </div>
 
-                    {{-- Estimasi --}}
-                    <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="estimasi" class="form-label">Estimasi</label>
-                    </div>
-                    @if ($pesan->status == 'DISETUJUI' || $pesan->status == 'TELAH MEMBAYAR')
-                        <div class="form-group" style="margin-left: 1rem; font-size: 15px;">
-                            <button class="btn disabled"
-                                style="font-size: 15px; font-weight: bold; border: 2px solid #e966a0; letter-spacing: 0.5px;
-                                font-family: 'Poppins' , sans-serif; text-transform: capitalize; padding: 6px 11px; margin-top: -10px;
-                                border-radius: 10px; transition: all 0.3s ease 0s;">
-                                {{ $pesan->estimasi }}
-                            </button>
-                        </div>
-                    @elseif ($pesan->status == 'TIDAK DISETUJUI')
-                        <div class="form-group" style="margin-left: 1rem; font-size: 15px; font-weight: bold;">
-                            -
-                        </div>
-                    @endif
+                <div class="col" style="margin-top:2rem;">
+                    <h2 class="m-3">Detail Pesanan</h2>
 
-                    {{-- Status --}}
-                    <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
-                        <label for="status" class="form-label">Status</label>
-                    </div>
-                    <div class="form-group" style="margin-left: 1rem;">
+                </div>
+                {{-- Ukuran --}}
+                <div style="margin-left:1rem; font-size: 14px;">
+                    <label for="ukuran" class="form-label">Ukuran</label>
+                </div>
+                <div class="form-group" style="margin-left:1rem;">
+                    <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                        id="ukuran" name="ukuran" placeholder="Ukuran" readonly value="{{ $pesan->ukuran }}">
+                </div>
+                {{-- Jenis --}}
+                <div style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                    <label for="jenis" class="form-label">Jenis Baju</label>
+                </div>
+                <div class="form-group" style="margin-left:1rem;">
+                    <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                        id="jenis" name="jenis" placeholder="Jenis" readonly value="{{ $pesan->jenis }}">
+                </div>
+                {{-- Tambahan --}}
+                <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                    <label for="tambahan" class="form-label">Tambahan</label>
+                </div>
+                <div class="form-group" style="margin-left:1rem;">
+                    <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                        id="tambahan" name="tambahan" readonly value="{{ $pesan->tambahan }}">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-card">
+                {{-- Gambar --}}
+                <div class="form-group" style="margin-left:1rem; font-size: 14px; margin-top: 1rem;">
+                    <label for="gambar" class="form-label">Gambar</label>
+                </div>
+                <div class="form-group" style="margin-left:1rem;">
+                    <img src="{{ asset('assets/img/gambarpesanan/' . $pesan->gambar) }}" id="gambar-zoom"
+                        class="img-preview img-fluid mb-3 col-sm-4"
+                        style="margin-right: 10px; border: none; cursor: pointer;">
+                </div>
+                {{-- Harga --}}
+                <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
+                    <label for="Harga" class="form-label">Harga</label>
+                </div>
+                @if ($pesan->status == 'DISETUJUI' || $pesan->status == 'TELAH MEMBAYAR')
+                    <div class="form-group" style="margin-left: 1rem; font-size: 15px;">
                         <button class="btn disabled"
-                            style="font-size: 15px; color:
+                            style="font-size: 15px; font-weight: bold; border: 2px solid #e966a0; letter-spacing: 0.5px;
+                                font-family: 'Poppins' , sans-serif; text-transform: capitalize; padding: 6px 11px; margin-top: -10px;
+                                border-radius: 10px; transition: all 0.3s ease 0s;">
+                            {{ $pesan->harga }}
+                        </button>
+                    </div>
+                @elseif ($pesan->status == 'TIDAK DISETUJUI')
+                    <div class="form-group" style="margin-left: 1rem; font-size: 15px; font-weight: bold;">
+                        -
+                    </div>
+                @endif
+
+                {{-- Estimasi --}}
+                <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
+                    <label for="estimasi" class="form-label">Estimasi</label>
+                </div>
+                @if ($pesan->status == 'DISETUJUI' || $pesan->status == 'TELAH MEMBAYAR')
+                    <div class="form-group" style="margin-left: 1rem; font-size: 15px;">
+                        <button class="btn disabled"
+                            style="font-size: 15px; font-weight: bold; border: 2px solid #e966a0; letter-spacing: 0.5px;
+                                font-family: 'Poppins' , sans-serif; text-transform: capitalize; padding: 6px 11px; margin-top: -10px;
+                                border-radius: 10px; transition: all 0.3s ease 0s;">
+                            {{ $pesan->estimasi }}
+                        </button>
+                    </div>
+                @elseif ($pesan->status == 'TIDAK DISETUJUI')
+                    <div class="form-group" style="margin-left: 1rem; font-size: 15px; font-weight: bold;">
+                        -
+                    </div>
+                @endif
+
+                {{-- Status --}}
+                <div class="form-group" style="margin-left: 1rem; font-size: 14px; margin-top: 1rem;">
+                    <label for="status" class="form-label">Status</label>
+                </div>
+                <div class="form-group" style="margin-left: 1rem;">
+                    <button class="btn disabled"
+                        style="font-size: 15px; color:
                             @if ($pesan->status == 'DISETUJUI') blue;
                             @elseif($pesan->status == 'TELAH MEMBAYAR') green;
                             @elseif($pesan->status == 'TIDAK DISETUJUI') red; @endif
                             font-weight: bold; font-size: 15px; font-weight: 600; border: 2px solid #e966a0;
                             letter-spacing: 0.5px; font-family: 'Poppins' , sans-serif; text-transform: capitalize;
                             padding: 6px 11px; margin-top: -10px; border-radius: 10px; transition: all 0.3s ease 0s;">
-                            {{ $pesan->status }}
-                        </button>
-                    </div>
-                    @if ($pesan->status == 'DISETUJUI')
-                        <div class="form-group" style="margin-left: 1rem;">
-                            <label for="pembayaran" class="form-label" style="font-size: 15px;">Transfer ke Nomor
-                                Rekening ini untuk Membayar</label><br>
-                            <div class="form-label card border-light" style="padding: 10px;">
-                                <p style="font-size: 15px; font-weight: bold;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17"
-                                        style="margin-top: -3px; margin-right: 5px;"
-                                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                        <path fill="#000000"
-                                            d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
-                                    </svg><span> Bank Mandiri : 1440022288762</span>
-                                </p>
-                            </div>
-                            <label for="pembayaran" class="form-label" style="font-size: 15px;">Bisa Juga Transfer ke
-                                Nomor ini untuk Membayar</label><br>
-                            <div class="form-label card border-light" style="padding: 10px;">
-                                <p style="font-size: 15px; font-weight: bold;">
-                                    <img src="{{ url('assets/img/icon/dana.png') }}" alt="Dana"
-                                        style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
-                                    Dana : 089697083392 <br>
-                                    <img src="{{ url('assets/img/icon/ovo.png') }}" alt="OVO"
-                                        style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
-                                    OVO : 089697083392 <br>
-                                    <img src="{{ url('assets/img/icon/shopee.png') }}" alt="ShopeePay"
-                                        style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
-                                    ShopeePay : 089697083392
-                                </p>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <a href="https://wa.link/9tioc1" style="text-decoration: none;">
-                                <p class="text-danger"
-                                    style="font-style: italic; margin-bottom: -5px; margin-right: 10px;">* Silahkan
-                                    Konfirmasi Pembayaran Dengan Klik Tombol Dibawah</p>
-                                <button class="btn mt-3"
-                                    style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s; width: auto;"
-                                    type="button">Konfirmasi Pembayaran</button>
-                            </a>
-                        </div>
-                    @endif
-                    @if ($pesan->status == 'TELAH MEMBAYAR')
-                        <div style="text-align: right;">
-                            <a href="{{ route('ulasan') }}" class="btn mt-3"
-                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 50px; border-radius: 10px; transition: all 0.3s ease 0s;">
-                                Beri Ulasan
-                            </a>
-                            <a href="{{ route('home') }}" class="btn mt-3"
-                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 45px; border-radius: 10px; transition: all 0.3s ease 0s;">
-                                Selesai
-                            </a>
-                        </div>
-                    @endif
+                        {{ $pesan->status }}
+                    </button>
                 </div>
+                @if ($pesan->status == 'DISETUJUI')
+                    <div class="form-group" style="margin-left: 1rem;">
+                        <label for="pembayaran" class="form-label" style="font-size: 15px;">Transfer ke Nomor
+                            Rekening ini untuk Membayar</label><br>
+                        <div class="form-label card border-light" style="padding: 10px;">
+                            <p style="font-size: 15px; font-weight: bold;">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17"
+                                    style="margin-top: -3px; margin-right: 5px;"
+                                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path fill="#000000"
+                                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160v8c0 13.3 10.7 24 24 24H456c13.3 0 24-10.7 24-24v-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224H64V420.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512H480c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1V224H384V416H344V224H280V416H232V224H168V416H128V224zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                                </svg><span> Bank Mandiri : 1440022288762</span>
+                            </p>
+                        </div>
+                        <label for="pembayaran" class="form-label" style="font-size: 15px;">Bisa Juga Transfer ke
+                            Nomor ini untuk Membayar</label><br>
+                        <div class="form-label card border-light" style="padding: 10px;">
+                            <p style="font-size: 15px; font-weight: bold;">
+                                <img src="{{ url('assets/img/icon/dana.png') }}" alt="Dana"
+                                    style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
+                                Dana : 089697083392 <br>
+                                <img src="{{ url('assets/img/icon/ovo.png') }}" alt="OVO"
+                                    style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
+                                OVO : 089697083392 <br>
+                                <img src="{{ url('assets/img/icon/shopee.png') }}" alt="ShopeePay"
+                                    style="vertical-align: middle; margin-right: 5px; margin-bottom: 10px; width: 30px; height: auto;">
+                                ShopeePay : 089697083392
+                            </p>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <a href="https://wa.link/9tioc1" style="text-decoration: none;">
+                            <p class="text-danger"
+                                style="font-style: italic; margin-bottom: -5px; margin-right: 10px;">* Silahkan
+                                Konfirmasi Pembayaran Dengan Klik Tombol Dibawah</p>
+                            <button class="btn mt-3"
+                                style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; padding: 9px 11px; margin: 0 0 20px; margin-right: 10px; border-radius: 10px; transition: all 0.3s ease 0s; width: auto;"
+                                type="button">Konfirmasi Pembayaran</button>
+                        </a>
+                    </div>
+                @endif
+                @if ($pesan->status == 'TELAH MEMBAYAR')
+                    <div style="text-align: right;">
+                        <a href="{{ route('ulasan') }}" class="btn mt-3"
+                            style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 50px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                            Beri Ulasan
+                        </a>
+                        <a href="{{ route('home') }}" class="btn mt-3"
+                            style="color: #fff; background-color: #e966a0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; font-family: 'Poppins', sans-serif; text-transform: capitalize; width: 35%; padding: 9px 11px; margin: 0 0 20px; margin-right: 45px; border-radius: 10px; transition: all 0.3s ease 0s;">
+                            Selesai
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -304,21 +300,32 @@
         }
     </script>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+            class="bi bi-arrow-up-short"></i></a>
 
 
-        <!-- Vendor JS Files -->
-        <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-        <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
-        <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-        <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-        <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-        <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-        <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
-      
-        <!-- Template Main JS File -->
-        <script src="{{ url('assets/js/main.js') }}"></script>
-        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <!-- Vendor JS Files -->
+    <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{{ url('assets/js/main.js') }}"></script>
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "6030eb7e-c752-422c-aedc-06dc472fe214";
+        (function() {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
 
 </body>
+
 </html>

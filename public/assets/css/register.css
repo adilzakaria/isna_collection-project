@@ -148,16 +148,8 @@
 
 .form-container .form-horizontal .btn:hover,
 .form-container .form-horizontal .btn:focus {
-    box-shadow: 0 0 10px #ff9dda;
+    box-shadow: 0 0 10px #ff97a8;
     outline: none;
-}
-
-.form-container .right-content .separator {
-    color: #999;
-    font-size: 15px;
-    text-align: center;
-    margin: 0 0 15px;
-    display: block;
 }
 
 .form-container .form-horizontal .remember-me {
@@ -218,8 +210,49 @@
     outline: none;
 }
 
+.form-container .form-horizontal .forgot {
+    color: #ff97a8;
+    font-size: 12px;
+    text-align: right;
+    width: 100px;
+    vertical-align: top;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .form-horizontal .forgot:hover {
+    text-decoration: underline;
+}
+
+.form-container .right-content .separator {
+    color: #999;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 0 15px;
+    display: block;
+}
+
+.form-container .right-content .signup-link {
+    color: #999;
+    font-size: 13px;
+}
+
+.form-container .right-content .signup-link a {
+    color: #ff97a8;
+    transition: all 0.3s ease 0s;
+}
+
+.form-container .right-content .signup-link a:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 767px) {
-    .form-container .left-content,
+    .form-container .left-content {
+        width: 100%;
+        height: 100%;
+        margin-top: 170%;
+    }
+
     .form-container .right-content {
         width: 100%;
         padding: 30px;
@@ -247,18 +280,4 @@
     right: 10px; /* Sesuaikan posisi ikon */
     top: 50%; /* Sesuaikan posisi ikon */
     transform: translateY(-50%); /* Menengahkan ikon secara vertikal */
-}
-
-/* Media Query untuk layar kecil */
-@media only screen and (min-width: 500px) {
-    /* Left Content dan Right Content */
-    .form-container .left-content {
-        text-wrap: fixed;
-        width: 40%; /* Sesuaikan lebar pada layar yang lebih besar */
-        padding: 40px 30px;
-    }
-    .form-container .right-content {
-        width: 60%; /* Sesuaikan lebar pada layar yang lebih besar */
-        padding: 30px 50px;
-    }
 }

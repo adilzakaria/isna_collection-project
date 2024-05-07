@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="assets/css/akun.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+</head>
+
+<body>
     @include ('frontend.navcontent')
 
     <nav id="navbar" class="navbar"
@@ -42,7 +45,7 @@
     </nav>
 
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-md-offset-2 col-lg-8">
                 <div class="form-container">
                     <div class="row">
                         <div class="col-md-6 left-content">
@@ -56,7 +59,7 @@
                             <a class="title" style="margin-bottom: 70px; margin-left: 20px;"
                                 href="{{ route('akun') }}">{{ auth()->user()->nama }}</a>
                         </div>
-                        <form class="form-horizontal" action="/logout" method="POST">
+                        <form class="form-horizontal" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <a href="{{ route('edit_akun') }}" class="btn kiri" style="margin-top: 20px">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17"
@@ -137,7 +140,7 @@
         <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
-      
+
         <!-- Template Main JS File -->
         <script src="{{ url('assets/js/main.js') }}"></script>
         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>

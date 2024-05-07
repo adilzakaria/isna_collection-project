@@ -21,7 +21,9 @@
     <link rel="stylesheet" href={{ url('assets/css/order.css') }}>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+</head>
 
+<body>
     {{-- @dd(Auth::user()) --}}
     @include('frontend.navcontent')
 
@@ -211,7 +213,7 @@
         <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
-      
+
         <!-- Template Main JS File -->
         <script src="{{ url('assets/js/main.js') }}"></script>
         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>

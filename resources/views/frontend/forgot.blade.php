@@ -50,7 +50,7 @@
                     </div>
                     <div class="right-content">
                         <h3 class="form-title">Lupa Kata Sandi</h3>
-                        <form class="form-horizontal" action="/forgot" method="POST">
+                        <form class="form-horizontal" action="{{ route('forgot') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>

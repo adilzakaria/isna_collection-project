@@ -50,7 +50,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <form action="/logout" method="post">
+                                <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <button type="submit" class="dropdown-item">Keluar <i
                                             class="bi bi-box-arrow-right"></i></button>

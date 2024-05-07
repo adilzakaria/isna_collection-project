@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daftar</title>
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
     <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -19,10 +19,10 @@
     <link rel="stylesheet" href="{{ url('assets/css/register.css') }}">
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
-
+</head>
 
 <body>
-    <div class="container">
+    <div class="container" style="margin-top: 2%">
         <div class="row">
             <div class="col-md-offset-2 col-md-8">
                 <div class="form-container">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="right-content">
                         <h3 class="form-title">Daftar</h3>
-                        <form class="form-horizontal" action="/register" method="POST">
+                        <form class="form-horizontal" action="{{ route('register') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label><strong>Username</strong></label>

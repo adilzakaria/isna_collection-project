@@ -10,6 +10,9 @@
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 	<title>Form Reviews</title>
 
+</head>
+
+<body>
     @include('frontend.navcontent')
 
     <!-- Jika ada pesan sukses -->
@@ -29,7 +32,7 @@
     <div class="container">
         <div class="wrapper">
             <h3>Berikan Penilaian kepada Isna Collection</h3>
-            <form action="{{ url('/review') }}" method="POST">
+            <form action="{{ route('review') }}" method="POST">
                 @csrf
                 @foreach ($pesanan as $item)
                 <input type="text" name="product_id" value="{{ $item->nomor }}" hidden>
@@ -45,7 +48,7 @@
                 <textarea name="review" cols="30" rows="5" placeholder="Tulis Komentarmu disini"></textarea>
                 <div class="btn-group">
                     <button type="submit" class="btn submit">Kirim</button>
-                    <button class="btn cancel">Batal</button>
+                    <button type="button" class="btn cancel" onclick="window.location.href='{{ route('ulasan') }}';">Batal</button>
                 </div>
             </form>
         </div>
@@ -90,7 +93,7 @@
     <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
-  
+
     <!-- Template Main JS File -->
     <script src="{{ url('assets/js/main.js') }}"></script>
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>

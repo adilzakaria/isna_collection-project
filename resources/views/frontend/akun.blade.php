@@ -28,8 +28,12 @@
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 
-    @include('frontend.navcontent')
 
+</head>
+
+<body>
+
+    @include('frontend.navcontent')
     <nav id="navbar" class="navbar"
         style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
         <h1
@@ -38,7 +42,7 @@
     </nav>
 
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-8 col-md-offset-2">
                 @if (session()->has('sukses'))
                     <script>
                         swal("Berhasil!", "{{ session('sukses') }}", "success");
@@ -56,7 +60,7 @@
                             <a class="title" style="margin-bottom: 70px; margin-left: 20px;"
                                 href="{{ route('akun') }}">{{ auth()->user()->nama }}</a>
                         </div>
-                        <form class="form-horizontal" action="/logout" method="POST">
+                        <form class="form-horizontal" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <a href="{{ route('edit_akun') }}" class="btn kiri" style="margin-top: 20px">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="17" width="17"
@@ -118,7 +122,7 @@
             <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
             <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
             <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
-          
+
             <!-- Template Main JS File -->
             <script src="{{ url('assets/js/main.js') }}"></script>
             <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>

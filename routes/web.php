@@ -81,7 +81,8 @@ Route::get('/order-admin', function () {
 
 // Rating dan Review
 Route::get('/ulasan', [ReviewController::class, 'ulasan'])->name('ulasan');
-Route::post('/review', [ReviewController::class, 'review'])->name('review');
+Route::get('/review', [ReviewController::class, 'review'])->name('review');
+Route::post('/review', [ReviewController::class, 'review']);
 Route::get('/tentang-kami', [ReviewController::class, 'allReviewRating'])->name('tentang-kami');
 Route::get('/edit-penilaian/{ulasan_nomor}/penilaianpengguna', [ReviewController::class, 'edit'])->name('edit-penilaian');
 Route::post('/update-review', [ReviewController::class, 'update'])->name('update-review');

@@ -63,7 +63,7 @@
                     </div>
                     <div class="right-content">
                         <h3 class="form-title">Masuk</h3>
-                        <form class="form-horizontal" action="/login" method="POST">
+                        <form class="form-horizontal" action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label>Email</label>

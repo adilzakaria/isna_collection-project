@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Penilaian Tentang Kami</title>
+
+
     <link href="{{ url('assets/css/review.css') }}" rel="stylesheet">
     <link href='{{ url('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css') }}' rel='stylesheet'>
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
+</head>
 
+<body>
 
     @include('frontend.navcontent')
 
@@ -27,7 +31,7 @@
     @endif
 
     {{-- Testimonial --}}
-    <section id="testimonials">
+    <section id="testimonials" style="margin-top: 10%">
 
         {{-- heading --}}
         <div class="testimonial-heading">
@@ -91,7 +95,7 @@
         <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
-      
+
         <!-- Template Main JS File -->
         <script src="{{ url('assets/js/main.js') }}"></script>
         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>

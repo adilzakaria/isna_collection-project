@@ -18,6 +18,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/navbar.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -67,7 +68,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <form action="/logout" method="post">
+                                <form action="{{ route('logout') }}" method="post">
                                     @csrf
                                     <button type="submit" class="dropdown-item" style="font-size: 15px; margin-left: 10px">Keluar <i
                                             class="bi bi-box-arrow-right"></i></button>

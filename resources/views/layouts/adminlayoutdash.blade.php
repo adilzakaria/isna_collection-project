@@ -148,7 +148,7 @@
                   <h6 class="p-3 mb-0">Profile</h6>
                   <div class="dropdown-divider"></div>
                   <div class="dropdown-divider"></div>
-                  <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
 
