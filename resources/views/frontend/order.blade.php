@@ -7,22 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pesan Produk</title>
 
-
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
-
-    <!-- <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://e6t7a8v2.stackpathcdn.com/tutorial/css/fontawesome-all.min.css"> -->
     <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://e6t7a8v2.stackpathcdn.com/tutorial/css/bootstrap.min.css"> -->
-
-
     <link rel="stylesheet" href="../../css/common-1.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
@@ -44,7 +33,6 @@
             style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card border-card">
@@ -196,7 +184,6 @@
                 </form>
             </div>
         </div>
-    </div>
     <script>
         function previewImage() {
             const gambar = document.querySelector('#gambar');

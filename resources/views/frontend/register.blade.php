@@ -5,27 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daftar</title>
-
-    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
-
-    <!-- <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://e6t7a8v2.stackpathcdn.com/tutorial/css/fontawesome-all.min.css"> -->
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">>
     <link rel="stylesheet" href="../../css/fontawesome-all.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://e6t7a8v2.stackpathcdn.com/tutorial/css/bootstrap.min.css"> -->
 
 
     <link rel="stylesheet" href="../../css/common-1.css">
     <link
         href="{{ url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap') }}"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url('assets/css/style.css') }}"> -->
     <link rel="stylesheet" href="{{ url('assets/css/register.css') }}">
     <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}">
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
@@ -140,5 +130,4 @@
         });
     </script>
 </body>
-
 </html>

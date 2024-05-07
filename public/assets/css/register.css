@@ -249,3 +249,16 @@
     transform: translateY(-50%); /* Menengahkan ikon secara vertikal */
 }
 
+/* Media Query untuk layar kecil */
+@media only screen and (min-width: 500px) {
+    /* Left Content dan Right Content */
+    .form-container .left-content {
+        text-wrap: fixed;
+        width: 40%; /* Sesuaikan lebar pada layar yang lebih besar */
+        padding: 40px 30px;
+    }
+    .form-container .right-content {
+        width: 60%; /* Sesuaikan lebar pada layar yang lebih besar */
+        padding: 30px 50px;
+    }
+}

@@ -22,7 +22,7 @@ class DetailController extends Controller
         $params = [
             'transaction_details' => [
                 'order_id' => $nomor,
-                'gross_amount' => $pesan->harga,
+                'gross_amount' => 100000,
             ],
             'customer_details' => [
                 'name' => $pesan->nama,
@@ -34,5 +34,11 @@ class DetailController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
         // dd($snapToken);
         return view('frontend.detail', compact('snapToken', 'pesan'));
+    }
+    public function show1($nomor)
+    {
+
+        $pesan = Pesanan::where('nomor', $nomor)->firstOrFail();
+        return view('frontend.detailpesan', compact('pesan'));
     }
 }
