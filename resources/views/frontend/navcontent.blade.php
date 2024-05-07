@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>@yield('title', 'Isna Collection')</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
 
     <!-- Favicons -->
     <link href="{{ url('assets/img/favicon.png') }}" rel="icon">
@@ -40,7 +30,7 @@
             </div>
 
             <nav id="navbar" class="navbar">
-                <ul style="padding-top: 15px">
+                <ul>
                     <li><a class="nav-link scrollto" href="{{ route('home') }}">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('order') }}">Buat Pesanan</a></li>
                     <li class="dropdown">
@@ -87,9 +77,8 @@
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
+            </nav>
+            <!-- .navbar -->
         </div>
-    </header><!-- End Header -->
-</body>
+    </header>
 
-</html>

@@ -12,26 +12,24 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/common-1.css">
+    <link rel="stylesheet" href={{ url('assets/css/common-1.css') }}>
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/akun.css">
-    <link rel="stylesheet" href="assets/css/order.css">
+    <link rel="stylesheet" href={{ url('assets/css/style.css') }}>
+    {{-- <link rel="stylesheet" href={{ url('assets/css/akun.css') }}> --}}
+    <link rel="stylesheet" href={{ url('assets/css/order.css') }}>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
 
-<body>
 
     {{-- @dd(Auth::user()) --}}
     @include('frontend.navcontent')
 
     <nav id="navbar" class="navbar"
-        style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
-        <h1
-            style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
-            Hai, {{ auth()->user()->nama }}</h1>
+    style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+    <h1
+        style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
+        Hai, {{ auth()->user()->nama }}</h1>
     </nav>
         <div class="row justify-content-center">
             <div class="col-md-4">
@@ -202,4 +200,21 @@
             }
         }
     </script>
+
+
+
+        <!-- Vendor JS Files -->
+        <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+        <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
+        <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
+      
+        <!-- Template Main JS File -->
+        <script src="{{ url('assets/js/main.js') }}"></script>
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 </body>
+</html>

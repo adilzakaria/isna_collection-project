@@ -9,8 +9,7 @@
     rel="stylesheet">
     <script src="{{ url('https://unpkg.com/sweetalert/dist/sweetalert.min.js') }}"></script>
 	<title>Perbarui Penilaian</title>
-</head>
-<body>
+
     @include('frontend.navcontent')
 
     <!-- Jika ada pesan sukses -->
@@ -29,8 +28,8 @@
 
 
 
-    <div class="container">
-        <div class="wrapper">
+    <div class="container" style="margin-top: 200px;">
+        <div class="wrapper" >
             <h3>Perbarui Penilaian kepada Isna Collection</h3>
             <form action="{{ url('/update-review') }}" method="POST">
                 @csrf
@@ -85,6 +84,23 @@
             })
         })
     </script>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
+
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{{ url('assets/js/main.js') }}"></script>
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
 </body>
 </html>

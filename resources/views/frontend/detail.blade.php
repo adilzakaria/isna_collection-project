@@ -35,9 +35,6 @@
     <link rel="stylesheet" href="{{ url('assets/css/akun.css') }}">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-
-<body>
 
     {{-- @dd(Auth::user()) --}}
     @include('frontend.navcontent')
@@ -48,8 +45,8 @@
             style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
-    <div class="container" style="margin-top: -50px">
-        <div class="row justify-content-center" style="margin-top: 2%">
+    <div class="container" style="height: 130vh;">
+        <div class="row justify-content-center" style="margin-top: -30%;">
             <div class="col-md-8">
                 <form action="{{ route('detail', ['nomor' => $pesan->nomor]) }}" method="POST"
                     enctype="multipart/form-data" class="card border-card">
@@ -306,4 +303,22 @@
             }
         }
     </script>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+
+        <!-- Vendor JS Files -->
+        <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+        <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
+        <script src="{{ url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+        <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
+      
+        <!-- Template Main JS File -->
+        <script src="{{ url('assets/js/main.js') }}"></script>
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
 </body>
+</html>
