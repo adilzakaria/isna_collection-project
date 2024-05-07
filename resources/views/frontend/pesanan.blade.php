@@ -122,9 +122,6 @@
                                     <a href="{{ route('detail', ['nomor' => $pesan->nomor]) }}" type="submit"
                                         class="btn btn-body kirim" style="height: 100%;font-size: 15px;">Lihat
                                         Detail</a>
-                                    <a href="{{ route('detailpesan', ['nomor' => $pesan->nomor]) }}" type="submit"
-                                        class="btn btn-body kirim" style="height: 100%;font-size: 15px;">Lihat
-                                        Detail</a>
                                 </div>
                             @endforeach
                         </form>
