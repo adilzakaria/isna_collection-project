@@ -33,10 +33,11 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto" href="{{ route('home') }}">Beranda</a></li>
-                    <li><a class="nav-link scrollto active" href="{{ route('home') }}">Tentang Kami</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('home') }}">Katalog</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home.about') }}">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home.portfolio') }}">Katalog</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('order') }}">Buat Pesanan</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('home') }}">Hubungi Kami</a></li>
+                    <li><a class="nav-link scrollto active" href="{{ route('tentang-kami') }}">Ulasan</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home.contact') }}">Hubungi Kami</a></li>
                     <li class="dropdown">
                         <a class="nav-link scrollto" href="#" id="akun">
                             <span>Hai, {{ auth()->user()->nama }}</span>
