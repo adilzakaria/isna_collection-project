@@ -29,11 +29,11 @@ use App\Http\Controllers\ReviewController;
 Route::get('/', [WelcomeController::class, 'index'])->middleware('guest')->name('welcome');
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
-Route::get('/#about', function () {
+Route::get('/home/#about', function () {
     return redirect()->route('home') . '#about';})->name('home.about');
-Route::get('/#portfolio', function () {
+Route::get('/home/#portfolio', function () {
         return redirect()->route('home') . '#portfolio';})->name('home.portfolio');
-Route::get('/#contact', function () {
+Route::get('/home/#contact', function () {
     return redirect()->route('home') . '#contact';})->name('home.contact');
 
 Route::get('/#about', function () {
