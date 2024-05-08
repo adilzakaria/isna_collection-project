@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('frontend.navcontent')
+    @include('frontend.navreview')
 
     <!-- Jika ada pesan sukses -->
     @if (session()->has('success'))
@@ -29,7 +29,7 @@
         </script>
     @endif
 
-    <div class="container">
+    <div class="container" style="min-height: 75vh;">
         <div class="wrapper">
             <h3>Berikan Penilaian kepada Isna Collection</h3>
             <form action="{{ route('review') }}" method="POST">

@@ -251,7 +251,7 @@
                 Temukan keindahan dan kepuasan yang dibagikan oleh pelanggan kami di Isna Collection. Jelajahi ulasan yang penuh inspirasi dan pengalaman nyata dari pelanggan kami, yang dapat membantu Anda memilih produk yang sempurna untuk gaya dan kebutuhan Anda.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <a href="{{ route('login') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
+            <a href="{{ route('penilaian-isna') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
             </div>
         </div>
     </div>
