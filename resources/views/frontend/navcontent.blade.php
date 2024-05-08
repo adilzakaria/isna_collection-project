@@ -26,14 +26,17 @@
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex justify-content-between">
 
-            <div class="logo">
-                <h1 class="text-light"><a href="{{ route('home') }}">Isna Collection</a></h1>
+            <div class="logo" style="display: flex; align-items: center;">
+                <h1 class="text-light" style="margin: auto 0;"><a href="{{ route('home') }}">Isna Collection</a></h1>
             </div>
 
-            <nav id="navbar" class="navbar">
+            <nav id="navbar" class="navbar" style="margin-top: 20px; margin-left: auto">
                 <ul>
                     <li><a class="nav-link scrollto" href="{{ route('home') }}">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home') }}">Tentang Kami</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home') }}">Katalog</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('order') }}">Buat Pesanan</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('home') }}">Hubungi Kami</a></li>
                     <li class="dropdown">
                         <a class="nav-link scrollto active" href="#" id="akun">
                             <span>Hai, {{ auth()->user()->nama }}</span>

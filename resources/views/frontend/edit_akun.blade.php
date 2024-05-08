@@ -38,7 +38,7 @@
     <nav id="navbar" class="navbar"
         style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
         <h1
-            style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
+            style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px; margin-right: 25%;">
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
 
