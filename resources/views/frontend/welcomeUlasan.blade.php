@@ -46,11 +46,11 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="{{ route('welcome') }}">Beranda</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('welcome') }}">Tentang Kami</a></li>
-          <li><a class="nav-link scrollto " href="{{ route('welcome') }}">Katalog</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('welcome.about') }}">Tentang Kami</a></li>
+          <li><a class="nav-link scrollto " href="{{ route('welcome.portfolio') }}">Katalog</a></li>
           <li><a class="nav-link scrollto" href="{{ route('login') }}">Buat Pesanan</a></li>
           <li><a class="nav-link scrollto active" href="{{ route('penilaian-isna') }}">Ulasan</a></li>
-          <li><a class="nav-link scrollto" href="{{ route('welcome') }}">Hubungi Kami</a></li>
+          <li><a class="nav-link scrollto" href="{{ route('welcome.contact') }}">Hubungi Kami</a></li>
           <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
            <ul>
             <li><a href="{{ route('register') }}">Daftar</a></li>

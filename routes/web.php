@@ -36,6 +36,13 @@ Route::get('/#portfolio', function () {
 Route::get('/#contact', function () {
     return redirect()->route('home') . '#contact';})->name('home.contact');
 
+Route::get('/#about', function () {
+    return redirect()->route('welcome') . '#about';})->name('welcome.about');
+Route::get('/#portfolio', function () {
+        return redirect()->route('welcome') . '#portfolio';})->name('welcome.portfolio');
+Route::get('/#contact', function () {
+    return redirect()->route('welcome') . '#contact';})->name('welcome.contact');
+
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
