@@ -34,7 +34,7 @@
     <section id="testimonials">
 
         {{-- heading --}}
-        <div class="testimonial-heading">
+        <div class="testimonial-heading" style="margin-top: 2%">
             <span>Penilaian</span>
             <h1>Para Kostumer</h1>
         </div>
