@@ -89,7 +89,7 @@
                             <select style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kota" name="kota" placeholder="Kota"
                                 value="{{ old('kota') }}">
-                            <option></option>
+                            <option>Pilih kota</option>
                                 <option></option>
                             @error('kota')
                                 <div class="alert alert-danger">{{ $message }}</div>
@@ -101,7 +101,7 @@
                             @error('kecamatan')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <option></option>
+                            <option>Pilih kecamatan</option>
                                 <option></option>
                             </select>
                         </div>
@@ -216,38 +216,6 @@
         }
     </script>
 
-    <script>
-        $(function(){
-            $.ajaxSetup({
-                headers: {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
-            });
-
-            
-        $(function(){
-            $('#provinsi').on('change', function(){
-                let id_provinsi = $('#provinsi').val();
-
-                console.log(id_provinsi)
-
-                $.ajax({
-                    type : 'POST',
-                    url : "{{route('getkota')}}",
-                    data : {id_provinsi:id_provinsi},
-                    cache : false,
-
-                    success: function(msg){
-                        $('#kota').html(msg);
-                    },
-                    error: function(data){
-                        console.log('error:',data)
-                    },
-                })
-            })
-        })
-        })
-    </script>
-
-
         <!-- Vendor JS Files -->
         <script src="{{ url('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
         <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
@@ -256,6 +224,7 @@
         <script src="{{ url('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ url('assets/js/main.js') }}"></script>
@@ -271,9 +240,52 @@
         })();
     </script>
 
-        <script>
-            
-        </script>
+<script>
+    $(function(){
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
+        });
+
+        $('#provinsi').on('change', function(){
+            let id_provinsi = $(this).val(); // Menggunakan $(this) untuk mengambil nilai dropdown provinsi yang berubah
+
+            console.log(id_provinsi); // Gunakan ini untuk debug, pastikan nilai id_provinsi terambil dengan benar
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('getkota') }}",
+                data: {id_provinsi: id_provinsi},
+                cache: false,
+
+                success: function(msg){
+                    $('#kota').html(msg);
+                },
+                error: function(data){
+                    console.log('error:', data);
+                },
+            });
+        });
+        $('#kota').on('change', function(){
+            let id_kota = $(this).val(); // Menggunakan $(this) untuk mengambil nilai dropdown kota yang berubah
+
+            console.log(id_kota); // Gunakan ini untuk debug, pastikan nilai id_kota terambil dengan benar
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('getkecamatan') }}",
+                data: {id_kota: id_kota},
+                cache: false,
+
+                success: function(msg){
+                    $('#kecamatan').html(msg);
+                },
+                error: function(data){
+                    console.log('error:', data);
+                },
+            });
+        });
+    });
+</script>
 
 </body>
 

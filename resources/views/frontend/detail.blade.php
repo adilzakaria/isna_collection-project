@@ -78,7 +78,7 @@
                     <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
                         <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
                             id="provinsi" name="provinsi" placeholder="Provinsi" readonly
-                            value="{{ $pesan->provinsi }}">
+                            value="{{ $pesan->provinsi}}">
                         <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
                             class="form-control input_form" id="kota" name="kota" placeholder="Kota" readonly
                             value="{{ $pesan->kota }}">
