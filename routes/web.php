@@ -27,8 +27,22 @@ use App\Http\Controllers\IndoController;
 
 
 // User
-Route::get('/', [WelcomeController::class, 'index'])->middleware('guest');
+Route::get('/', [WelcomeController::class, 'index'])->middleware('guest')->name('welcome');
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
+
+Route::get('/home/#about', function () {
+    return redirect()->route('home') . '#about';})->name('home.about');
+Route::get('/home/#portfolio', function () {
+        return redirect()->route('home') . '#portfolio';})->name('home.portfolio');
+Route::get('/home/#contact', function () {
+    return redirect()->route('home') . '#contact';})->name('home.contact');
+
+Route::get('/#about', function () {
+    return redirect()->route('welcome') . '#about';})->name('welcome.about');
+Route::get('/#portfolio', function () {
+        return redirect()->route('welcome') . '#portfolio';})->name('welcome.portfolio');
+Route::get('/#contact', function () {
+    return redirect()->route('welcome') . '#contact';})->name('welcome.contact');
 
 Route::get('/login', [LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

@@ -41,7 +41,7 @@
     background-color: #fff;
     font-family: "Poppins", sans-serif;
     font-size: 0;
-    box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3); */
     padding-bottom: 15rem;
 }
 

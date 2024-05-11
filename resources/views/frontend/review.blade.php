@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('frontend.navcontent')
+    @include('frontend.navreview')
 
     <!-- Jika ada pesan sukses -->
     @if (session()->has('success'))
@@ -29,7 +29,7 @@
         </script>
     @endif
 
-    <div class="container">
+    <div class="container" style="min-height: 75vh;">
         <div class="wrapper">
             <h3>Berikan Penilaian kepada Isna Collection</h3>
             <form action="{{ route('review') }}" method="POST">
@@ -48,7 +48,7 @@
                 <textarea name="review" cols="30" rows="5" placeholder="Tulis Komentarmu disini"></textarea>
                 <div class="btn-group">
                     <button type="submit" class="btn submit">Kirim</button>
-                    <button type="button" class="btn cancel" onclick="window.location.href='{{ route('ulasan') }}';">Batal</button>
+                    <button type="button" class="btn cancel" onclick="window.location.href='{{ route('pesanan') }}';">Batal</button>
                 </div>
             </form>
         </div>

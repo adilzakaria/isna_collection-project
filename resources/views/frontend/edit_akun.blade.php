@@ -25,7 +25,7 @@
 
     <link rel="stylesheet" href="../../css/common-1.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
+        href="{{ url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap') }}"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ url('assets/css/akun.css') }}">
@@ -38,7 +38,7 @@
     <nav id="navbar" class="navbar"
         style="background-color: White; box-shadow: 0 15px 19px rgba(0, 0, 0, 0.2); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
         <h1
-            style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px">
+            style="text-align: left; font-weight: bold; margin: 0; width: 58%; font-family: 'Poppins', sans-serif; color: black; font-size: 25px; margin-right: 25%;">
             Hai, {{ auth()->user()->nama }}</h1>
     </nav>
 
@@ -110,7 +110,7 @@
                                     <p class="text-danger" style="font-style: italic">*Email Tidak Bisa Diubah.</p>
                             </div>
                             <button type="submit" class="btn btnkiri">Simpan</button>
-                            <button type="button" class="btn btnkanan" style="float: right;" onclick="window.location.href='{{ route('edit_akun') }}';">Batal</button>
+                            <button type="button" class="btn btnkanan" style="float: right;" onclick="window.location.href='{{ route('akun') }}';">Batal</button>
                         </form>
                     </div>
                 </div>

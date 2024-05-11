@@ -46,6 +46,7 @@
           <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Katalog</a></li>
           <li><a class="nav-link scrollto" href="{{ route('login') }}">Buat Pesanan</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">Ulasan</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
           <li class="dropdown" ><a href="#"><span>Masuk/Daftar</span> <i class="bi bi-chevron-down"></i> </a>
            <ul>
@@ -251,7 +252,7 @@
                 Temukan keindahan dan kepuasan yang dibagikan oleh pelanggan kami di Isna Collection. Jelajahi ulasan yang penuh inspirasi dan pengalaman nyata dari pelanggan kami, yang dapat membantu Anda memilih produk yang sempurna untuk gaya dan kebutuhan Anda.
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <a href="{{ route('login') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Disini</a>
+            <a href="{{ route('penilaian-isna') }}" class="btn-get-started scrollto" style="text-decoration: none;">Lihat Penilaian</a>
             </div>
         </div>
     </div>

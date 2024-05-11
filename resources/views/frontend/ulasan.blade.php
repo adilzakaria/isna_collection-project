@@ -14,7 +14,7 @@
 
 <body>
 
-    @include('frontend.navcontent')
+    @include('frontend.navreview')
 
     <!-- Jika ada pesan sukses -->
     @if (session()->has('success'))
@@ -31,10 +31,10 @@
     @endif
 
     {{-- Testimonial --}}
-    <section id="testimonials" style="margin-top: 10%">
+    <section id="testimonials">
 
         {{-- heading --}}
-        <div class="testimonial-heading">
+        <div class="testimonial-heading" style="margin-top: 2%">
             <span>Penilaian</span>
             <h1>Para Kostumer</h1>
         </div>

@@ -1,5 +1,5 @@
 .container {
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -12,9 +12,9 @@
     position: absolute;
     background: #fff;
     border-radius: 6px;
-    max-width: 80%;
+    max-width: 100%;
     width: 100%;
-    padding: 40px;
+    /* padding: 40px; */
 }
 
 .form-container {

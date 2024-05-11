@@ -12,9 +12,9 @@
     position: absolute;
     background: #fff;
     border-radius: 6px;
-    max-width: 80%;
+    max-width: 90%;
     width: 100%;
-    padding: 40px;
+    /* padding: 40px; */
 }
 
 .form-container {
