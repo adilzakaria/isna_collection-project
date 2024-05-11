@@ -76,23 +76,34 @@
                     </div>
                     <div>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                            <select style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
                                 id="provinsi" name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
+                            <option>Pilih provinsi</option>
+                            @foreach ($provinces as $provinsi)
+                                <option value="{{$provinsi->id}}">{{$provinsi->name}}</option>
+                            @endforeach
                             @error('provinsi')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                            </select>
+                            <select style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kota" name="kota" placeholder="Kota"
                                 value="{{ old('kota') }}">
+                            <option></option>
+                                <option></option>
                             @error('kota')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                            </select>
+                            <select style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kecamatan" name="kecamatan"
                                 placeholder="Kecamatan" value="{{ old('kecamatan') }}">
                             @error('kecamatan')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                            <option></option>
+                                <option></option>
+                            </select>
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
                             <input style="width: 75%; font-size: 15px;" type="text"

@@ -64,6 +64,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/order', [OrderController::class, 'order'])->name('order');
     Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
     Route::post('/getkota', [OrderController::class, 'getkota'])->name('getkota');
+    Route::post('/getkecamatan', [OrderController::class, 'getkecamatan'])->name('getkecamatan');
     // Route::get('provinsi', [IndoController::class, 'provinsi'])->name('provinsi.index');
     // Route::get('kota/{id}', [IndoController::class, 'kota']);
     Route::get('/pesanan', [OrderController::class, 'showPesanan'])->name('pesanan');

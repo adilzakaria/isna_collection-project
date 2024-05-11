@@ -28,6 +28,14 @@ class OrderController extends Controller
             echo "<option value = '$kota->id'> $kota->name </option>";
         }
     }
+    public function getkecamatan(request $request){
+        $id_kota = $request->id_kota;
+        $kecamatans = District::where('regency_id',$id_kota)->get();
+
+        foreach ($kecamatans as $kecamatan){
+            echo "<option value = '$kecamatan->id'> $kecamatan->name </option>";
+        }
+    }
 
     public function pesan(Request $request)
     {
