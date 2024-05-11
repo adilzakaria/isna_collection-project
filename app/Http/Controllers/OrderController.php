@@ -17,22 +17,25 @@ class OrderController extends Controller
     {
         // return view('frontend.order');
         $provinces = Province::all();
-        return view ('frontend.order', compact('provinces'));
+        return view('frontend.order', compact('provinces'));
     }
 
-    public function getkota(request $request){
+    public function getkota(request $request)
+    {
         $id_provinsi = $request->id_provinsi;
-        $kotas = Regency::where('province_id',$id_provinsi)->get();
+        $kotas = Regency::where('province_id', $id_provinsi)->get();
 
-        foreach ($kotas as $kota){
+        foreach ($kotas as $kota) {
             echo "<option value = '$kota->id'> $kota->name </option>";
         }
     }
-    public function getkecamatan(request $request){
-        $id_kota = $request->id_kota;
-        $kecamatans = District::where('regency_id',$id_kota)->get();
 
-        foreach ($kecamatans as $kecamatan){
+    public function getkecamatan(request $request)
+    {
+        $id_kota = $request->id_kota;
+        $kecamatans = District::where('regency_id', $id_kota)->get();
+
+        foreach ($kecamatans as $kecamatan) {
             echo "<option value = '$kecamatan->id'> $kecamatan->name </option>";
         }
     }
@@ -42,20 +45,28 @@ class OrderController extends Controller
         try {
             $random = random_int(1, 999999999);
             $request->request->add(['status' => 'BELUM DISETUJUI']);
-    
+
             // Simpan data pesanan ke database
             $simpan = new Pesanan;
             $simpan->nama = $request->nama;
             $simpan->hp = $request->hp;
             $simpan->email = $request->email;
-            $simpan->provinsi = $request->provinsi;
-            $simpan->kota = $request->kota;
-            $simpan->kecamatan = $request->kecamatan;
+
+            // Ambil nama provinsi, kota, dan kecamatan dari ID yang dipilih
+            $provinsi = Province::find($request->provinsi);
+            $kota = Regency::find($request->kota);
+            $kecamatan = District::find($request->kecamatan);
+
+            // Simpan nama daerah
+            $simpan->provinsi = $provinsi->name;
+            $simpan->kota = $kota->name;
+            $simpan->kecamatan = $kecamatan->name;
+
             $simpan->alamat = $request->alamat;
             $simpan->kode = $request->kode;
             $simpan->ukuran = $request->ukuran;
             $simpan->jenis = $request->jenis;
-            
+
             // Check if file is present in the request
             if ($request->hasFile('gambar')) {
                 // Get file extension
@@ -67,18 +78,19 @@ class OrderController extends Controller
                 // Set the filename to the database field
                 $simpan->gambar = $filename;
             }
-            
+
             $simpan->tambahan = $request->tambahan;
             $simpan->nomor = $random;
             $simpan->status = $request->status;
             $simpan->save();
-    
+
             return redirect('/pesanan')->with('success', 'Pesanan berhasil dibuat!');
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
     }
-    
+
+
 
     public function showPesanan()
     {
