@@ -12,6 +12,7 @@ use App\Http\Controllers\EditAkunController;
 use App\Http\Controllers\DetailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\IndoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,9 @@ Route::post('/forgot', [ForgotController::class, 'updatePassword']);
 Route::middleware('auth')->group(function () {
     Route::get('/order', [OrderController::class, 'order'])->name('order');
     Route::post('/order', [OrderController::class, 'pesan'])->name('pesan');
+    Route::post('/getkota', [OrderController::class, 'getkota'])->name('getkota');
+    // Route::get('provinsi', [IndoController::class, 'provinsi'])->name('provinsi.index');
+    // Route::get('kota/{id}', [IndoController::class, 'kota']);
     Route::get('/pesanan', [OrderController::class, 'showPesanan'])->name('pesanan');
     Route::get('/detail/{nomor}', [DetailController::class, 'show'])->name('detail');
 });

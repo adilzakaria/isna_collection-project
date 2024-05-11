@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <title>Pesan Produk</title>
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
@@ -12,14 +13,17 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href={{ url('assets/css/common-1.css') }}>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href={{ url('assets/css/style.css') }}>
-    {{-- <link rel="stylesheet" href={{ url('assets/css/akun.css') }}> --}}
-    <link rel="stylesheet" href={{ url('assets/css/order.css') }}>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="{{ url('assets/css/common-1.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&amp;family=Poppins:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/akun.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/order.css') }}">
+    
+    
+    
 
 </head>
 
@@ -75,23 +79,32 @@
                     </div>
                     <div>
                         <div class="form-group" style="display: inline-flex; margin-left:1rem; width: 95%;">
-                            <input style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
+                            <select style="width: 40%; font-size: 15px;" type="text" class="form-control input_form"
                                 id="provinsi" name="provinsi" placeholder="Provinsi" value="{{ old('provinsi') }}">
-                            @error('provinsi')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                                <option>Pilih provinsi</option>
+                                @foreach ($provinces as $provinsi)
+                                    <option value="{{$provinsi->id}}">{{$provinsi->name}}</option>
+                                @endforeach
+                                @error('provinsi')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </select>
+                            <select style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kota" name="kota" placeholder="Kota"
                                 value="{{ old('kota') }}">
-                            @error('kota')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                            <input style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
+                                <option>Pilih kota</option> 
+                                @error('kota')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </select>
+                            <select style="width: 40%; font-size: 15px; margin-left: 2rem;" type="text"
                                 class="form-control input_form" id="kecamatan" name="kecamatan"
                                 placeholder="Kecamatan" value="{{ old('kecamatan') }}">
-                            @error('kecamatan')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
+                                <option>Pilih kecamatan</option>
+                                @error('kecamatan')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </select>
                         </div>
                         <div style="display: inline-flex; margin-left:1rem; margin-top:1rem;  width: 95%;">
                             <input style="width: 75%; font-size: 15px;" type="text"
@@ -203,6 +216,36 @@
         }
     </script>
 
+    <script>
+        $(function(){
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
+            });
+
+            
+        $(function(){
+            $('#provinsi').on('change', function(){
+                let id_provinsi = $('#provinsi').val();
+
+                console.log(id_provinsi)
+
+                $.ajax({
+                    type : 'POST',
+                    url : "{{route('getkota')}}",
+                    data : {id_provinsi:id_provinsi},
+                    cache : false,
+
+                    success: function(msg){
+                        $('#kota').html(msg);
+                    },
+                    error: function(data){
+                        console.log('error:',data)
+                    },
+                })
+            })
+        })
+        })
+    </script>
 
 
         <!-- Vendor JS Files -->
@@ -214,9 +257,15 @@
         <script src="{{ url('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ url('assets/vendor/php-email-form/validate.js') }}"></script>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <!-- Template Main JS File -->
         <script src="{{ url('assets/js/main.js') }}"></script>
         <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="6030eb7e-c752-422c-aedc-06dc472fe214";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+        <script>
+            
+        </script>
 
 </body>
 </html>

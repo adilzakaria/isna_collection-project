@@ -6,12 +6,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Pesanan;
 use App\Models\User;
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
+use App\Models\Village;
 
 class OrderController extends Controller
 {
     public function order()
     {
-        return view('frontend.order');
+        // return view('frontend.order');
+        $provinces = Province::all();
+        return view ('frontend.order', compact('provinces'));
+    }
+
+    public function getkota(request $request){
+        $id_provinsi = $request->id_provinsi;
+        $kotas = Regency::where('province_id',$id_provinsi)->get();
+
+        foreach ($kotas as $kota){
+            echo "<option value = '$kota->id'> $kota->name </option>";
+        }
     }
 
     public function pesan(Request $request)
